@@ -1,4 +1,6 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < ApplicationController
+  layout 'admin'
+  before_filter :require_is_admin
   # GET /questions
   # GET /questions.json
   def index
@@ -34,20 +36,18 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-    # @question = Question.find(params[:id])
-    @question = current_user.questions.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   # POST /questions
   # POST /questions.json
   def create
-    # @question = Question.new(params[:question])
-    @question = Question.new(params[:question])
+    @question = Question.new(params[:post])
     @question.user_id = current_user.id
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to admin_question_path(@question), notice: 'Question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else
         format.html { render action: "new" }
@@ -59,8 +59,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.json
   def update
-    # @question = Question.find(params[:id])
-    @question = current_user.questions.find(params[:id])
+    @question = Question.find(params[:id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
