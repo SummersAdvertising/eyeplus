@@ -21,23 +21,10 @@
 </p>
 
 <h2>answers</h2>
-<% @question.answers.each do |answer| %>
-  <p>
-    <b>answer:</b>
-    <%= answer.content %>
-  </p>
-<% end %>
+<%= render @question.answers %>
 
 <h2>Add a answer:</h2>
-<%= form_for([@question, @question.answers.build]) do |f| %>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render "answers/form" %>
 
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
