@@ -2,7 +2,10 @@
   <% if user_signed_in? %>
       Hi! <%= current_user.email %>
       <%= link_to("Sign out", destroy_user_session_path, :method => :delete )%>
-      <% if current_user && current_user.is_admin? %>
+      <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true)=="/questions") %>
+        <%= link_to("Admin Panel", admin_questions_path )%>
+      <% end %>
+      <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true)=="/posts") %>
         <%= link_to("Admin Panel", admin_posts_path )%>
       <% end %>
   <% else %>

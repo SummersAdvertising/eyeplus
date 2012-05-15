@@ -1,14 +1,22 @@
 EyePlus02::Application.routes.draw do
-  # resources :questions
+  devise_for :users
+
+  namespace :admin do
+    resources :questions do
+      resources :answers
+    end
+  end
+
   resources :questions do
     resources :answers
   end
 
-  devise_for :users
+  
   
   namespace :admin do
     resources :posts
   end
+
   resources :posts
 
   # The priority is based upon order of creation:

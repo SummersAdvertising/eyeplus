@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @question.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @question.content %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @question.email %>
+</p>
+
+<p>
+  <b>Is private:</b>
+  <%= @question.is_private %>
+</p>
+
+<h2>answers</h2>
+<%= render @question.answers %>
+
+<h2>Add a answer:</h2>
+<%= render "answers/form" %>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
