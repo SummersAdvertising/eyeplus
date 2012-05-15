@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<% if current_user && current_user.is_admin? %>
+	<%= link_to 'Edit', edit_admin_post_path(@post) %> |
+<%end%>
+<%= link_to 'Back', admin_posts_path %>
