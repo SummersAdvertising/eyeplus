@@ -1,4 +1,6 @@
 EyePlus02::Application.routes.draw do
+  resources :questions
+
   devise_for :users
   
   namespace :admin do
