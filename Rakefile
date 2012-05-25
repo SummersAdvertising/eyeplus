@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-EyePlus02::Application.load_tasks
+EyePlus::Application.load_tasks

@@ -1,4 +1,4 @@
-EyePlus02::Application.routes.draw do
+EyePlus::Application.routes.draw do
   devise_for :users
 
   namespace :admin do
