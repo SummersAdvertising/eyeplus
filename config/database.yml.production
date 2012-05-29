@@ -1,8 +1,8 @@
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: eyeplusdevelopment
-  pool: 5
-  username: root
-  password: 'rails'
+adapter: mysql2
+encoding: utf8
+reconnect: false
+database: eyeplus
+pool: 5
+username: root
+password: 'rails'
