@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :questions
   has_many :answers
+  has_many :articles
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

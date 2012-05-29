@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user! , :except => [ :show, :index ]
   # GET /articles
   # GET /articles.json
   def index
@@ -42,6 +43,8 @@ class ArticlesController < ApplicationController
     # @article = Article.find(params[:id])
     @board = Board.find(params[:board_id])
     @article = @board.articles.find(params[:id])
+    @article.user_id = current_user.id
+    # @article = current_user.articles.find(params[:id])
   end
 
   # POST /articles
@@ -50,6 +53,7 @@ class ArticlesController < ApplicationController
     # @article = Article.new(params[:article])
     @board = Board.find(params[:board_id])
     @article = @board.articles.create(params[:article])
+    @article.user_id = current_user.id
 
     respond_to do |format|
       if @article.save
@@ -68,6 +72,7 @@ class ArticlesController < ApplicationController
     # @article = Article.find(params[:id])
     @board = Board.find(params[:board_id])
     @article = @board.articles.find(params[:id])
+    @article.user_id = current_user.id
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
@@ -87,6 +92,7 @@ class ArticlesController < ApplicationController
     # @article.destroy
     @board = Board.find(params[:board_id])
     @article = @board.articles.find(params[:id])
+    # @article = current_user.articles.find(params[:id])
     @article.destroy
 
     respond_to do |format|

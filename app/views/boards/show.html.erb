@@ -24,8 +24,10 @@
     <td><%= article.title %></td>
     <td><%= article.content %></td>
     <td><%= link_to 'Show', board_article_path(@board,article) %></td>
-    <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
-    <td><%= link_to 'Destroy', board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if current_user && article.user == current_user %>
+      <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
+      <td><%= link_to 'Destroy', board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
 </tr>
 <% end %>
 </table>
