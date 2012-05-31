@@ -18,7 +18,7 @@
   database: eyeplusdevelopment
   pool: 5
   username: root
-  password: 'rails'
+  password: 
 
 
 # Warning: The database defined as "test" will be erased and
