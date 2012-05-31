@@ -1,14 +1,14 @@
 EyePlus::Application.routes.draw do
   devise_for :users
 
+  resources :boards do
+    resources :articles
+  end
+
   namespace :admin do
     resources :boards do
       resources :articles
     end
-  end
-
-  resources :boards do
-    resources :articles
   end
 
 
