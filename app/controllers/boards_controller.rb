@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_filter :authenticate_user! , :except => [ :show, :index ]
   # GET /boards
   # GET /boards.json
   def index
@@ -35,13 +36,15 @@ class BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
   end
 
   # POST /boards
   # POST /boards.json
   def create
     @board = Board.new(params[:board])
+    @board.user_id = current_user.id
 
     respond_to do |format|
       if @board.save
@@ -57,7 +60,8 @@ class BoardsController < ApplicationController
   # PUT /boards/1
   # PUT /boards/1.json
   def update
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
 
     respond_to do |format|
       if @board.update_attributes(params[:board])
@@ -73,7 +77,8 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
     @board.articles.destroy_all
     @board.destroy
 
