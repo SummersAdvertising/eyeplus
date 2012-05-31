@@ -10,6 +10,12 @@
   <%= @board.order %>
 </p>
 
+<% if @board.excerpt_image %>
+  <p>
+    <%= image_tag(@board.excerpt_image.url(:medium)) %>
+  </p>
+<% end %>
+
 <table>
   <tr>
     <th>Title</th>

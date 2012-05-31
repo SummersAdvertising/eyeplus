@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529073800) do
+ActiveRecord::Schema.define(:version => 20120531045425) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -35,8 +35,12 @@ ActiveRecord::Schema.define(:version => 20120529073800) do
   create_table "boards", :force => true do |t|
     t.string   "name"
     t.integer  "order"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "excerpt_image_file_name"
+    t.string   "excerpt_image_content_type"
+    t.integer  "excerpt_image_file_size"
+    t.datetime "excerpt_image_updated_at"
   end
 
   create_table "posts", :force => true do |t|
