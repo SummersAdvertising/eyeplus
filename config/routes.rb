@@ -1,7 +1,11 @@
 EyePlus::Application.routes.draw do
-  resources :facebooks
-
   devise_for :users
+
+  namespace :admin do
+    resources :facebooks
+  end
+
+  resources :facebooks
 
   resources :boards do
     resources :articles
@@ -12,8 +16,7 @@ EyePlus::Application.routes.draw do
       resources :articles
     end
   end
-
-
+  
   namespace :admin do
     resources :questions do
       resources :answers

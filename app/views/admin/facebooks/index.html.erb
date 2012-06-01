@@ -1,0 +1,37 @@
+<h1>Listing facebooks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Site type</th>
+    <th>Url</th>
+    <th>Site name</th>
+    <th>Admins</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facebooks.each do |facebook| %>
+  <tr>
+    <td><%= facebook.title %></td>
+    <td><%= facebook.description %></td>
+    <td><%= facebook.image_url %></td>
+    <td><%= facebook.site_type %></td>
+    <td><%= facebook.url %></td>
+    <td><%= facebook.site_name %></td>
+    <td><%= facebook.admins %></td>
+    <td><%= link_to 'Show', admin_facebook_path(facebook) %></td>
+    <% if current_user && current_user.is_admin? %>
+        <td><%= link_to 'Edit', edit_admin_facebook_path(facebook) %></td>
+        <td><%= link_to 'Destroy', admin_facebook_path(facebook), confirm: 'Are you sure?', method: :delete %></td>
+    <% end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facebook', new_admin_facebook_path %>
