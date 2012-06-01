@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= render :partial => "common/facebook_tag" %>
   <title>EyePlus</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -12,6 +13,6 @@
 <br>
 <br>
 <br>
-<%= render :partial => "common/facebook" %>
+<%= render :partial => "common/facebook_share_button" %>
 </body>
 </html>
