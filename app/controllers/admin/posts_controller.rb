@@ -1,4 +1,6 @@
+# coding: utf-8
 class Admin::PostsController < ApplicationController
+
   layout 'admin'
   before_filter :require_is_admin
   before_filter :authenticate_user! , :except => [ :show, :index ]
@@ -49,6 +51,17 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+         @facebook = Facebook.new
+         @facebook.title = @post.title
+         @facebook.description = @post.content
+         @facebook.image_url = get_default_facebook_tag_image_url
+         @facebook.site_type = get_default_facebook_tag_site_type
+         @facebook.url = "/posts/" + @post.id.to_s()
+         @facebook.site_name = get_default_facebook_tag_site_name
+         @facebook.admins = get_default_facebook_tag_admins
+         @facebook.user_id = current_user.id
+         @facebook.save
+
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
