@@ -1,4 +1,6 @@
 EyePlus::Application.routes.draw do
+  resources :facebooks
+
   devise_for :users
 
   resources :boards do

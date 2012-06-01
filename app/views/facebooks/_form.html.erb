@@ -1,0 +1,45 @@
+<%= form_for(@facebook) do |f| %>
+  <% if @facebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facebook.errors.count, "error") %> prohibited this facebook from being saved:</h2>
+
+      <ul>
+      <% @facebook.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :site_type %><br />
+    <%= f.text_field :site_type %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :site_name %><br />
+    <%= f.text_field :site_name %>
+  </div>
+  <div class="field">
+    <%= f.label :admins %><br />
+    <%= f.text_field :admins %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
