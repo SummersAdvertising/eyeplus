@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :boards
   has_many :facebooks
+  has_many :default_facebooks
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

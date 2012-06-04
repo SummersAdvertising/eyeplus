@@ -41,6 +41,7 @@ class DefaultFacebooksController < ApplicationController
   # POST /default_facebooks.json
   def create
     @default_facebook = DefaultFacebook.new(params[:default_facebook])
+    @default_facebook.user_id = current_user.id
 
     respond_to do |format|
       if @default_facebook.save
@@ -57,6 +58,7 @@ class DefaultFacebooksController < ApplicationController
   # PUT /default_facebooks/1.json
   def update
     @default_facebook = DefaultFacebook.find(params[:id])
+    @default_facebook = current_user.default_facebooks.find(params[:id])
 
     respond_to do |format|
       if @default_facebook.update_attributes(params[:default_facebook])
@@ -72,7 +74,8 @@ class DefaultFacebooksController < ApplicationController
   # DELETE /default_facebooks/1
   # DELETE /default_facebooks/1.json
   def destroy
-    @default_facebook = DefaultFacebook.find(params[:id])
+    # @default_facebook = DefaultFacebook.find(params[:id])
+    @default_facebook = current_user.default_facebooks.find(params[:id])
     @default_facebook.destroy
 
     respond_to do |format|
