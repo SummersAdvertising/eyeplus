@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604031517) do
+ActiveRecord::Schema.define(:version => 20120604033240) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20120604031517) do
   create_table "default_facebooks", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
     t.string   "site_type"
     t.string   "url"
     t.string   "site_name"
