@@ -56,7 +56,7 @@ class Admin::PostsController < ApplicationController
          @facebook.description = @post.content
          @facebook.image_url = DefaultFacebook.first.excerpt_image.url
          @facebook.site_type = DefaultFacebook.first.site_type
-         @facebook.url = "/posts/" + @post.id.to_s()
+         @facebook.url = "posts/" + @post.id.to_s()
          @facebook.site_name = DefaultFacebook.first.site_name
          @facebook.admins = DefaultFacebook.first.admins
          @facebook.user_id = current_user.id
@@ -79,7 +79,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-         @conditionUrl = "/posts/" + @post.id.to_s()
+         @conditionUrl = "posts/" + @post.id.to_s()
          @facebook = Facebook.where(:url => @conditionUrl).first    
          @facebook.title = @post.title
          @facebook.description = @post.content
