@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @default_facebook.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @default_facebook.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @default_facebook.image_url %>
+</p>
+
+<p>
+  <b>Site type:</b>
+  <%= @default_facebook.site_type %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @default_facebook.url %>
+</p>
+
+<p>
+  <b>Site name:</b>
+  <%= @default_facebook.site_name %>
+</p>
+
+<p>
+  <b>Admins:</b>
+  <%= @default_facebook.admins %>
+</p>
+
+
+<%= link_to 'Edit', edit_default_facebook_path(@default_facebook) %> |
+<%= link_to 'Back', default_facebooks_path %>

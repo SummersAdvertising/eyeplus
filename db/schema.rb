@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120601053825) do
+ActiveRecord::Schema.define(:version => 20120604030731) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20120601053825) do
     t.integer  "excerpt_image_file_size"
     t.datetime "excerpt_image_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "default_facebooks", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "site_type"
+    t.string   "url"
+    t.string   "site_name"
+    t.string   "admins"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "facebooks", :force => true do |t|
