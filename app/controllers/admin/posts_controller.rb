@@ -101,6 +101,9 @@ class Admin::PostsController < ApplicationController
     # @post = Post.find(params[:id])
     @post = current_user.posts.find(params[:id])
     @post.destroy
+    @conditionUrl = "posts/" + @post.id.to_s()
+    @facebook = Facebook.where(:url => @conditionUrl).first  
+    @facebook.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_posts_url }
