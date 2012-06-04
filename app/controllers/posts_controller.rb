@@ -5,6 +5,20 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
+    @conditionUrl = "posts"
+    @facebook = Facebook.where(:url => @conditionUrl).first
+    if @facebook.nil?
+      @facebook = Facebook.new
+      @defaultFacebook = DefaultFacebook.first
+      @facebook.title = @defaultFacebook.title
+      @facebook.description = @defaultFacebook.description
+      @facebook.image_url = @defaultFacebook.excerpt_image.url
+      @facebook.site_type = @defaultFacebook.site_type
+      @facebook.url = @defaultFacebook.url
+      @facebook.site_name = @defaultFacebook.site_name
+      @facebook.admins = @defaultFacebook.admins
+    end 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -15,6 +29,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+
+    @conditionUrl = "posts/" + @post.id.to_s()
+    @facebook = Facebook.where(:url => @conditionUrl).first
 
     respond_to do |format|
       format.html # show.html.erb
