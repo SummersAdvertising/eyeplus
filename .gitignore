@@ -14,5 +14,5 @@
 /log/*.log
 /tmp
 
-# Ignore all upload images.
-/public/system/boards/excerpt_images/
+# Ignore all files in the public.
+/public
