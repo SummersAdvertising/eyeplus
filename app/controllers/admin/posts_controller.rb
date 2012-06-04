@@ -79,6 +79,13 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
+         @conditionUrl = "/posts/" + @post.id.to_s()
+         @facebook = Facebook.where(:url => @conditionUrl).first    
+         @facebook.title = @post.title
+         @facebook.description = @post.content
+         @facebook.user_id = current_user.id
+         @facebook.save
+
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
