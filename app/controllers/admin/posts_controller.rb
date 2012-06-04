@@ -81,7 +81,7 @@ class Admin::PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
          @conditionUrl = "posts/" + @post.id.to_s()
-         @facebook = Facebook.where(:url => @conditionUrl).first    
+         @facebook = getFacebook(@conditionUrl)
          @facebook.title = @post.title
          @facebook.description = @post.content
          @facebook.user_id = current_user.id
@@ -103,7 +103,7 @@ class Admin::PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     @post.destroy
     @conditionUrl = "posts/" + @post.id.to_s()
-    @facebook = Facebook.where(:url => @conditionUrl).first  
+    @facebook = getFacebook(@conditionUrl)
     @facebook.destroy
 
     respond_to do |format|
