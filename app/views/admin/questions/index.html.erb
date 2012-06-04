@@ -16,6 +16,7 @@
     <td><%= question.content %></td>
     <td><%= question.email %></td>
     <td><%= question.is_private %></td>
+    <td><%= question.user_name %></td>
     <td><%= link_to 'Show', admin_question_path(question) %></td>
     <% if current_user && current_user.is_admin? %>
       <td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
