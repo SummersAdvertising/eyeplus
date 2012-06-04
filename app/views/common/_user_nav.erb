@@ -11,9 +11,12 @@
       <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true).include? 'boards') %>
         <%= link_to("Admin Panel", admin_boards_path )%>
       <% end %>
-      <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true).include? 'facebooks') %>
+<!--       <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true).include? 'facebooks') %>
         <%= link_to("Admin Panel", admin_facebooks_path )%>
       <% end %>
+      <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true).include? 'default_facebooks') %>
+        <%= link_to("Admin Panel", admin_default_facebooks_path )%>
+      <% end %> -->
   <% else %>
       <%= link_to "Sign in", new_user_session_path %>
       <%= link_to "Sign up", new_user_registration_path %>

@@ -1,7 +1,11 @@
 EyePlus::Application.routes.draw do
-  resources :default_facebooks
-
   devise_for :users
+
+  namespace :admin do
+    resources :default_facebooks
+  end
+
+  resources :default_facebooks  
 
   namespace :admin do
     resources :facebooks

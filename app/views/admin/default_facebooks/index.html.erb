@@ -1,0 +1,36 @@
+<h1>Listing default_facebooks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Site type</th>
+    <th>Url</th>
+    <th>Site name</th>
+    <th>Admins</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @default_facebooks.each do |default_facebook| %>
+  <tr>
+    <td><%= default_facebook.title %></td>
+    <td><%= default_facebook.description %></td>
+    <td><%= default_facebook.site_type %></td>
+    <td><%= default_facebook.url %></td>
+    <td><%= default_facebook.site_name %></td>
+    <td><%= default_facebook.admins %></td>
+    <td><%= link_to 'Show', admin_default_facebook_path(default_facebook) %></td>
+    <% if current_user && current_user.is_admin? %>
+        <td><%= link_to 'Edit', edit_admin_default_facebook_path(default_facebook) %></td>
+        <td><%= link_to 'Destroy', admin_default_facebook_path(default_facebook), confirm: 'Are you sure?', method: :delete %></td>
+    <% end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Default facebook', new_admin_default_facebook_path %>
