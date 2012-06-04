@@ -54,11 +54,11 @@ class Admin::PostsController < ApplicationController
          @facebook = Facebook.new
          @facebook.title = @post.title
          @facebook.description = @post.content
-         @facebook.image_url = get_default_facebook_tag_image_url
-         @facebook.site_type = get_default_facebook_tag_site_type
+         @facebook.image_url = DefaultFacebook.first.excerpt_image.url
+         @facebook.site_type = DefaultFacebook.first.site_type
          @facebook.url = "/posts/" + @post.id.to_s()
-         @facebook.site_name = get_default_facebook_tag_site_name
-         @facebook.admins = get_default_facebook_tag_admins
+         @facebook.site_name = DefaultFacebook.first.site_name
+         @facebook.admins = DefaultFacebook.first.admins
          @facebook.user_id = current_user.id
          @facebook.save
 

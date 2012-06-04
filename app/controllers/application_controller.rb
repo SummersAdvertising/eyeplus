@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   # default facebook tag values
   def get_default_facebook_tag_title
-    @default_facebook_tag_title = "聚英視光眼科診所"
+    @default_facebook_tag_title = DefaultFacebook.first.title
   end
 
   def get_default_facebook_tag_description
