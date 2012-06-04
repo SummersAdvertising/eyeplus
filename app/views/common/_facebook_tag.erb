@@ -1,3 +1,16 @@
+<%
+if @facebook.nil?
+      @facebook = Facebook.new
+      @defaultFacebook = DefaultFacebook.first
+      @facebook.title = @defaultFacebook.title
+      @facebook.description = @defaultFacebook.description
+      @facebook.image_url = @defaultFacebook.excerpt_image.url
+      @facebook.site_type = @defaultFacebook.site_type
+      @facebook.site_name = @defaultFacebook.site_name
+      @facebook.admins = @defaultFacebook.admins      
+end
+@facebook.url = "http://"+request.host_with_port+request.original_fullpath
+%>
 <meta property="og:title" content="<%=@facebook.title%>" />
 <meta property="og:description" content="<%=@facebook.description%>" />
 <meta property="og:image" content="<%=@facebook.image_url%>" />

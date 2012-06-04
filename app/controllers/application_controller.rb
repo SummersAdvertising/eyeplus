@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def getFacebook()
-  	
-  # end
+  def getFacebook(url)
+    @facebook = Facebook.where(:url => url).first
+    return @facebook
+  end
+
 end

@@ -52,13 +52,14 @@ class Admin::PostsController < ApplicationController
     respond_to do |format|
       if @post.save
          @facebook = Facebook.new
+         @defaultFacebook = DefaultFacebook.first
          @facebook.title = @post.title
          @facebook.description = @post.content
-         @facebook.image_url = DefaultFacebook.first.excerpt_image.url
-         @facebook.site_type = DefaultFacebook.first.site_type
+         @facebook.image_url = @defaultFacebook.excerpt_image.url
+         @facebook.site_type = @defaultFacebook.site_type
          @facebook.url = "posts/" + @post.id.to_s()
-         @facebook.site_name = DefaultFacebook.first.site_name
-         @facebook.admins = DefaultFacebook.first.admins
+         @facebook.site_name = @defaultFacebook.site_name
+         @facebook.admins = @defaultFacebook.admins
          @facebook.user_id = current_user.id
          @facebook.save
 

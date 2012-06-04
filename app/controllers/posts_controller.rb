@@ -3,21 +3,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
+    @posts = Post.all   
     @conditionUrl = "posts"
-    @facebook = Facebook.where(:url => @conditionUrl).first
-    if @facebook.nil?
-      @facebook = Facebook.new
-      @defaultFacebook = DefaultFacebook.first
-      @facebook.title = @defaultFacebook.title
-      @facebook.description = @defaultFacebook.description
-      @facebook.image_url = @defaultFacebook.excerpt_image.url
-      @facebook.site_type = @defaultFacebook.site_type
-      @facebook.url = @defaultFacebook.url
-      @facebook.site_name = @defaultFacebook.site_name
-      @facebook.admins = @defaultFacebook.admins
-    end 
+    @facebook = getFacebook(@conditionUrl)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @conditionUrl = "posts/" + @post.id.to_s()
-    @facebook = Facebook.where(:url => @conditionUrl).first
+    @facebook = getFacebook(@conditionUrl)
 
     respond_to do |format|
       format.html # show.html.erb
