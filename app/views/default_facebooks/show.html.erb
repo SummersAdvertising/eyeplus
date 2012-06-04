@@ -10,6 +10,12 @@
   <%= @default_facebook.description %>
 </p>
 
+<% if @default_facebook.excerpt_image %>
+<p>
+  <%= image_tag(@default_facebook.excerpt_image.url(:medium)) %>
+</p>
+<% end %>
+
 <p>
   <b>Site type:</b>
   <%= @default_facebook.site_type %>
