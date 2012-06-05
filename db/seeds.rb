@@ -6,9 +6,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-default_facebook = DefaultFacebook.new(:title => "聚英眼科診所", :description => "聚英眼科診所", :site_type => "company", :url => "www.eyeplus.com.tw", :site_name => "聚英眼科診所", :admins => "1123456")
-default_facebook.save!
-
 admin = User.new(:email => "admin@eyeplus.com.tw", :password => "123456", 
   :password_confirmation => "123456")
 admin.is_admin = true
@@ -18,3 +15,6 @@ normal_user = User.new(:email => "user@eyeplus.com.tw", :password => "123456",
   :password_confirmation => "123456")
 normal_user.save!
 
+default_facebook = DefaultFacebook.new(:title => "聚英眼科診所", :description => "聚英眼科診所", :site_type => "company", :url => "www.eyeplus.com.tw", :site_name => "聚英眼科診所", :admins => "1123456")
+default_facebook.user_id = 1
+default_facebook.save!
