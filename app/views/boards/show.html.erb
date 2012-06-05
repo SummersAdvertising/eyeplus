@@ -30,15 +30,15 @@
     <td><%= article.title %></td>
     <td><%= article.content %></td>
     <td><%= link_to 'Show', board_article_path(@board,article) %></td>
-    <% if current_user && article.user == current_user %>
+<!--     <% if current_user && article.user == current_user %>
       <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
       <td><%= link_to 'Destroy', board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
+    <% end %> -->
 </tr>
 <% end %>
 </table>
 <br>
-<%= link_to 'New Article', new_board_article_path(@board) %>
+<!-- <%= link_to 'New Article', new_board_article_path(@board) %> -->
 <br><br>
-<%= link_to 'Edit', edit_board_path(@board) %> |
+<!-- <%= link_to 'Edit', edit_board_path(@board) %> | -->
 <%= link_to 'Back', boards_path %>

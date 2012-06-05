@@ -5,13 +5,13 @@ EyePlus::Application.routes.draw do
     resources :default_facebooks
   end
 
-  resources :default_facebooks  
+  # resources :default_facebooks  
 
   namespace :admin do
     resources :facebooks
   end
 
-  resources :facebooks
+  # resources :facebooks
 
   resources :boards do
     resources :articles
