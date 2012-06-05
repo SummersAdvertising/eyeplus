@@ -1,6 +1,6 @@
 <div class="user_navigation">
   <% if user_signed_in? %>
-      Hi! <%= current_user.email %>
+      Hi! <%= current_user.user_name %>
       <%= link_to("Sign out", destroy_user_session_path, :method => :delete )%>
       <% if (current_user) && (current_user.is_admin?) && (url_for(:only_path => true).include? 'questions') %>
         <%= link_to("Admin Panel", admin_questions_path )%>
