@@ -13,7 +13,7 @@ end
 %>
 <meta property="og:title" content="<%=@facebook.title%>" />
 <meta property="og:description" content="<%=@facebook.description%>" />
-<meta property="og:image" content="<%=@facebook.image_url%>" />
+<meta property="og:image" content="<%="http://"+request.host_with_port+@facebook.image_url%>" />
 <meta property="og:type" content="<%=@facebook.site_type%>" />
 <meta property="og:url" content="<%=@facebook.url%>" />
 <meta property="og:site_name" content="<%=@facebook.site_name%>" />
