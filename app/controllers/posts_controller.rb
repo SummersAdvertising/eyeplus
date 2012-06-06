@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
     @conditionUrl = "posts"
     @facebook = getFacebook(@conditionUrl)
+    encodeURIComponent
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
 
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)
+    encodeURIComponent
 
     respond_to do |format|
       format.html # show.html.erb

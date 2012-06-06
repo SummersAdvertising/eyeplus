@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @conditionUrl = "boards/"+@board.id.to_s()+"/articles"
     @facebook = getFacebook(@conditionUrl)
+    encodeURIComponent
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +22,7 @@ class ArticlesController < ApplicationController
     @article = @board.articles.find(params[:id])
     @conditionUrl = "boards/"+@board.id.to_s()+"/articles/"+@article.id.to_s()
     @facebook = getFacebook(@conditionUrl)
+    encodeURIComponent
 
     respond_to do |format|
       format.html # show.html.erb

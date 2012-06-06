@@ -26,4 +26,13 @@ class ApplicationController < ActionController::Base
     return @facebook
   end
 
+  def encodeURIComponent
+    @facebook_title_encode_URI = URI.escape(@facebook.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_description_encode_URI = URI.escape(@facebook.description, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_image_url_encode_URI = URI.escape(@facebook.image_url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_site_type_encode_URI = URI.escape(@facebook.site_type, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_url_encode_URI = URI.escape(@facebook.url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_site_name_encode_URI = URI.escape(@facebook.site_name, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    @facebook_admins_encode_URI = URI.escape(@facebook.admins, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+  end
 end
