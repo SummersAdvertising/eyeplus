@@ -10,6 +10,7 @@ gem 'mysql2'
 
 gem "devise"
 gem "paperclip"
+gem "will_paginate"
 
 gem 'capistrano'
 gem 'capistrano-ext'
