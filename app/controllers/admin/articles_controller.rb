@@ -59,6 +59,17 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+         @facebook = Facebook.new
+         @defaultFacebook = DefaultFacebook.first
+         @facebook.title = @article.title
+         @facebook.description = @article.content
+         @facebook.image_url = @defaultFacebook.excerpt_image.url
+         @facebook.site_type = @defaultFacebook.site_type
+         @facebook.url = "boards/"+@board.id.to_s()+"/articles/"+@article.id.to_s()
+         @facebook.site_name = @defaultFacebook.site_name
+         @facebook.admins = @defaultFacebook.admins
+         @facebook.user_id = current_user.id
+         @facebook.save
         format.html { redirect_to admin_board_path(@board), notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
@@ -78,6 +89,13 @@ class Admin::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
+         @conditionUrl = "boards/"+@board.id.to_s()+"/articles/"+@article.id.to_s()
+         @facebook = getFacebook(@conditionUrl)
+         @facebook.title = @article.title
+         @facebook.description = @article.content
+         @facebook.user_id = current_user.id
+         @facebook.save
+
         format.html { redirect_to admin_board_path(@board), notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
@@ -96,6 +114,9 @@ class Admin::ArticlesController < ApplicationController
     @article = @board.articles.find(params[:id])
     # @article = current_user.articles.find(params[:id])
     @article.destroy
+    @conditionUrl = "boards/"+@board.id.to_s()+"/articles/"+@article.id.to_s()
+    @facebook = getFacebook(@conditionUrl)
+    @facebook.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_board_path(@board) }
