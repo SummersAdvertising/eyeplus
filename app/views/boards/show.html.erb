@@ -20,6 +20,8 @@
   <tr>
     <th>Title</th>
     <th>Content</th>
+    <th>Created At</th>
+    <th>Updated At</th>
     <th></th>
     <th></th>
     <th></th>
@@ -29,6 +31,8 @@
 <tr>
     <td><%= article.title %></td>
     <td><%= article.content %></td>
+    <td><%= l(article.created_at, :format => :short)%></td>
+    <td><%= l(article.updated_at, :format => :short)%></td>
     <td><%= link_to 'Show', board_article_path(@board,article) %></td>
 <!--     <% if current_user && article.user == current_user %>
       <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
@@ -37,6 +41,7 @@
 </tr>
 <% end %>
 </table>
+<%= will_paginate(@articles)%>
 <br>
 <!-- <%= link_to 'New Article', new_board_article_path(@board) %> -->
 <br><br>
