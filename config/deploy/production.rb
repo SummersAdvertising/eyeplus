@@ -1,7 +1,7 @@
 set :application, "eyeplus"
-set :domain, "192.168.1.45"
+set :domain, "li406-49.members.linode.com"
 set :repository,  "git@github.com:SummersAdvertising/eyeplus.git"
-set :deploy_to, "/home/apps/eyeplus"
+set :deploy_to, "/var/spool/RoR-Projects/eyeplus"
 
 role :app, domain
 role :web, domain
@@ -16,7 +16,9 @@ set :scm_verbose, true
 set :use_sudo, false
 
 set :user, "apps"
-set :group, "apps"
+set :password, "1qaz2wsx"
+set :group, "webs"
+# set :group, "apps"
 
 default_environment["PATH"] = "/opt/ree/bin:/usr/local/bin:/usr/bin:/bin:/usr/games"
 
