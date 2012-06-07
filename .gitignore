@@ -17,5 +17,4 @@
 # Ignore all files in the public.
 /public
 
-# Ignore all files in the /config/deploy
-/config/deploy/
+
