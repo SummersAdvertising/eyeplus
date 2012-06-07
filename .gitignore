@@ -18,4 +18,4 @@
 /public
 
 # Ignore all files in the /config/deploy
-/config/deploy
+/config/deploy/
