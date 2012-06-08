@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: eyeplusdevelopment
   pool: 5
-  username: production
-  password: 1qaz2wsx
+  username: root
+  password: 
 
 
 # Warning: The database defined as "test" will be erased and
