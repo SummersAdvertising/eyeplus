@@ -1,31 +1,49 @@
-<h1>Listing questions</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Email</th>
-    <th>Is private</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.title %></td>
-    <td><%= question.content %></td>
-    <td><%= question.email %></td>
-    <td><%= question.is_private %></td>
-    <td><%= question.user_name %></td>
-    <td><%= link_to 'Show', admin_question_path(question) %></td>
-    <% if current_user && current_user.is_admin? %>
-      <td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
-      <td><%= link_to 'Destroy', admin_question_path(question), confirm: 'Are you sure?', method: :delete %></td>
-    <% end%>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Question', new_admin_question_path %>
+<div id="top">
+  <h1 class="left"><a href="index.html">聚英眼科-後台管理系統</a></h1>
+  <div class="right">你好，黃醫師！<a href="#">修改個人資料</a><a href="#">登出</a></div>
+</div>
+<!--top-->
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <li><a href="#" id="posts" >最新消息</a></li>
+      <li><a href="#" id="questions" class="active">醫師答客問</a></li>
+      <li><a href="#" id="boards">醫療專欄</a></li>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-list">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="main-list-title">
+          <th width="9%" align="center" scope="col">&nbsp;</th>
+          <th width="15%" align="center" scope="col">日期</th>
+          <th width="58%" align="left" scope="col">留言人</th>
+          <th width="7%" align="left" scope="col">回覆人</th>
+          <th width="9%" align="center" scope="col">刪除</th>
+        </tr>
+        <% @questions.each do |question| %>
+        <tr>
+          <% if question.answers.empty? %>
+            <td align="center"><img src="<%=image_path("admin/unread.png")%>"></td>
+          <% else %>
+            <td align="center"><img src="<%=image_path("admin/read.png")%>"></td>
+          <% end %>
+          <td align="center"><%= question.created_at.to_date %></td>
+          <td align="left"><a href="<%=admin_question_path(question)%>"><%= question.user_name %></a></td>
+          <% if question.answers.empty? %>
+            <td align="left">&nbsp;</td>
+          <% else %>
+            <td align="left"><%=User.where(:id => question.answers.first.user_id).first.user_name %></td>
+          <% end %>
+          <td align="center"><a href='<%=admin_question_path(question)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
