@@ -1,4 +1,50 @@
-<h1>Listing posts</h1>
+<div id="top">
+<h1 class="left"><a href="index.html">聚英眼科-後台管理系統</a></h1>
+<div class="right">你好，黃醫師！<a href="#">修改個人資料</a><a href="#">登出</a></div>
+</div>
+<!--top-->
+<div id="container">
+<div id="side" class="left">
+<ul>
+<li><a href="#" id="posts" class="active">最新消息</a></li>
+<li><a href="#" id="questions">醫師答客問</a></li>
+<li><a href="#" id="boards">醫療專欄</a></li>
+</ul>
+</div>
+<!--side-->
+<div id="main" class="right">
+<div class="button"><a href="<%=new_admin_post_path%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>
+<div class="main-list">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr class="main-list-title">
+<th scope="col" align="center" width="16%">日期</th>
+<th scope="col" align="left" width="64%">標題</th>
+<th scope="col" width="4%">&nbsp;</th>
+<th scope="col" align="center" width="8%">編輯</th>
+<th scope="col" align="center" width="8%">刪除</th>
+</tr>
+<% @posts.each do |post| %>
+  <tr>
+    <td align="center"><%= post.created_at.to_date %></td>
+    <td align="left"><a href="<%=admin_post_path(post)%>"><%= post.title %></a></td> 
+    <td>&nbsp;</td>   
+    <% if current_user && current_user.is_admin? %>
+      <td align="center"><a href="<%=edit_admin_post_path(post)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
+      <td align="center"><a href='<%=admin_post_path(post)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a></td>
+    <% end%>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+</div>
+<!--main--></div>
+<!--container-->
+<div id="footer" />
+<!--footer-->
+
+<!-- <h1>Listing posts</h1>
 
 <table>
   <tr>
@@ -24,4 +70,4 @@
 
 <br />
 
-<%= link_to 'New Post', new_admin_post_path %>
+<%= link_to 'New Post', new_admin_post_path %> -->
