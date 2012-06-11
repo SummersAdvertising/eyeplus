@@ -18,10 +18,13 @@
       <div class="title"><%= @question.user_name %></div>
     </div>
     <div class="main-text"><%= simple_format(@question.content) %></div>
-    <div class="button"><a href="<%=new_admin_question_answer_path(@question)%>"><img src="<%=image_path("admin/reply.png")%>">回覆</a></div>
-    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
-    <div class="main-text" id="main-text-reply"><%= render @question.answers %></div>    
+    <%= form_for @answer, :url => admin_question_answers_path(@question,@answer) do |f| %>
+    <div class="main-text" id="main-text-reply"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%>     
+    </div>
+    <div class="button"><a href="#"><%= f.submit "" %><img src="<%=image_path("admin/mail.png")%>"><a>儲存寄出</a></div>
+    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/cancel.png")%>">取消</a></div>
     <!--main--> 
+    <% end %>
   </div>
 </div>
 <!--container-->

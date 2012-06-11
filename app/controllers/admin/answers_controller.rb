@@ -1,6 +1,16 @@
 class Admin::AnswersController < ApplicationController
   layout 'admin'
   before_filter :require_is_admin
+  def new
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @answer }
+    end
+  end
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(params[:answer])
