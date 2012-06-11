@@ -16,6 +16,15 @@ class User < ActiveRecord::Base
   attr_protected :is_admin
   # attr_accessible :title, :body
 
+  def update_with_password(params={})
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) #if params[:password_confirmation].blank?
+    end
+
+    update_attributes(params)
+  end
+
   def is_admin?
   	is_admin
   end
