@@ -79,8 +79,8 @@ EyePlus::Application.configure do
       :port => "587",
       :domain => "gmail.com",
       :authentication => "plain",
-      :user_name => "yuzhe@summers.com.tw",
-      :password => "20101101",
+      :user_name => "rails.test.action.mailer@gmail.com",
+      :password => "3edc&UJM",
       :enable_starttls_auto => true
    }
 end
