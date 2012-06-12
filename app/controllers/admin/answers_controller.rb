@@ -16,6 +16,11 @@ class Admin::AnswersController < ApplicationController
     @answer = @question.answers.create(params[:answer])
     @answer.user_id = current_user.id
     @answer.save
+    # Tell the UserMailer to send a welcome Email after save
+    @user=User.new
+    @user.email=@question.email
+    @user.user_name=@question.user_name
+    AnswerMailer.welcome_email(@user).deliver
     redirect_to admin_question_path(@question)
   end
 
