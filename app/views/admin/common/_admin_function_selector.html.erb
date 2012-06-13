@@ -1,3 +1,20 @@
-<li><a href="<%="/admin/posts"%>" id="posts" class="active">最新消息</a></li>
-<li><a href="<%="/admin/questions"%>" id="questions">醫師答客問</a></li>
-<li><a href="<%="/admin/boards/"+Board.first.id.to_s()%>" id="boards">醫療專欄</a></li>
+<%if request.original_fullpath == "/admin/posts" %>   
+	<li><a href="<%="/admin/posts"%>" id="posts" class="active">最新消息</a></li>
+<% else %>
+	<li><a href="<%="/admin/posts"%>" id="posts">最新消息</a></li>
+<% end %>
+
+<%if request.original_fullpath == "/admin/questions" %>   
+	<li><a href="<%="/admin/questions"%>" id="questions" class="active">醫師答客問</a></li>
+<% else %>
+	<li><a href="<%="/admin/questions"%>" id="questions">醫師答客問</a></li>
+<% end %>
+<%@board=Board.find(:all, :limit => 1, :order=> 'order_number asc').first%>
+<%if request.original_fullpath == "/admin/boards/"+@board.id.to_s() %>
+	<li><a href="<%="/admin/boards/"+@board.id.to_s()%>" id="boards" class="active">醫療專欄</a></li>
+<% else %>
+	<li><a href="<%="/admin/boards/"+@board.id.to_s()%>" id="boards">醫療專欄</a></li>
+<% end %>
+
+
+
