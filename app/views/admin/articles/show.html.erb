@@ -1,15 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @article.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_admin_board_article_path(@board, @article) %> |
-<%= link_to 'Back', admin_board_path(@board) %>
+<div id="top">
+  <h1 class="left"><a href="#">聚英眼科-後台管理系統</a></h1>
+  <div class="right">你好，黃醫師！<a href="#">修改個人資料</a><a href="#">登出</a></div>
+</div>
+<!--top-->
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <li><a href="#" id="posts" >最新消息</a></li>
+      <li><a href="#" id="questions" >醫師答客問</a></li>
+      <li><a href="#" id="boards" class="active">醫療專欄</a></li>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title"> <div class="publish"><%= @article.created_at.to_date %></div> <div class="title"><%= @article.title %></div> 
+    </div>
+    <div class="main-text"><%= @article.content %></div>
+    <div class="button"><a href="<%=edit_admin_board_article_path(@board, @article)%>"><img src="<%=image_path("admin/edit.png")%>">編輯</a></div>
+    <div class="button"><a href="<%=admin_board_path(@board)%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
+    <!--main--> 
+  </div>
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
