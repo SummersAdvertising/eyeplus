@@ -20,7 +20,8 @@ class Admin::AnswersController < ApplicationController
     @user=User.new
     @user.email=@question.email
     @user.user_name=@question.user_name
-    AnswerMailer.welcome_email(@user).deliver
+    # AnswerMailer.welcome_email(@user).deliver
+    AnswerMailer.answer_email(@user, @question, @answer).deliver
     redirect_to admin_question_path(@question)
   end
 
