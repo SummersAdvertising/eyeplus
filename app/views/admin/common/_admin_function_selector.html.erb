@@ -3,11 +3,13 @@
 <% else %>
 	<li><a href="<%="/admin/posts"%>" id="posts">最新消息</a></li>
 <% end %>
+
 <%if request.original_fullpath.include?("/admin/questions") %>   
 	<li><a href="<%="/admin/questions"%>" id="questions" class="active">醫師答客問</a></li>
 <% else %>
 	<li><a href="<%="/admin/questions"%>" id="questions">醫師答客問</a></li>
 <% end %>
+
 <%@board=Board.find(:all, :limit => 1, :order=> 'order_number asc').first%>
 <%if request.original_fullpath.include?("/admin/boards/") %>
 	<li><a href="<%="/admin/boards/"+@board.id.to_s()%>" id="boards" class="active">醫療專欄</a></li>
