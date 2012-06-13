@@ -16,10 +16,10 @@
     <div class="main-title">
       <div class="publish">專欄分類</div>
       <div class="title">        
-          <a href="#" class="main-category select">保護與矯正兒童視力</a>
-          <a href="#" class="main-category">近視與角膜塑形術</a>
-          <a href="#" class="main-category">個人化配鏡指南</a>
-          <a href="#" class="main-category">對抗老花、白內障</a>        
+          <a href="<%=admin_board_path(@first_board)%>" class="main-category select"><%=@first_board.name%></a>
+          <a href="<%=admin_board_path(@second_board)%>" class="main-category"><%=@second_board.name%></a>
+          <a href="<%=admin_board_path(@third_board)%>" class="main-category"><%=@third_board.name%></a>
+          <a href="<%=admin_board_path(@fourth_board)%>" class="main-category"><%=@fourth_board.name%></a>       
       </div>
     </div>
     <div class="button" style="margin-top:10px"><a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>

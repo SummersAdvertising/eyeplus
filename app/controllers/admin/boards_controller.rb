@@ -19,6 +19,12 @@ class Admin::BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @articles = @board.articles.all    
 
+    @boards=Board.find(:all, :limit => 4, :order=> 'order_number asc')
+    @first_board=@boards[0]
+    @second_board=@boards[1]
+    @third_board=@boards[2]
+    @fourth_board=@boards[3]
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @board }

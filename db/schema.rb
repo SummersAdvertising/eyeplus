@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605085522) do
+ActiveRecord::Schema.define(:version => 20120613042317) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120605085522) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
-    t.integer  "order"
+    t.integer  "order_number"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "excerpt_image_file_name"
