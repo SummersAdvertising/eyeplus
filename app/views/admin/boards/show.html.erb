@@ -1,44 +1,52 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @board.name %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%= @board.order %>
-</p>
-
-<% if @board.excerpt_image %>
-  <p>
-    <%= image_tag(@board.excerpt_image.url(:medium)) %>
-  </p>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-<tr>
-    <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= link_to 'Show', admin_board_article_path(@board,article) %></td>
-    <% if current_user && article.user == current_user %>
-      <td><%= link_to 'Edit', edit_admin_board_article_path(@board,article) %></td>
-      <td><%= link_to 'Destroy', admin_board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-</tr>
-<% end %>
-</table>
-<br>
-<%= link_to 'New Article', new_admin_board_article_path(@board) %>
-<br><br>
-<%= link_to 'Edit', edit_admin_board_path(@board) %> |
-<%= link_to 'Back', admin_boards_path %>
+<div id="top">
+  <h1 class="left"><a href="index.html">聚英眼科-後台管理系統</a></h1>
+  <div class="right">你好，黃醫師！<a href="#">修改個人資料</a><a href="#">登出</a></div>
+</div>
+<!--top-->
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <li><a href="#" id="posts" >最新消息</a></li>
+      <li><a href="#" id="questions" >醫師答客問</a></li>
+      <li><a href="#" id="boards" class="active">醫療專欄</a></li>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title">
+      <div class="publish">專欄分類</div>
+      <div class="title">        
+          <a href="#" class="main-category select">保護與矯正兒童視力</a>
+          <a href="#" class="main-category">近視與角膜塑形術</a>
+          <a href="#" class="main-category">個人化配鏡指南</a>
+          <a href="#" class="main-category">對抗老花、白內障</a>        
+      </div>
+    </div>
+    <div class="button" style="margin-top:10px"><a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>
+    <div class="main-list">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="main-list-title">
+          <th width="16%" align="center" scope="col">日期</th>
+          <th width="58%" align="left" scope="col">標題</th>
+          <th width="10%" align="center" scope="col">撰寫人</th>
+          <th width="8%" align="center" scope="col">編輯</th>
+          <th width="8%" align="center" scope="col">刪除</th>
+        </tr>
+        <% @articles.each do |article| %>
+          <tr>
+            <td align="center"><%= article.created_at.to_date %></td>
+            <td align="left"><a href="<%=admin_board_article_path(@board,article)%>"><%= article.title %></a></td>
+            <td align="center"><%=User.where(:id => article.user_id).first.user_name %></td>
+            <td align="center"><a href="<%=edit_admin_board_article_path(@board,article)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
+            <td align="center"><a href='<%=admin_board_article_path(@board,article)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a>
+            </td>
+          </tr>  
+        <% end %>     
+      </table>     
+    </div>
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
