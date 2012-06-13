@@ -1,9 +1,9 @@
-<%if request.original_fullpath == "/admin/posts" %>   
+<%if request.original_fullpath.include?("/admin/posts") %>   
 	<li><a href="<%="/admin/posts"%>" id="posts" class="active">最新消息</a></li>
 <% else %>
 	<li><a href="<%="/admin/posts"%>" id="posts">最新消息</a></li>
 <% end %>
-<%if request.original_fullpath == "/admin/questions" %>   
+<%if request.original_fullpath.include?("/admin/questions") %>   
 	<li><a href="<%="/admin/questions"%>" id="questions" class="active">醫師答客問</a></li>
 <% else %>
 	<li><a href="<%="/admin/questions"%>" id="questions">醫師答客問</a></li>
