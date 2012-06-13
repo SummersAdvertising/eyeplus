@@ -1,25 +1,39 @@
-
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
+<% if @article.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
       <ul>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
+  </div>
+<% end %>
+<div id="top">
+  <h1 class="left"><a href="#">聚英眼科-後台管理系統</a></h1>
+  <div class="right">你好，黃醫師！<a href="#">修改個人資料</a><a href="#">登出</a></div>
+</div>
+<!--top-->
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <li><a href="#" id="posts" >最新消息</a></li>
+      <li><a href="#" id="questions" >醫師答客問</a></li>
+      <li><a href="#" id="boards" class="active">醫療專欄</a></li>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title"> 
+    <div class="publish"><%=Time.now.to_date%></div> 
+    <div class="title"><%= f.text_field :title %></div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <div class="main-text"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%></div>
+    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
+    <div class="button"><a href="<%=admin_board_path(@board)%>"><%=image_tag("admin/cancel.png")%>取消</a>
+    </div>
+    <!--main--> 
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
