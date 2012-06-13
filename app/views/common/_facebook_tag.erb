@@ -11,6 +11,7 @@
     end
     @facebook.image_url = request.host_with_port+@facebook.image_url
     @facebook.url = request.host_with_port+request.original_fullpath
+    @facebook.description = truncate(@facebook.description, :length => 165)
 %>
 <meta property="og:title" content="<%=@facebook.title%>" />
 <meta property="og:description" content="<%=@facebook.description%>" />
