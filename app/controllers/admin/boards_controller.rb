@@ -20,10 +20,30 @@ class Admin::BoardsController < ApplicationController
     @articles = @board.articles.all    
 
     @boards=Board.find(:all, :limit => 4, :order=> 'order_number asc')
-    @first_board=@boards[0]
-    @second_board=@boards[1]
-    @third_board=@boards[2]
-    @fourth_board=@boards[3]
+    
+    if !@boards[0].blank?
+      @first_board=@boards[0]
+    else
+      @first_board=@board
+    end
+
+    if !@boards[1].blank?
+      @second_board=@boards[1]
+    else
+      @second_board=@board
+    end
+    
+    if !@boards[2].blank?
+      @third_board=@boards[2]
+    else
+      @third_board=@board
+    end
+    
+    if !@boards[3].blank?
+      @fourth_board=@boards[3]
+    else
+      @fourth_board=@board
+    end    
 
     respond_to do |format|
       format.html # show.html.erb
