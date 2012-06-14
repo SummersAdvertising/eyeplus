@@ -17,4 +17,6 @@
 # Ignore all files in the public.
 /public
 
+#Innore production.rb
+/config/deploy/production.rb
 
