@@ -14,6 +14,16 @@ class ApplicationController < ActionController::Base
     return @facebook
   end
 
+  layout :layout_by_resource
+
+  def layout_by_resource
+    if devise_controller? && resource_name == :user && action_name == 'edit'
+      "admin"
+    else
+      "application"
+    end
+  end
+
   # def encodeURIComponent
   #   @facebook_title_encode_URI = URI.escape(@facebook.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
   #   @facebook_description_encode_URI = URI.escape(@facebook.description, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))

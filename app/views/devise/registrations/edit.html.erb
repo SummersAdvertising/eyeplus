@@ -1,28 +1,47 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div><%= f.label :user_name %><br />
-  <%= f.text_field :user_name %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br /> 
-   <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-<!--   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div> -->
-
-  <div><%= f.submit "Update" %></div>
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <h2><img src="<%=image_path("admin/psw.png")%>"> 修改個人資料</h2>
+    <div class="main-form">
+      <table width="100%" border="0" cellpadding="0" cellspacing="10" >
+        <tr>
+          <td width="12%" align="right">帳號</td>
+          <td width="88%"><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <td align="right">姓名</td>
+          <td><%= f.text_field :user_name %></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="left" height="40" style="color:#aaa;text-shadow:0 1px 0#fff">- - - - - - - - - - - - - - - - - - 如不修改密碼則無需填下欄 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</td>
+        </tr>
+        <tr>
+          <td align="right">新密碼</td>
+          <td><%= f.password_field :password, :autocomplete => "off" %></td>
+        </tr>
+        <tr>
+          <td align="right">確認新密碼</td>
+          <td><%= f.password_field :password_confirmation %></td>
+        </tr>
+      </table>
+    </div>
+    <!--main-form-->
+    <div class="button">
+      <%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a>
+    </div>
+    <div class="button"><a href="/admin/posts"><img src="<%=image_path("admin/cancel.png")%>">取消</a></div>
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
 <% end %>
-
-<!-- <h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p> -->
-
-<%= link_to "Back", :back %>
