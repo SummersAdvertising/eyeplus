@@ -45,7 +45,6 @@ class Admin::UsersController < ApplicationController
       #then use following codes to update a user became a admin
       # @user.is_admin=true
       # @user.save!	
-
       @user.email=params[:user][:email]
       @user.user_name=params[:user][:user_name]
       if params[:user][:is_admin].to_i==1
