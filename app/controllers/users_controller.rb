@@ -28,10 +28,12 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    # Need to remove the password key of the params hash if it’s blank.
+    # If not, Devise will fail to validate.
   	if params[:user][:password].blank?
   		params[:user].delete(:password)
   		params[:user].delete(:password_confirmation)
-	end
+	  end
     @user = User.find(params[:id])
     # @user = current_user.users.find(params[:id])
 
