@@ -17,6 +17,8 @@
 # Ignore all files in the public.
 /public
 
-#Innore production.rb
+#Ignore production.rb
 /config/deploy/production.rb
 
+#Ignore database.yml.production
+/config/database.yml.production
