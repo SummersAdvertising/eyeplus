@@ -55,7 +55,7 @@ class Admin::UsersController < ApplicationController
       
       #if @user.update_attributes(params[:user])
       if @user.save!      	
-        format.html { redirect_to admin_user_path(@user), notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_posts_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
