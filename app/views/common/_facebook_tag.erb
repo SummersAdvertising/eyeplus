@@ -9,8 +9,9 @@
       @facebook.site_name = @defaultFacebook.site_name
       @facebook.admins = @defaultFacebook.admins      
     end
-    @facebook.image_url = request.host_with_port+@facebook.image_url
-    @facebook.url = request.host_with_port+request.original_fullpath
+    http_head="http://"
+    @facebook.image_url = http_head + request.host_with_port+@facebook.image_url
+    @facebook.url = http_head + request.host_with_port+request.original_fullpath
     @facebook.description = truncate(@facebook.description, :length => 165)
 %>
 <meta property="og:title" content="<%=@facebook.title%>" />
