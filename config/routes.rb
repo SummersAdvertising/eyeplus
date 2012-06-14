@@ -1,5 +1,10 @@
 EyePlus::Application.routes.draw do
   devise_for :users, :path_prefix => 'd'
+  
+  namespace :admin do
+    resources :users
+  end
+
   resources :users
 
   namespace :admin do
