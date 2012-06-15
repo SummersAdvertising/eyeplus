@@ -31,6 +31,15 @@
         <%= f.file_field :excerpt_image_top %>
     </div>
     <div class="main-text"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%></div>
+    <% if @article.excerpt_image_bottom %>
+      <p>
+        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+      </p>
+    <% end %>
+    <div class="field">
+        <%= f.label :excerpt_image_bottom %><br />
+        <%= f.file_field :excerpt_image_bottom %>
+    </div>
     <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
     <div class="button"><a href="<%=admin_board_path(@board)%>"><%=image_tag("admin/cancel.png")%>取消</a>
     </div>

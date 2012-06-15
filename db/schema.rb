@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120615031501) do
+ActiveRecord::Schema.define(:version => 20120615033127) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -26,14 +26,18 @@ ActiveRecord::Schema.define(:version => 20120615031501) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "board_id"
     t.integer  "user_id"
     t.string   "excerpt_image_top_file_name"
     t.string   "excerpt_image_top_content_type"
     t.integer  "excerpt_image_top_file_size"
     t.datetime "excerpt_image_top_updated_at"
+    t.string   "excerpt_image_bottom_file_name"
+    t.string   "excerpt_image_bottom_content_type"
+    t.integer  "excerpt_image_bottom_file_size"
+    t.datetime "excerpt_image_bottom_updated_at"
   end
 
   create_table "boards", :force => true do |t|

@@ -15,6 +15,11 @@
       </p>
     <% end %>
     <div class="main-text"><%= @article.content %></div>
+    <% if @article.excerpt_image_bottom %>
+      <p>
+        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+      </p>
+    <% end %>
     <div class="button"><a href="<%=edit_admin_board_article_path(@board, @article)%>"><img src="<%=image_path("admin/edit.png")%>">編輯</a></div>
     <div class="button"><a href="<%=admin_board_path(@board)%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
     <!--main--> 
