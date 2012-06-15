@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   layout 'admin'
-  before_filter :require_is_admin
+  before_filter :require_is_super_admin
   
   def index
     @users = User.all

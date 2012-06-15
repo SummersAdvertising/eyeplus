@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_is_super_admin
+    unless (current_user && current_user.is_super_admin?)
+      flash[:alert] = "You must be super admin!"
+      redirect_to root_path
+    end
+  end
+
   def getFacebook(url)
     @facebook = Facebook.where(:url => url).first
     return @facebook
