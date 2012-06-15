@@ -11,7 +11,7 @@
 <div class="publish"><%= @post.created_at.to_date %></div>
 <div class="title"><%= @post.title %></div>
 </div>
-<div class="main-text"><%= @post.content.gsub('\n', '<br />') %></div>
+<div class="main-text"><%= @post.content.gsub("\n", "<br />").html_safe  %></div>
 <div class="button"><a href="<%=edit_admin_post_path(@post)%>"><%=image_tag("admin/edit.png")%>編輯</a></div>
 <div class="button"><a href="<%=admin_posts_path%>"><%=image_tag("admin/back.png")%>返回</a></div>
 <!--main--> </div>

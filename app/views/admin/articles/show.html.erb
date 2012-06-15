@@ -14,7 +14,7 @@
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
       </p>
     <% end %>
-    <div class="main-text"><%= @article.content %></div>
+    <div class="main-text"><%= @article.content.gsub("\n", "<br />").html_safe %></div>
     <% if @article.excerpt_image_bottom %>
       <p>
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
