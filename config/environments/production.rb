@@ -49,6 +49,7 @@ EyePlus::Application.configure do
   config.assets.precompile += %w( admin.js )
   config.assets.precompile += %w( admin.css )
   config.assets.precompile += %w( introduction.css )
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
