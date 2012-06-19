@@ -11,6 +11,7 @@ gem 'mysql2'
 gem "devise"
 gem "paperclip"
 gem "will_paginate"
+gem 'ckeditor_rails', :require => 'ckeditor-rails'
 
 gem 'capistrano'
 gem 'capistrano-ext'
