@@ -12,6 +12,7 @@ gem "devise"
 gem "paperclip"
 gem "will_paginate"
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
+gem 'rails-i18n'
 
 gem 'capistrano'
 gem 'capistrano-ext'
