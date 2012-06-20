@@ -1,11 +1,14 @@
 EyePlus::Application.routes.draw do
+  devise_for :users do
+    get 'users', :to => 'admin/posts#index', :as => :user_root # Rails 3
+  end
+
   get "static_pages/introduction"
 
   get "static_pages/staff"
 
-  devise_for :users do
-    get 'users', :to => 'admin/posts#index', :as => :user_root # Rails 3
-  end
+  get "static_pages/services"
+
 
   namespace :admin do
     resources :users

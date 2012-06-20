@@ -51,6 +51,7 @@ EyePlus::Application.configure do
   config.assets.precompile += %w( application.js )
   config.assets.precompile += %w( introduction.css )
   config.assets.precompile += %w( staff.css )
+  config.assets.precompile += %w( services.css )
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Disable delivery errors, bad email addresses will be ignored
