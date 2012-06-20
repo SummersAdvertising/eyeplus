@@ -1,11 +1,11 @@
-html{background:image-url("/assets/application/bg-style.jpg") 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
+html{background:image-url("application/bg-style.jpg") 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
 body{font:300 16px "微軟正黑體",Arial;line-height:24px}
 a{font:300 16px "微軟正黑體",Arial;text-decoration:none}
 a:hover{text-decoration:underline}
 
-#header{width:915px;margin:0 auto;height:175px;padding:0 0 0 25px!important;background: image-url("/assets/application/header.jpg") 0 0 no-repeat;}
+#header{width:915px;margin:0 auto;height:175px;padding:0 0 0 25px!important;background:image-url("application/header.jpg") 0 0 no-repeat;}
 #top{height:80px;overflow:hidden;}
-h1{width:220px;height:47px;background:image-url("/assets/application/h1.png") 0 0 no-repeat;float:left;margin:20px 0 0 0}
+h1{width:220px;height:47px;background:image-url("application/h1.png") 0 0 no-repeat;float:left;margin:20px 0 0 0}
 h1 a{display:block;text-indent:-7777px;width:100%;height:100%;font-size:0px}
 
 #nav{float:right;margin:30px 50px 0 0}
@@ -34,8 +34,8 @@ h2{font:300 46px 華康黑體,微軟正黑體;color:#a7a7a7;padding:35px 0 0 0;t
 #page li a{display:block;width:15px;height:15px;font-size:12px;background:#969696;color:#fff}
 #page .active a{color:yellow}
 
-#footer{clear:both;height:150px;background:image-url("/assets/application/footer.jpg") center 0 no-repeat #000;}	
-#info{background:image-url("/assets/application/tel.jpg") 280px 37px no-repeat;width:940px;margin:0 auto;color:#fff;
+#footer{clear:both;height:150px;background:image-url("application/footer.jpg") center 0 no-repeat #000;}	
+#info{background:image-url("application/tel.jpg") 280px 37px no-repeat;width:940px;margin:0 auto;color:#fff;
 padding:40px 0 0 0;line-height:10px;height:100px;}
 #address{font:700 18px 華康黑體,微軟正黑體}
 #tel{display:none}
