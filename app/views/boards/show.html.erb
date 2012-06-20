@@ -22,15 +22,12 @@
 <!--header-->
 
 <div id="container">
-  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="library.html">駐診醫師專欄</a> > 保護與矯正兒童視力</div>
+  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
       <ul id="category">
-        <li class="active"><a href="#"><img src="<%=image_path("application/library-01.jpg")%>">保護與矯正兒童視力</a></li>
-        <li><a href="#"><img src="<%=image_path("application/library-02.jpg")%>">近視與角膜塑型術</a></li>
-        <li><a href="#"><img src="<%=image_path("application/library-03.jpg")%>">個人化配鏡指南</a></li>
-        <li><a href="#"><img src="<%=image_path("application/library-04.jpg")%>">對抗老花、白內障</a></li>
+        <%= render :partial => "common/board_selector" %>
       </ul><!--category-->
       <div id="list">
       <% @articles.each do |article| %>

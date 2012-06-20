@@ -1,0 +1,27 @@
+<%if request.original_fullpath.include?("/admin/boards/"+@first_board.id.to_s())%>       
+  <a href="<%=admin_board_path(@first_board)%>" class="main-category select">
+<% else %>
+  <a href="<%=admin_board_path(@first_board)%>" class="main-category">
+<% end %>    
+<%=@first_board.name%></a>
+
+<%if request.original_fullpath.include?("/admin/boards/"+@second_board.id.to_s())%>      
+  <a href="<%=admin_board_path(@second_board)%>" class="main-category select">
+<% else %>
+  <a href="<%=admin_board_path(@second_board)%>" class="main-category">
+<% end %>
+<%=@second_board.name%></a>
+
+<%if request.original_fullpath.include?("/admin/boards/"+@third_board.id.to_s())%>       
+  <a href="<%=admin_board_path(@third_board)%>" class="main-category select">
+<% else %>
+  <a href="<%=admin_board_path(@third_board)%>" class="main-category">
+<% end %> 
+<%=@third_board.name%></a> 
+
+<%if request.original_fullpath.include?("/admin/boards/"+@fourth_board.id.to_s())%>      
+  <a href="<%=admin_board_path(@fourth_board)%>" class="main-category select">
+<% else %>
+  <a href="<%=admin_board_path(@fourth_board)%>" class="main-category">
+<% end %>            
+<%=@fourth_board.name%></a>

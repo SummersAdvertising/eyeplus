@@ -31,6 +31,36 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_four_boards(board)
+    @board=board
+
+    @boards=Board.find(:all, :limit => 4, :order=> 'order_number asc')
+    
+    if !@boards[0].blank?
+      @first_board=@boards[0]
+    else
+      @first_board=@board
+    end
+
+    if !@boards[1].blank?
+      @second_board=@boards[1]
+    else
+      @second_board=@board
+    end
+    
+    if !@boards[2].blank?
+      @third_board=@boards[2]
+    else
+      @third_board=@board
+    end
+    
+    if !@boards[3].blank?
+      @fourth_board=@boards[3]
+    else
+      @fourth_board=@board
+    end  
+  end
+
   # def encodeURIComponent
   #   @facebook_title_encode_URI = URI.escape(@facebook.title, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
   #   @facebook_description_encode_URI = URI.escape(@facebook.description, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))

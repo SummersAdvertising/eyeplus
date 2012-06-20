@@ -19,6 +19,8 @@ class BoardsController < ApplicationController
     # @articles = @board.articles.recent.paginate(:page => params[:page], :per_page => 5 )
     @articles = @board.articles.page params[:page]
 
+    get_four_boards(@board)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @board }

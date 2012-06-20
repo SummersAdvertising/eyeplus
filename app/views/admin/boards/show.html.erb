@@ -10,26 +10,7 @@
     <div class="main-title">
       <div class="publish">專欄分類</div>
       <div class="title">
-      <%if request.original_fullpath == "/admin/boards/"+@first_board.id.to_s() %>        
-          <a href="<%=admin_board_path(@first_board)%>" class="main-category select"><%=@first_board.name%></a>
-      <% else %>
-          <a href="<%=admin_board_path(@first_board)%>" class="main-category"><%=@first_board.name%></a>
-      <% end %>    
-      <%if request.original_fullpath == "/admin/boards/"+@second_board.id.to_s() %>        
-          <a href="<%=admin_board_path(@second_board)%>" class="main-category select"><%=@second_board.name%></a>
-      <% else %>
-          <a href="<%=admin_board_path(@second_board)%>" class="main-category"><%=@second_board.name%></a>
-      <% end %>
-      <%if request.original_fullpath == "/admin/boards/"+@third_board.id.to_s() %>        
-          <a href="<%=admin_board_path(@third_board)%>" class="main-category select"><%=@third_board.name%></a>
-      <% else %>
-          <a href="<%=admin_board_path(@third_board)%>" class="main-category"><%=@third_board.name%></a>
-      <% end %>  
-      <%if request.original_fullpath == "/admin/boards/"+@fourth_board.id.to_s() %>        
-          <a href="<%=admin_board_path(@fourth_board)%>" class="main-category select"><%=@fourth_board.name%></a>
-      <% else %>
-          <a href="<%=admin_board_path(@fourth_board)%>" class="main-category"><%=@fourth_board.name%></a>
-      <% end %>            
+        <%= render :partial => "admin/common/admin_board_selector" %>
       </div>
     </div>
     <div class="button" style="margin-top:10px"><a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>

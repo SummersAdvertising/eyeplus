@@ -1,0 +1,24 @@
+<%if request.original_fullpath.include?("/boards/"+@first_board.id.to_s())%>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %>    
+        <a href="<%=board_path(@first_board)%>"><img src="<%=image_path("application/library-01.jpg")%>"><%=@first_board.name%></a></li>
+        <%if request.original_fullpath.include?("/boards/"+@second_board.id.to_s())%>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %> 
+        <a href="<%=board_path(@second_board)%>"><img src="<%=image_path("application/library-02.jpg")%>"><%=@second_board.name%></a></li>
+        <%if request.original_fullpath.include?("/boards/"+@third_board.id.to_s())%>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %> 
+        <a href="<%=board_path(@third_board)%>"><img src="<%=image_path("application/library-03.jpg")%>"><%=@third_board.name%></a></li>
+        <%if request.original_fullpath.include?("/boards/"+@fourth_board.id.to_s())%>
+          <li class="active">
+        <% else %>
+          <li>
+        <% end %> 
+        <a href="<%=board_path(@fourth_board)%>"><img src="<%=image_path("application/library-04.jpg")%>"><%=@fourth_board.name%></a></li>
