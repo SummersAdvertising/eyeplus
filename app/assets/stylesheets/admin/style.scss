@@ -25,7 +25,7 @@ h1 a{font:700 15px "Helvetica"}
 
 #side{width:100px;position:relative;left:2px;text-align:center}
 #side li{height:100px}
-#side li a{background-image:url(../images/side.png);background-repeat:no-repeat;
+#side li a{background-image:image-url("admin/side.png");background-repeat:no-repeat;
 	display:block;width:100%;height:40px;color:#7D8089;text-shadow:0 1px 0 #fff;padding-top:60px;}
 #side li a:hover{color:#152529}
 #posts{background-position:-710px -68px}
