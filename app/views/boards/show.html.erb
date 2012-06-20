@@ -39,16 +39,11 @@
           <li><a href="<%=board_article_path(@board,article)%>"><%= article.title %></a></li>
         </ul>   
       <% end %>
-      </div><!--list-->      
+      </div><!--list--> 
       <div id="page">
-      <%= will_paginate @articles, :renderer => SearchPagination::LinkRenderer%>
-      <ul>
-      <li><a href="#" >5</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">2</a></li>
-      <li class="active"><a href="#">1</a></li>
-      </ul>
+        <ul>
+          <%= paginate @articles %>
+        </ul>      
       </div>
     </div>
     <!--side-->

@@ -10,9 +10,10 @@ gem 'mysql2'
 
 gem "devise"
 gem "paperclip"
-gem "will_paginate"
+# gem "will_paginate"
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
 gem 'rails-i18n'
+gem 'kaminari'
 
 gem 'capistrano'
 gem 'capistrano-ext'
