@@ -47,12 +47,12 @@ EyePlus::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( admin.js )
+  config.assets.precompile += %w( boards.js )
   config.assets.precompile += %w( admin.css )
-  config.assets.precompile += %w( application.js )
-  config.assets.precompile += %w( introduction.css )
-  config.assets.precompile += %w( staff.css )
-  config.assets.precompile += %w( services.css )
   config.assets.precompile += %w( boards.css )
+  config.assets.precompile += %w( introduction.css )
+  config.assets.precompile += %w( services.css )
+  config.assets.precompile += %w( staff.css )
   config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Disable delivery errors, bad email addresses will be ignored

@@ -8,5 +8,5 @@
     remote:        data-remote
 -%>
 <li <%= "class=active" if page.current? %>>
-  <%= link_to page, url %>
+  <a href="<%=url%>" id="<%=page%>"><%=page%></a>
 </li>

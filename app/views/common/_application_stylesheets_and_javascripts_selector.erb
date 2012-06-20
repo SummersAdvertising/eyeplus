@@ -9,4 +9,5 @@
 <% end %>
 <%if request.original_fullpath.include?("/boards/") %> 
 	<%= stylesheet_link_tag    "boards", :media => "all" %>
+	<%= javascript_include_tag "boards" %>
 <% end %>
