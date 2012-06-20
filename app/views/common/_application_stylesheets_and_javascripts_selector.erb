@@ -7,7 +7,9 @@
 <%if request.original_fullpath.include?("/static_pages/services") %> 
 	<%= stylesheet_link_tag    "services", :media => "all" %>
 <% end %>
-<%if request.original_fullpath.include?("/boards/") %> 
+<%if request.original_fullpath.include?("/boards") %> 
 	<%= stylesheet_link_tag    "boards", :media => "all" %>
-	<%= javascript_include_tag "boards" %>
+<% end %>
+<%if request.original_fullpath.include?("/posts") %> 
+	<%= stylesheet_link_tag    "posts", :media => "all" %>
 <% end %>
