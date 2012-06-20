@@ -1,49 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div id="header">
+  <div id="top">
+    <h1><a href="index.html">聚英視光眼科診所</a></h1>
+    <ul id="nav">
+      <li><a href="intro.html">診所介紹</a>│</li>
+      <li><a href="services.html">服務項目</a>│</li>
+      <li><a href="staff.html">醫師陣容</a>│</li>
+      <li><a href="library.html">駐診醫師專欄</a>│</li>
+      <li><a href="qa.html">醫師答客問</a>│</li>
+      <li><a href="news.html">最新消息</a>│</li>
+      <li><a href="brands.html">代理品牌</a></li>
+      <li><a href="#" id="fb"><img src="<%=image_path("application/fb.jpg")%>"></a></li>
+    </ul>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>駐診醫師專欄</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
 
-<p>
-  <b>Name:</b>
-  <%= @board.name %>
-</p>
+<div id="container">
+  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="library.html">駐診醫師專欄</a> > 保護與矯正兒童視力</div>
+  <!--bread-crumbs-->
+  <div id="main">
+    <div id="side">
+      <ul id="category">
+        <li class="active"><a href="#"><img src="<%=image_path("application/library-01.jpg")%>">保護與矯正兒童視力</a></li>
+        <li><a href="#"><img src="<%=image_path("application/library-02.jpg")%>">近視與角膜塑型術</a></li>
+        <li><a href="#"><img src="<%=image_path("application/library-03.jpg")%>">個人化配鏡指南</a></li>
+        <li><a href="#"><img src="<%=image_path("application/library-04.jpg")%>">對抗老花、白內障</a></li>
+      </ul><!--category-->
+      <div id="list">
+      <% @articles.each do |article| %>
+        <ul class="content-title">      
+          <li>醫師：<%=User.where(:id => article.user_id).first.user_name %>  │   <%= article.created_at.to_date %></li>
+          <li><a href="<%=board_article_path(@board,article)%>"><%= article.title %></a></li>
+        </ul>   
+      <% end %>
+      </div><!--list-->      
+      <div id="page">
+      <%= will_paginate @articles, :renderer => SearchPagination::LinkRenderer%>
+      <ul>
+      <li><a href="#" >5</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">2</a></li>
+      <li class="active"><a href="#">1</a></li>
+      </ul>
+      </div>
+    </div>
+    <!--side-->
+    <div id="content">
+      <h3>保護與矯正兒童視力</h3>
+      <p class="text">小孩子的眼睛在六歲以前都還算半成品，正處於一生視力奠定基礎的發育時期，父母們必須特別留意寶寶的視力狀況、定期檢查，才能及早應對視力障礙、弱視、遠視，或是先天性白內障、眼皮下垂、青光眼、視網膜母細胞瘤等先天性疾病。 <br>
+        <br>
+        本專欄將由醫師、視光師與您分享嬰幼兒在「檢查」與「矯正」上的各種正確知識，馬上了解，讓孩子不受視力問題所苦！</p>
+    <img src="<%=image_path("application/library-05.jpg")%>" style="margin-left:180px">
+     </div>
+    <!--content--> 
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
 
-<p>
-  <b>Order:</b>
-  <%= @board.order_number %>
-</p>
-
-<% if @board.excerpt_image %>
-  <p>
-    <%= image_tag(@board.excerpt_image.url(:medium)) %>
-  </p>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Created At</th>
-    <th>Updated At</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-<tr>
-    <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= l(article.created_at, :format => :short)%></td>
-    <td><%= l(article.updated_at, :format => :short)%></td>
-    <td><%= link_to 'Show', board_article_path(@board,article) %></td>
-<!--     <% if current_user && article.user == current_user %>
-      <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
-      <td><%= link_to 'Destroy', board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %> -->
-</tr>
-<% end %>
-</table>
-<%= will_paginate(@articles)%>
-<br>
-<!-- <%= link_to 'New Article', new_board_article_path(@board) %> -->
-<br><br>
-<!-- <%= link_to 'Edit', edit_board_path(@board) %> | -->
-<%= link_to 'Back', boards_path %>
+<div id="footer">
+  <div id="info"> <span id="address">台北市中山區民權東路三段56號</span><span id="tel">02-250-250-91</span> <br>
+    <br>
+    <span id="copyright">Copyright (c) 2012 聚英視光眼科診所</span> </div>
+</div>
+<!--footer-->
