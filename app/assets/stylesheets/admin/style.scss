@@ -34,6 +34,8 @@ h1 a{font:700 15px "Helvetica"}
 #questions:hover{background-position:-70px 12px}
 #boards{background-position:-388px -68px}
 #boards:hover{background-position:-388px 12px}
+#users{background-position:-790px -68px}
+#users:hover{background-position:-790px 12px}
 
 .active{background:#fff;border-top:1px solid #C6C5CF;border-left:1px solid #C6C5CF;
 	border-bottom:1px solid #C6C5CF;border-radius:5px 0 0 5px;box-shadow:-1px 1px 1px #ccc;
@@ -42,7 +44,7 @@ h1 a{font:700 15px "Helvetica"}
 /*-------------------------------------------------------------------主內容---*/
 
 #main{background:#fff;border:1px solid #D1D1DB;border-radius:5px;box-shadow:0 0 1px #aaa;
-	width:646px;padding:10px;min-height:300px;}
+	width:646px;padding:10px;min-height:380px;}
 
 /*-------------------------------------------------------------------表格---*/
 
