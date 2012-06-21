@@ -3,7 +3,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all  
+    # @posts = Post.all
+    @posts = Post.page params[:page]  
+    @post_show = @posts[0]
     # @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
     @conditionUrl = "posts"
     @facebook = getFacebook(@conditionUrl)
