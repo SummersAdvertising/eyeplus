@@ -31,18 +31,11 @@
     <div id="content">
     <h4 style="padding:25px 0 25px 25px">最新消息</h4>
       <div class="list">
-        <ul class="content-title">
-          <li><span>2012年4月15日</span></li>
-          <li><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
-        </ul>
-        <ul class="content-title">
-          <li><span>2012年4月15日</span></li>
-          <li><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
-        <ul class="content-title no-border">
-          <li><span>2012年4月15日</span></li>
-          <li><a href="#">台北市幼稚園演講兒童視力發育與視力保健 </a></li>
-        </ul>
+        <% @posts.each do |post| %>
+          <ul class="content-title">
+            <li><span><%= post.updated_at.to_date %></span><a href="<%=post_path(post)%>"><%= post.title %></a></li>
+          </ul>
+        <% end %>
       </div>
       <!--list--> 
       <h4 style="padding:25px 0 0 25px">駐診醫師專欄</h4>
@@ -51,13 +44,12 @@
       寶寶有哪些眼睛保養重點？<br>
       由專精兒童視覺的醫師與視光師為您解答
       </div>
-      <div class="list">
-        <ul class="content-title">
-          <li><span>2012年4月15日</span><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
+      <div class="list">        
+        <% @first_board_articles.each do |article| %>       
+        <ul class="content-title"> 
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@first_board,article)%>"><%= article.title %></a></li>
         </ul>
-        <ul class="content-title no-border">
-          <li><span>2012年4月15日</span><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
+        <% end %>        
       </div>
       <!--list--> 
       <div class="column" id="column-2">
@@ -65,13 +57,12 @@
       近視有藥醫？為您介紹最新矯正觀念<br>
       以及無須藥物、手術的角膜塑型術
       </div>
-      <div class="list">
+      <div class="list">        
+        <% @second_board_articles.each do |article| %>        
         <ul class="content-title">
-          <li><span>2012年4月15日</span><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@second_board,article)%>"><%= article.title %></a></li>
         </ul>
-        <ul class="content-title no-border">
-          <li><span>2012年4月15日</span><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
+        <% end %>        
       </div>
       <!--list-->
       <div class="column" id="column-3">
@@ -79,13 +70,12 @@
       眼鏡總是戴不舒服嗎？<br>
       醫師與視光師為您解答長久以來的配鏡疑問
       </div>
-      <div class="list">
-        <ul class="content-title">
-          <li><span>2012年4月15日</span><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
+      <div class="list">        
+        <% @third_board_articles.each do |article| %>    
+        <ul class="content-title">    
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@third_board,article)%>"><%= article.title %></a></li>
         </ul>
-        <ul class="content-title no-border">
-          <li><span>2012年4月15日</span><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
+        <% end %>        
       </div>
       <!--list-->
       <div class="column" id="column-4">
@@ -93,13 +83,12 @@
       抗老化手術權威醫師，最新老花雷射手術、微切口<br>
       白內障手術專文分享
       </div>
-      <div class="list">
-        <ul class="content-title">
-          <li><span>2012年4月15日</span><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
+      <div class="list">        
+        <% @fourth_board_articles.each do |article| %>    
+        <ul class="content-title">    
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@fourth_board,article)%>"><%= article.title %></a></li>
         </ul>
-        <ul class="content-title no-border">
-          <li><span>2012年4月15日</span><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
+        <% end %>        
       </div>
       <!--list-->
       
