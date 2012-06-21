@@ -21,7 +21,11 @@
     <h4 style="padding:25px 0 25px 25px">最新消息</h4>
       <div class="list">
         <% @posts.each do |post| %>
-          <ul class="content-title">
+          <%if !(post == @posts.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
             <li><span><%= post.updated_at.to_date %></span><a href="<%=post_path(post)%>"><%= post.title %></a></li>
           </ul>
         <% end %>
@@ -35,7 +39,11 @@
       </div>
       <div class="list">        
         <% @first_board_articles.each do |article| %>       
-        <ul class="content-title"> 
+          <%if !(article == @first_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
           <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@first_board,article)%>"><%= article.title %></a></li>
         </ul>
         <% end %>        
@@ -48,7 +56,11 @@
       </div>
       <div class="list">        
         <% @second_board_articles.each do |article| %>        
-        <ul class="content-title">
+          <%if !(article == @second_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
           <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@second_board,article)%>"><%= article.title %></a></li>
         </ul>
         <% end %>        
@@ -61,7 +73,11 @@
       </div>
       <div class="list">        
         <% @third_board_articles.each do |article| %>    
-        <ul class="content-title">    
+          <%if !(article == @third_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
           <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@third_board,article)%>"><%= article.title %></a></li>
         </ul>
         <% end %>        
@@ -74,7 +90,11 @@
       </div>
       <div class="list">        
         <% @fourth_board_articles.each do |article| %>    
-        <ul class="content-title">    
+          <%if !(article == @fourth_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
           <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@fourth_board,article)%>"><%= article.title %></a></li>
         </ul>
         <% end %>        
