@@ -1,0 +1,43 @@
+<%if request.original_fullpath.include?("/boards/"+@first_board.id.to_s())%>
+<div id="content">
+      <h3>保護與矯正兒童視力</h3>
+      <p class="text">小孩子的眼睛在六歲以前都還算半成品，正處於一生視力奠定基礎的發育時期，父母們必須特別留意寶寶的視力狀況、定期檢查，才能及早應對視力障礙、弱視、遠視，或是先天性白內障、眼皮下垂、青光眼、視網膜母細胞瘤等先天性疾病。 <br>
+        <br>
+        本專欄將由醫師、視光師與您分享嬰幼兒在「檢查」與「矯正」上的各種正確知識，馬上了解，讓孩子不受視力問題所苦！</p>
+    <img src="<%=image_path("application/library-05.jpg")%>" style="margin-left:180px">
+</div>
+<% end %>  
+
+<%if request.original_fullpath.include?("/boards/"+@second_board.id.to_s())%>
+<div id="content">
+      <h3 style="color:#39BC9D">近視與角膜塑型術</h3>
+      <p class="text">近視要小心！錯誤的矯正方式，都可能埋下永久傷害的陰影。<br>
+        <br>
+        目前國際間公認最佳的近視矯正方式，是以特殊設計的角膜塑型鏡片重塑眼角膜，只要在夜間配戴，就能回復白天的正常視力，無須藥物、不影響眼睛的自然調節力，不但是近視、散光的救星，更曾有高度近視的患者，順利恢復正常視力。<br>
+        <br>
+        馬上讓醫師、視光師為您介紹這種最新的矯正方式，以及近視控制的各種正確概念！ </p>
+      <img src="<%=image_path("application/library-05-2.jpg")%>" style="margin-left:180px"> </div>
+    <!--content--> 
+  </div>
+<% end %>
+
+<%if request.original_fullpath.include?("/boards/"+@third_board.id.to_s())%>
+<div id="content">
+      <h3 style="color:#A160B2">個人化配鏡指南</h3>
+      <p class="text">眼鏡總是戴得頭昏眼脹、看不清楚；老是在調整鏡架、鼻墊；明明驗了光，為什麼戴上新眼鏡還是需要適應、戴不舒服？當然，是因為眼鏡沒配好。<br><br>
+
+坊間的眼鏡行多半做不了完整的驗光，也缺乏眼睛的生理知識，不但無法讓您戴得舒適，更會傷害視力，只有將生理、光學與生活需求作通盤的考量，才能量身訂做真正適合您的「個人化配鏡」。<br><br>
+
+以下將為由視光師、醫師為您介紹個人化配鏡的重點，想擁有舒適健康的眼鏡，請不要錯過！
+</p>
+    <img src="<%=image_path("application/library-05-3.jpg")%>" style="margin-left:180px">
+     </div>
+<% end %>
+
+<%if request.original_fullpath.include?("/boards/"+@fourth_board.id.to_s())%>
+<div id="content">
+      <h3 style="color:#FFCA00">對抗老花、白內障</h3>
+      <p class="text">中老年是一生中視力變化最劇烈的時期，除了老花，還有許多伴隨老化的疾病與視力障礙，以下將由抗老化權威醫師與您分享老花矯正的正確觀念，以及老花雷射手術、微切口白內障手術的最新趨勢，盡早了解、定期檢查，才能以正確的方式矯正，免於老化的不便與危險！ </p>
+    <img src="<%=image_path("application/library-05-4.jpg")%>" style="margin-left:180px">
+     </div>
+<% end %>
