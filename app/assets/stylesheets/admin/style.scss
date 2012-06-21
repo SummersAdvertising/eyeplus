@@ -34,6 +34,8 @@ h1 a{font:700 15px "Helvetica"}
 #questions:hover{background-position:-70px 12px}
 #boards{background-position:-388px -68px}
 #boards:hover{background-position:-388px 12px}
+#users{background-position:-790px -68px}
+#users:hover{background-position:-790px 12px}
 
 .active{background:#fff;border-top:1px solid #C6C5CF;border-left:1px solid #C6C5CF;
 	border-bottom:1px solid #C6C5CF;border-radius:5px 0 0 5px;box-shadow:-1px 1px 1px #ccc;
@@ -42,7 +44,7 @@ h1 a{font:700 15px "Helvetica"}
 /*-------------------------------------------------------------------主內容---*/
 
 #main{background:#fff;border:1px solid #D1D1DB;border-radius:5px;box-shadow:0 0 1px #aaa;
-	width:646px;padding:10px;min-height:300px;}
+	width:646px;padding:10px;min-height:380px;}
 
 /*-------------------------------------------------------------------表格---*/
 
@@ -59,11 +61,10 @@ h1 a{font:700 15px "Helvetica"}
 .button{background:image-url("admin/list.jpg") 0 0 repeat-x;border:1px solid #ccc;
 	margin:0 0 10px 10px;border-radius:5px;height:27px;padding:3px 0 0 10px;width:100px;float:right;position:relative;z-index:1}
 .button a{color:#333;text-shadow:0 1px 0 #fff;font-weight:700}
-.button a:hover{color:#777}
+.button:hover a{color:#777}
 .button img{position:relative;top:3px;margin-right:10px}
 
 .button input{display:block;width:110px;height:30px;position:absolute;top:0;left:0;background:none;border:0;z-index:2;cursor:pointer}
-.button input:hover a{color:#777!important}
 
 /*-------------------------------------------------------------------標題---*/
 
