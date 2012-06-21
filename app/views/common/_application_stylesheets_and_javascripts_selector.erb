@@ -7,6 +7,11 @@
 <%if request.original_fullpath.include?("/static_pages/services") %> 
 	<%= stylesheet_link_tag    "services", :media => "all" %>
 <% end %>
+<%if request.original_fullpath.include?("/static_pages/home") || request.original_fullpath==root_path %> 
+	<%= stylesheet_link_tag    "home", :media => "all" %>
+	<%= javascript_include_tag "home" %>
+<% end %>
+
 <%if request.original_fullpath.include?("/boards") %> 
 	<%= stylesheet_link_tag    "boards", :media => "all" %>
 <% end %>

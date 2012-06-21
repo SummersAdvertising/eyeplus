@@ -9,6 +9,8 @@ EyePlus::Application.routes.draw do
 
   get "static_pages/services"
 
+  get "static_pages/home"
+
 
   namespace :admin do
     resources :users
@@ -103,7 +105,7 @@ EyePlus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'posts#index'
+  root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 
