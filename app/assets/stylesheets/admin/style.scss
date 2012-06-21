@@ -28,12 +28,12 @@ h1 a{font:700 15px "Helvetica"}
 #side li a{background-image:image-url("admin/side.png");background-repeat:no-repeat;
 	display:block;width:100%;height:40px;color:#7D8089;text-shadow:0 1px 0 #fff;padding-top:60px;}
 #side li a:hover{color:#152529}
-#posts{background-position:-900px bottom}
-#posts:hover{background-position:-900px top}
-#questions{background-position:-100px bottom}
-#questions:hover{background-position:-100px top}
-#boards{background-position:-500px bottom}
-#boards:hover{background-position:-500px top}
+#posts{background-position:-710px -68px}
+#posts:hover{background-position:-710px 12px}
+#questions{background-position:-70px -68px}
+#questions:hover{background-position:-70px 12px}
+#boards{background-position:-388px -68px}
+#boards:hover{background-position:-388px 12px}
 
 .active{background:#fff;border-top:1px solid #C6C5CF;border-left:1px solid #C6C5CF;
 	border-bottom:1px solid #C6C5CF;border-radius:5px 0 0 5px;box-shadow:-1px 1px 1px #ccc;
@@ -62,8 +62,8 @@ h1 a{font:700 15px "Helvetica"}
 .button a:hover{color:#777}
 .button img{position:relative;top:3px;margin-right:10px}
 
-.button input{display:block;width:110px;height:30px;position:absolute;top:0;left:0;background:none;border:0;z-index:2}
-.button input:hover a{color:#777}
+.button input{display:block;width:110px;height:30px;position:absolute;top:0;left:0;background:none;border:0;z-index:2;cursor:pointer}
+.button input:hover a{color:#777!important}
 
 /*-------------------------------------------------------------------標題---*/
 
