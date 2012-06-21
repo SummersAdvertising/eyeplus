@@ -9,7 +9,7 @@
       <li><a href="qa.html">醫師答客問</a>│</li>
       <li><a href="news.html">最新消息</a>│</li>
       <li><a href="brands.html">代理品牌</a></li>
-      <li><a href="#" id="fb"><img src="images/fb.jpg"></a></li>
+      <li><a href="#" id="fb"><img src="<%=image_path("application/fb.jpg")%>"></a></li>
     </ul>
     <!--nav--> 
   </div>
@@ -20,65 +20,34 @@
   <!--banner--> 
 </div>
 <!--header-->
-
 <div id="container">
-  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="news.html">最新消息</a></div>
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="<%=posts_path%>">最新消息</a></div>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
       <div id="list">
+        <% @posts.each do |post| %>
         <ul class="content-title">
-          <li>2012年4月15日</li>
-          <li><a href="#">梁醫師在台北市"聚英視光眼科診所"開始看診</a></li>
-        </ul>
-        <ul class="content-title">
-          <li>2012年4月15日</li>
-          <li><a href="#">梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦 </a></li>
-        </ul>
-        <ul class="content-title">
-          <li>2012年4月15日</li>
-          <li><a href="#">台北市幼稚園演講兒童視力發育與視力保健 </a></li>
-        </ul>
-        <ul class="content-title">
-          <li>2012年4月15日</li>
-          <li><a href="#">預防勝於治療：眼睛保養預防靠這味</a></li>
-        </ul>
-        <ul class="content-title" style="border:none">
-          <li>2012年4月15日</li>
-          <li><a href="#">全球眼科醫師採用VISX雷射的原因</a></li>
-        </ul>
+          <li><%= post.created_at.to_date %></li>
+          <li><a href="<%=post_path(post)%>"><%= post.title %></a></li>
+        </ul>        
+        <% end %>
       </div>
       <!--list-->
       <div id="page">
       <ul>
-      <li><a href="#" >5</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">2</a></li>
-      <li class="active"><a href="#">1</a></li>
+        <%= paginate @posts %>
       </ul>
       </div>
-      <img src="images/news-01.jpg">
+      <img src="<%=image_path("application/news-01.jpg")%>">
     </div>
     <!--side-->
     <div id="content"> 
-    <span>2012年4月15日</span>
-    <h3>梁智凱醫師榮獲商業周刊調查"2009百大良醫"好醫師推薦</h3> 
+    <span><%= @post_show.created_at.to_date %></span>
+    <h3><%= @post_show.title %></h3> 
     <p class="text">
-  梁智凱醫師<br>
-  <br>
-  中西醫結合醫學碩士<br>
-  教育部部定講師<br>
-  教育部視力保健種子教官<br>
-  中國醫藥大學中西醫結合控制近視臨床研究主持人<br>
-  敏盛醫院散瞳劑預防近視研究主持人<br>
-  敏盛醫院角膜塑型片有效性與安全性臨床研究主持人<br>
-  <br>
-  台北聚英視光眼科顧問醫師(02)25025091;週一上午,週三下午及晚上,週四晚上,雙數周週六上午及下午.<br>
-  <br>
-  林口聚英眼科顧問醫師(03)328-3828;週二下午及晚上,單數周週六下午（角膜塑型特別門診,僅接受預約）<br>
-  <br>
-  敏盛綜合醫院經國院區眼科主治醫師(03)317-9599;週一晚上33診,週五下午及晚上33診,單數周週六上午35診</p>
+      <%= @post_show.content.gsub("\n", "<br />").html_safe %>
+    </p>
 </div>
     <!--content--> 
   </div>
