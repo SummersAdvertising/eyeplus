@@ -1,3 +1,15 @@
+<script type="text/javascript" src="/assets/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/assets/jQueryRotate.2.2.js"></script>
+<script type="text/javascript">
+var angle = 0;
+setInterval(function(){
+      angle+=0.03;
+     $("#circle-o").rotate(angle);
+},0);
+</script>
+<style>
+#circle-o{}
+</style>
 <div id="top">
   <div id="top-nav">    
     <%= render :partial => "common/nav" %>
@@ -15,7 +27,7 @@
 <!--header-->
 <div id="container">
   <div id="main">
-    <div id="sales"> <a href="#" id="sales-1">近視及老花困擾</a><a href="#" id="sales-2">希望有專業配鏡</a><a href="#" id="sales-3">關心子女視力</a> </div>
+    <div id="sales"><a href="#" id="sales-1" onclick="test()">近視及老花困擾</a><a href="#" id="sales-2">希望有專業配鏡</a><a href="#" id="sales-3">關心子女視力</a> </div>
     <!--sales-->
     <div id="content">
     <h4 style="padding:25px 0 25px 25px">最新消息</h4>
