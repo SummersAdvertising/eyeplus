@@ -8,5 +8,9 @@
     remote:        data-remote
 -%>
 <li <%= "class=active" if page.current? %>>
-  <a href="<%=url%>" id="<%=page%>"><%=page%></a>
+	<% if url.include?("/posts") %>
+  		<a href="<%=url.gsub("posts", "news")%>" id="<%=page%>"><%=page%></a>
+  	<% else %> 	
+  		<a href="<%=url%>" id="<%=page%>"><%=page%></a>
+  	<% end %>
 </li>
