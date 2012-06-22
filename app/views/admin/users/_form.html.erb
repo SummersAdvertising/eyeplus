@@ -1,39 +1,26 @@
+<%= form_for([:admin,@user]) do |f| %>
 <%= render :partial => "admin/common/admin_top" %>
 <div id="container">
   <div id="side" class="left">
     <ul>
-    <%= render :partial => "admin/common/admin_function_selector" %>
+      <%= render :partial => "admin/common/admin_function_selector" %>
     </ul>
-  </div><!--side-->
+  </div>
+  <!--side-->
   <div id="main" class="right">
-    <div class="main-list">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr class="main-list-title">
-          <th width="6%" align="center" scope="col">&nbsp;</th>
-          <th width="13%" align="center" scope="col">姓名</th>
-          <th width="65%" align="left" scope="col">帳號</th>
-          <th width="8%" align="center" scope="col">編輯</th>
-          <th width="8%" align="center" scope="col">刪除</th>
-        </tr>
-        <% @users.each do |user| %>
+    <div class="main-form">
+      <table width="100%" border="0" cellpadding="0" cellspacing="10" >
         <tr>
-          <% if user.is_admin == true %>
-            <td align="center"><img src="<%=image_path("admin/unlock.png")%>" /></td>
-          <% else %>
-            <td align="center"><img src="<%=image_path("admin/lock.png")%>" /></td>
-          <% end %> 
-          <td align="center"><%= user.user_name%></td>
-          <td align="left"><%= user.email %></td>
-          <td align="center"><a href="<%= edit_admin_user_path(user)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
-          <td align="center"><a href='<%=admin_user_path(user)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a></td>
+          <td align="left" height="30">是否給予權限<%= f.check_box :is_admin, :id =>"checkbox",:style=>"width:25px", :name =>"checkbox" %></td>
+         <!--  <td align="left" height="30"></td> -->
         </tr>
-        <% end %>
-      </table>      
-      <%= form_for([:admin,@user]) do |f| %>      
-        <div class="button" style="margin-top:10px"><a href="#"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
-      <% end %>
+      </table>
     </div>
-  </div><!--main-->
-</div><!--container-->
+    <!--main-form-->
+    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
+    <div class="button"><a href="<%=admin_users_path%>"><%=image_tag("admin/cancel.png")%>取消</a></div>  
+</div>
+<!--container-->
 <div id="footer"></div>
 <!--footer-->
+<% end %>
