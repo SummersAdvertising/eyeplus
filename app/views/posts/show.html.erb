@@ -1,16 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
-
-<!-- <% if current_user && @post.user == current_user %>
-	<%= link_to 'Edit', edit_post_path(@post) %> |
-<%end%> -->
-<%= link_to 'Back', posts_path %>
+<div id="header">
+  <div id="top">
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>最新消息</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
+<div id="container">
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="<%=posts_path%>">最新消息</a></div>
+  <!--bread-crumbs-->
+  <div id="main">
+    <div id="side">
+      <div id="list">
+        <% @posts.each do |post| %>
+        <ul class="content-title">
+          <li><%= post.created_at.to_date %></li>
+          <li><a href="<%=post_path(post)%>"><%= post.title %></a></li>
+        </ul>        
+        <% end %>
+      </div>
+      <!--list-->
+      <div id="page">
+      <ul>
+        <%= paginate @posts %>
+      </ul>
+      </div>
+      <img src="<%=image_path("application/news-01.jpg")%>">
+    </div>
+    <!--side-->
+    <div id="content"> 
+    <span><%= @post_show.created_at.to_date %></span>
+    <h3><%= @post_show.title %></h3> 
+    <p class="text">
+      <%= @post_show.content.gsub("\n", "<br />").html_safe %>
+    </p>
+</div>
+    <!--content--> 
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<%= render :partial => "common/footer" %>
+<!--footer-->
