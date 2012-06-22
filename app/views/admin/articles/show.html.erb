@@ -9,13 +9,13 @@
   <div id="main" class="right">
     <div class="main-title"> <div class="publish"><%= @article.created_at.to_date %></div> <div class="title"><%= @article.title %></div> 
     </div>
-    <% if @article.excerpt_image_top %>
+    <% if @article.excerpt_image_top? %>
       <p>
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
       </p>
     <% end %>
     <div class="main-text"><%= @article.content.gsub("\n", "<br />").html_safe %></div>
-    <% if @article.excerpt_image_bottom %>
+    <% if @article.excerpt_image_bottom? %>
       <p>
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
       </p>

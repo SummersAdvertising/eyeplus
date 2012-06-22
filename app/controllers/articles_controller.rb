@@ -19,7 +19,9 @@ class ArticlesController < ApplicationController
   def show
     # @article = Article.find(params[:id])
     @board = Board.find(params[:board_id])
+    @articles = @board.articles.page params[:page]
     @article = @board.articles.find(params[:id])
+    get_four_boards(@board)
     @conditionUrl = "boards/"+@board.id.to_s()+"/articles/"+@article.id.to_s()
     @facebook = getFacebook(@conditionUrl)
     # encodeURIComponent

@@ -21,7 +21,7 @@
     <div class="publish"><%=Time.now.to_date%></div> 
     <div class="title"><%= f.text_field :title %></div>
     </div>
-    <% if @article.excerpt_image_top %>
+    <% if @article.excerpt_image_top? %>
       <p>
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
       </p>
@@ -31,7 +31,7 @@
         <%= f.file_field :excerpt_image_top %>
     </div>
     <div class="main-text"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%></div>
-    <% if @article.excerpt_image_bottom %>
+    <% if @article.excerpt_image_bottom? %>
       <p>
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
       </p>

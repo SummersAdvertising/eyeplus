@@ -1,15 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div id="header">
+  <div id="top">
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>駐診醫師專欄</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @article.content %>
-</p>
-
-
-<!-- <%= link_to 'Edit', edit_board_article_path(@board, @article) %> | -->
-<%= link_to 'Back', board_path(@board) %>
+<div id="container">
+  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
+  <!--bread-crumbs-->
+  <div id="main">
+    <div id="side">
+      <ul id="category">
+        <%= render :partial => "common/board_selector" %>
+      </ul><!--category-->
+      <div id="list">
+      <% @articles.each do |article| %>
+        <ul class="content-title">      
+          <li>醫師：<%=User.where(:id => article.user_id).first.user_name %>  │   <%= article.created_at.to_date %></li>
+          <li><a href="<%=board_article_path(@board,article)%>"><%= article.title %></a></li>
+        </ul>   
+      <% end %>
+      </div><!--list--> 
+      <div id="page">
+        <ul>
+          <%= paginate @articles %>
+        </ul>      
+      </div>
+    </div>
+    <!--side-->
+    <% if @article.excerpt_image_top? %>
+      <p>
+        <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
+      </p>
+    <% end %>
+    <%= @article.content.gsub("\n", "<br />").html_safe %>
+    <% if @article.excerpt_image_bottom? %>
+      <p>
+        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+      </p>
+    <% end %>
+    <!--content--> 
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<%= render :partial => "common/footer" %>
+<!--footer-->

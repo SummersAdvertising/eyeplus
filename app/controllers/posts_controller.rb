@@ -21,6 +21,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @posts = Post.page params[:page]
+    # @post_show = @posts[0]
 
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)
