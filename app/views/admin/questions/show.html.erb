@@ -9,7 +9,7 @@
   <div id="main" class="right">
     <div class="main-title">
       <div class="publish"><%= @question.created_at.to_date %></div>
-      <div class="title"><%= @question.user_name %></div>
+      <div class="title"><span id="name"><%= @question.user_name %></span><span id="mail"></span></div>
     </div>
     <div class="main-text"><%= @question.content.gsub("\n", "<br />").html_safe %></div>
     <div class="button"><a href="<%=new_admin_question_answer_path(@question)%>"><img src="<%=image_path("admin/reply.png")%>">回覆</a></div>
