@@ -34,8 +34,10 @@ forth_board = Board.new(:name => "對抗老花、白內障", :order_number => 4)
 forth_board.save
 
 post = Post.new(:title => "News", :content => "News")
-post.save
+post.user_id = 1
+post.save!
 
 default_facebook = DefaultFacebook.new(:title => "聚英眼科診所", :description => "聚英眼科診所", :site_type => "company", :url => "www.eyeplus.com.tw", :site_name => "聚英眼科診所", :admins => "1123456")
 default_facebook.user_id = 1
 default_facebook.save!
+
