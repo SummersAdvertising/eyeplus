@@ -11,7 +11,7 @@
 </div>
 <!--header-->
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="<%=posts_path%>">最新消息</a></div>
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="/news">最新消息</a></div>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
@@ -19,7 +19,7 @@
         <% @posts.each do |post| %>
         <ul class="content-title">
           <li><%= post.created_at.to_date %></li>
-          <li><a href="<%=post_path(post)%>"><%= post.title %></a></li>
+          <li><a href="/news/<%=post.id%>"><%= post.title %></a></li>
         </ul>        
         <% end %>
       </div>

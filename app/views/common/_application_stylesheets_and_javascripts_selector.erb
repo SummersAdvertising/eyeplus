@@ -30,6 +30,10 @@
 	<%= stylesheet_link_tag    "posts", :media => "all" %>
 <% end %>
 
+<%if request.original_fullpath.include?("/news") %> 
+	<%= stylesheet_link_tag    "posts", :media => "all" %>
+<% end %>
+
 <%if request.original_fullpath.include?("/questions") %> 
 	<%= stylesheet_link_tag    "questions", :media => "all" %>
 <% end %>
