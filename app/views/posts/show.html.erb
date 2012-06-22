@@ -33,10 +33,10 @@
     </div>
     <!--side-->
     <div id="content"> 
-    <span><%= @post_show.created_at.to_date %></span>
-    <h3><%= @post_show.title %></h3> 
+    <span><%= @post.created_at.to_date %></span>
+    <h3><%= @post.title %></h3> 
     <p class="text">
-      <%= @post_show.content.gsub("\n", "<br />").html_safe %>
+      <%= @post.content.gsub("\n", "<br />").html_safe %>
     </p>
 </div>
     <!--content--> 
