@@ -107,9 +107,10 @@ EyePlus::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'static_pages#home'
 
-  #match 'news/'    => 'posts#index'
-  # match 'news/:id(.:format)'    => 'posts#show'
-  # match 'news(/:action(/:id))(.:format)'    => 'posts'
+  # match "/patients/:id" => "patients#show"
+  match "/news" => "posts#index"
+  match "/news/:id" => "posts#show"
+  
 
   # See how all your routes lay out with "rake routes"
 
