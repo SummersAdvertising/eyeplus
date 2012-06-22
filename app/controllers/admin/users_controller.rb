@@ -4,7 +4,6 @@ class Admin::UsersController < ApplicationController
   
   def index
     @users = User.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -28,41 +27,45 @@ class Admin::UsersController < ApplicationController
     # @user = current_user.users.find(params[:id])
   end
 
+  def update
+
+  end
+
   # PUT /users/1
   # PUT /users/1.json
-  def update
-    # Need to remove the password key of the params hash if it’s blank.
-    # If not, Devise will fail to validate.
-  	if params[:user][:password].blank?
-  		params[:user].delete(:password)
-  		params[:user].delete(:password_confirmation)
-	  end
-    @user = User.find(params[:id])
-    # @user = current_user.users.find(params[:id])
+  # def update
+  #   # Need to remove the password key of the params hash if it’s blank.
+  #   # If not, Devise will fail to validate.
+  # 	if params[:user][:password].blank?
+  # 		params[:user].delete(:password)
+  # 		params[:user].delete(:password_confirmation)
+	 #  end
+  #   @user = User.find(params[:id])
+  #   # @user = current_user.users.find(params[:id])
 
-    respond_to do |format|
-      #for security reason, the "is_admin" field must be set as "attr_protected" in the user.rb
-      #then use following codes to update a user became a admin
-      # @user.is_admin=true
-      # @user.save!	
-      @user.email=params[:user][:email]
-      @user.user_name=params[:user][:user_name]
-      if params[:user][:is_admin].to_i==1
-      	@user.is_admin=true
-      else
-      	@user.is_admin=false
-      end	
+  #   respond_to do |format|
+  #     #for security reason, the "is_admin" field must be set as "attr_protected" in the user.rb
+  #     #then use following codes to update a user became a admin
+  #     # @user.is_admin=true
+  #     # @user.save!	
+  #     @user.email=params[:user][:email]
+  #     @user.user_name=params[:user][:user_name]
+  #     if params[:user][:is_admin].to_i==1
+  #     	@user.is_admin=true
+  #     else
+  #     	@user.is_admin=false
+  #     end	
       
-      #if @user.update_attributes(params[:user])
-      if @user.save!      	
-        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #     #if @user.update_attributes(params[:user])
+  #     if @user.save!      	
+  #       format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: "edit" }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /users/1
   # DELETE /users/1.json

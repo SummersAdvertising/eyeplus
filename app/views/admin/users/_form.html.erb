@@ -1,29 +1,39 @@
-<%= form_for([:admin,@user]) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+    <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div><!--side-->
+  <div id="main" class="right">
+    <div class="main-list">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="main-list-title">
+          <th width="6%" align="center" scope="col">&nbsp;</th>
+          <th width="13%" align="center" scope="col">姓名</th>
+          <th width="65%" align="left" scope="col">帳號</th>
+          <th width="8%" align="center" scope="col">編輯</th>
+          <th width="8%" align="center" scope="col">刪除</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <% if user.is_admin == true %>
+            <td align="center"><img src="<%=image_path("admin/unlock.png")%>" /></td>
+          <% else %>
+            <td align="center"><img src="<%=image_path("admin/lock.png")%>" /></td>
+          <% end %> 
+          <td align="center"><%= user.user_name%></td>
+          <td align="left"><%= user.email %></td>
+          <td align="center"><a href="<%= edit_admin_user_path(user)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
+          <td align="center"><a href='<%=admin_user_path(user)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a></td>
+        </tr>
+        <% end %>
+      </table>      
+      <%= form_for([:admin,@user]) do |f| %>      
+        <div class="button" style="margin-top:10px"><a href="#"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :is_admin %><br />
-    <%= f.check_box :is_admin %>
-  </div>
-  <div class="field">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  </div><!--main-->
+</div><!--container-->
+<div id="footer"></div>
+<!--footer-->
