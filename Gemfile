@@ -13,7 +13,6 @@ gem "paperclip"
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
 gem 'rails-i18n'
 gem 'kaminari'
-gem 'hirb'
 
 gem 'capistrano'
 gem 'capistrano-ext'

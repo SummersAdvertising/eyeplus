@@ -1,4 +1,4 @@
-<%if request.original_fullpath.include?("/admin/posts") %>   
+<%if (request.original_fullpath.include?("/admin/posts") || request.original_fullpath.include?("/users")) && (!request.original_fullpath.include?("/admin/users"))%>   
 	<li><a href="<%="/admin/posts"%>" id="posts" class="active">最新消息</a></li>
 <% else %>
 	<li><a href="<%="/admin/posts"%>" id="posts">最新消息</a></li>
@@ -16,6 +16,15 @@
 <% else %>
 	<li><a href="<%="/admin/boards/"+@tempboard.id.to_s()%>" id="boards">醫療專欄</a></li>
 <% end %>
+
+<%if current_user.is_super_admin == true %>
+	<%if request.original_fullpath.include?("/admin/users")%>   
+		<li><a href="<%="/admin/users"%>" id="users" class="active">使用者管理</a></li>
+	<% else %>
+		<li><a href="<%="/admin/users"%>" id="users">使用者管理</a></li>
+	<% end %>
+<% end %>
+
 
 
 

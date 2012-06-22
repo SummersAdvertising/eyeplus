@@ -60,7 +60,6 @@ GEM
       multi_json (~> 1.0)
     highline (1.6.13)
     hike (1.2.1)
-    hirb (0.6.2)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -151,7 +150,6 @@ DEPENDENCIES
   ckeditor_rails
   coffee-rails (~> 3.2.1)
   devise
-  hirb
   jquery-rails
   kaminari
   mysql2
