@@ -43,8 +43,11 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     # @question = Question.new(params[:question])
+    @questions = Question.all.reverse
     @question = Question.new(params[:question])
     # @question.user_id = current_user.id
+    # @question.save!
+    # redirect_to questions_path
 
     respond_to do |format|
       if @question.save

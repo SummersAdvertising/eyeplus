@@ -15,7 +15,7 @@
   <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=questions_path%>">醫師答客問</a></div>
   <!--bread-crumbs-->
   <div id="main">
-    <%= form_for(@question) do |f| %>
+    <%= form_for(@question, :validate => true) do |f| %>
     <div id="form">      
       <table width="285px" border="0" cellspacing="0" cellpadding="0">
         <tr>
