@@ -47,7 +47,7 @@ EyePlus::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += %w( admin.js )
-  config.assets.precompile += %w( application.js )
+  config.assets.precompile += %w( questions.js )
   config.assets.precompile += %w( jQueryRotate.2.2.js )
   config.assets.precompile += %w( jquery-1.7.2.js )
   config.assets.precompile += %w( admin.css )
