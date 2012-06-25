@@ -37,21 +37,20 @@
     <div id="content"> 
       <span><%=@article.created_at.to_date%></span>
       <h3><%= @article.title %></h3> 
-    <p class="text">
-
-	<div class="text">
-    <% if @article.excerpt_image_top? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
-      </p>
-    <% end %>
-    <%= @article.content.gsub("\n", "<br />").html_safe %>
-    <% if @article.excerpt_image_bottom? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
-      </p>
-    <% end %>
-	</div>
+  	<div class="text">
+      <% if @article.excerpt_image_top? %>
+        <p>
+          <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
+        </p>
+      <% end %>
+      <%= @article.content.gsub("\n", "<br />").html_safe %>
+      <% if @article.excerpt_image_bottom? %>
+        <p>
+          <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+        </p>
+      <% end %>
+	  </div>
+  </div>
     <!--content--> 
   </div>
   <!--main--> 
