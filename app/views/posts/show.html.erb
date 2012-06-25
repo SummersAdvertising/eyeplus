@@ -35,9 +35,9 @@
     <div id="content"> 
     <span><%= @post.created_at.to_date %></span>
     <h3><%= @post.title %></h3> 
-    <p class="text">
+    <div class="text">
       <%= @post.content.gsub("\n", "<br />").html_safe %>
-    </p>
+    </div>
 </div>
     <!--content--> 
   </div>

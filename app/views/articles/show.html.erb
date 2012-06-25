@@ -34,10 +34,14 @@
       </div>
     </div>
     <!--side-->
+<<<<<<< HEAD
     <div id="content"> 
       <span><%=@article.created_at.to_date%></span>
       <h3><%= @article.title %></h3> 
     <p class="text">
+=======
+	<div class="text">
+>>>>>>> f3f53513d0131117d180383c0624f9b0f344c8aa
     <% if @article.excerpt_image_top? %>
       <p>
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
@@ -49,6 +53,7 @@
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
       </p>
     <% end %>
+	</div>
     <!--content--> 
   </div>
   <!--main--> 
