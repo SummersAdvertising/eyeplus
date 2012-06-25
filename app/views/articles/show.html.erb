@@ -34,6 +34,7 @@
       </div>
     </div>
     <!--side-->
+	<div class="text">
     <% if @article.excerpt_image_top? %>
       <p>
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
@@ -45,6 +46,7 @@
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
       </p>
     <% end %>
+	</div>
     <!--content--> 
   </div>
   <!--main--> 
