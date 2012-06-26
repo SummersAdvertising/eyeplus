@@ -1,18 +1,13 @@
 <div id="header">
   <div id="top">
-    <%= render :partial => "common/nav" %>
-    <!--nav--> 
-  </div>
-  <!--top-->
+    <%= render :partial => "common/nav" %> <!--nav--> 
+  </div><!--top-->
   <div id="banner">
     <h2>最新消息</h2>
-  </div>
-  <!--banner--> 
-</div>
-<!--header-->
+  </div><!--banner--> 
+</div><!--header-->
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="/news">最新消息</a></div>
-  <!--bread-crumbs-->
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="/news">最新消息</a></div><!--bread-crumbs-->
   <div id="main">
     <div id="side">
       <div id="list">
@@ -22,26 +17,21 @@
           <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
         </ul>        
         <% end %>
-      </div>
-      <!--list-->
+      </div><!--list-->
       <div id="page">
       <ul>
         <%= paginate @posts %>
       </ul>
-      </div>
-      
-    <!--side-->
+	  </div><!--page-->
+    </div><!--side-->
     <div id="content"> 
     <span><%= @post.created_at.to_date %></span>
     <h3><%= @post.title %></h3> 
     <div class="text">
       <%= @post.content.gsub("\n", "<br />").html_safe %>
     </div>
-</div>
-    <!--content--> 
-  </div>
-  <!--main--> 
-</div>
-<!--container-->
+    </div><!--content--> 
+  </div><!--main--> 
+</div><!--container-->
 <%= render :partial => "common/footer" %>
 <!--footer-->

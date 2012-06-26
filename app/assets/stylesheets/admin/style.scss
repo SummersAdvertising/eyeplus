@@ -70,7 +70,7 @@ h1 a{font:700 15px "Helvetica"}
 /*-------------------------------------------------------------------標題---*/
 
 .main-title{width:100%;border:1px solid #ccc;border-radius:5px;height:30px;
-	background:image-url("admin/title.png") 87px 0 no-repeat;}
+	background:image-url("admin/title.png") 87px 0 no-repeat;overflow:hidden}
 .main-title .publish{width:12%;float:left;background:#eee;height:22px;
 	padding:8px 10px 0 0;color:#999;text-shadow:0 1px 0 #fff;text-align:center}
 .main-title .title{width:83%;float:left;margin-left:20px;height:20px;padding-top:7px}
@@ -78,7 +78,7 @@ h1 a{font:700 15px "Helvetica"}
 .main-title .title #mail{float:right;padding-right:10px;color:#999}
 .main-text{padding:10px;border:1px solid #ccc;border-radius:5px;line-height:20px;
 	margin:10px 0;clear:both;background:#F9F9F9}
-
+	
 
 /*-------------------------------------------------------------------輸入---*/
 
