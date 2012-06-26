@@ -15,7 +15,7 @@
 <!--header-->
 <div id="container">
   <div id="main">
-    <div id="sales"><a href="#" id="sales-1" onclick="test()">近視及老花困擾</a><a href="#" id="sales-2">希望有專業配鏡</a><a href="#" id="sales-3">關心子女視力</a> </div>
+    <div id="sales"><a href="#" id="sales-1">近視及老花困擾</a><a href="#" id="sales-2">希望有專業配鏡</a><a href="#" id="sales-3">關心子女視力</a> </div>
     <!--sales-->
     <div id="content">
     <h4 style="padding:25px 0 25px 25px">最新消息</h4>
@@ -33,7 +33,7 @@
       <!--list--> 
       <h4 style="padding:25px 0 0 25px">駐診醫師專欄</h4>
       <div class="column" id="column-1">
-      <h5>保護與矯正兒童視力</h5>
+      <h5><a href="<%=board_path(@first_board)%>">保護與矯正兒童視力</a></h5>
       寶寶有哪些眼睛保養重點？<br>
       由專精兒童視覺的醫師與視光師為您解答
       </div>
@@ -50,7 +50,7 @@
       </div>
       <!--list--> 
       <div class="column" id="column-2">
-      <h5>近視與角膜塑型術</h5>
+      <h5><a href="<%=board_path(@second_board)%>">近視與角膜塑型術</a></h5>
       近視有藥醫？為您介紹最新矯正觀念<br>
       以及無須藥物、手術的角膜塑型術
       </div>
@@ -67,7 +67,7 @@
       </div>
       <!--list-->
       <div class="column" id="column-3">
-      <h5>個人化配鏡指南</h5>
+      <h5><a href="<%=board_path(@third_board)%>">個人化配鏡指南</a></h5>
       眼鏡總是戴不舒服嗎？<br>
       醫師與視光師為您解答長久以來的配鏡疑問
       </div>
@@ -84,7 +84,7 @@
       </div>
       <!--list-->
       <div class="column" id="column-4">
-      <h5>對抗老花、白內障</h5>
+      <h5><a href="<%=board_path(@fourth_board)%>">對抗老花、白內障</a></h5>
       抗老化手術權威醫師，最新老花雷射手術、微切口<br>
       白內障手術專文分享
       </div>
