@@ -99,8 +99,8 @@ class Admin::PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    # @post = Post.find(params[:id])
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    # @post = current_user.posts.find(params[:id])
     @post.destroy
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)
