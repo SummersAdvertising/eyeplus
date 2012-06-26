@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     # @posts = Post.all
-    @posts = Post.page params[:page]  
+    @posts = Post.recent.page params[:page]  
     @post_show = @posts[0]
     # @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
     @conditionUrl = "posts"
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @posts = Post.page params[:page]
+    @posts = Post.recent.page params[:page]
     # @post_show = @posts[0]
 
     @conditionUrl = "posts/" + @post.id.to_s()
