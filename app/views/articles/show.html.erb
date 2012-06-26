@@ -11,7 +11,7 @@
 </div>
 <!--header-->
 <div id="container">
-  <div id="bread-crumbs"><a href="index.html">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
@@ -33,19 +33,23 @@
       </div>
     </div>
     <!--side-->
-	<div class="text">
-    <% if @article.excerpt_image_top? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
-      </p>
-    <% end %>
-    <%= @article.content.gsub("\n", "<br />").html_safe %>
-    <% if @article.excerpt_image_bottom? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
-      </p>
-    <% end %>
-	</div>
+    <div id="content"> 
+      <span><%=@article.created_at.to_date%></span>
+      <h3><%= @article.title %></h3> 
+  	<div class="text">
+      <% if @article.excerpt_image_top? %>
+        <p>
+          <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
+        </p>
+      <% end %>
+      <%= @article.content.gsub("\n", "<br />").html_safe %>
+      <% if @article.excerpt_image_bottom? %>
+        <p>
+          <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+        </p>
+      <% end %>
+	  </div>
+  </div>
     <!--content--> 
   </div>
   <!--main--> 
