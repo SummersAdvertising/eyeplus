@@ -1,5 +1,11 @@
-<div class="main-text" id="main-text-reply"><%= answer.content.gsub("\n", "<br />").html_safe %></div> 
-<!--     <%= link_to 'Destroy Answer', admin_question_answer_path(answer.question, answer),
+<div class="main-text" id="main-text-reply"><%= answer.content.gsub("\n", "<br />").html_safe %>
+	<div class="right">
+		<a href='<%=admin_question_answer_path(answer.question, answer)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a>
+	</div> 
+</div>
+
+<!-- <%= link_to 'Destroy Answer', admin_question_answer_path(answer.question, answer),
                :confirm => 'Are you sure?',
                :method => :delete %> -->
+
  
