@@ -35,13 +35,11 @@
     <div id="content"> 
     <span><%= @post_show.created_at.to_date %></span>
     <h3><%= @post_show.title %></h3> 
-    <div class="text">
-      <%= @post_show.content.gsub("\n", "<br />").html_safe %>
-    </div>
-</div>
-    <!--content--> 
-  </div>
-  <!--main--> 
+      <div class="text">
+        <%= @post_show.content.gsub("\n", "<br />").html_safe %>
+      </div>
+    </div><!--content--> 
+  </div><!--main--> 
 </div>
 <!--container-->
 <%= render :partial => "common/footer" %>
