@@ -17,7 +17,7 @@ class Admin::BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @articles = @board.articles.all    
+    @articles = @board.articles.all.reverse    
 
     get_four_boards(@board)  
 
