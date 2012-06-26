@@ -2,6 +2,7 @@
 CKEDITOR.editorConfig = (config) ->
   config.language = "zh"
   config.uiColor = "#AADC6E"
+  config.enterMode = CKEDITOR.ENTER_BR;
   config.toolbar_Pure = [
      '/',
     { name: 'basicstyles', items: [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },

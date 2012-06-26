@@ -26,10 +26,9 @@ class PostsController < ApplicationController
 
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)
-    # encodeURIComponent
 
-    respond_to do |format|
-      format.html # show.html.erb
+    respond_to do |format|      
+      format.html 
       format.json { render json: @post }
     end
   end
