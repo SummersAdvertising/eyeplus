@@ -19,7 +19,7 @@
         <% @posts.each do |post| %>
         <ul class="content-title">
           <li><%= post.created_at.to_date %></li>
-          <li><a href="/news/<%=post.id%>"><%= post.title %></a></li>
+          <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
         </ul>        
         <% end %>
       </div>
