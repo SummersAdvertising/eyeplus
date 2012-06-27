@@ -20,5 +20,5 @@
 .a-text{background:#ececec;padding:5px 10px}
 .a-text .publish{color:#3088cb;font-size:12px}
 #footer{position:relative;top:50px}
-
+.message{color:red;font:300 12px "";width:100%;position:absolute;margin-top:-18px;margin-left:-85px}
 @media screen and (-webkit-min-device-pixel-ratio:0){ #form input:focus,#form-ta:focus{border:3px solid #F0F0F0} }
