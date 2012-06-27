@@ -108,7 +108,7 @@ zh-TW:
       greater_than: 必須大於 %{count}
       greater_than_or_equal_to: 必須大於或等於 %{count}
       inclusion: 沒有包含在列表中
-      invalid: 是無效的
+      invalid: 格式錯誤
       less_than: 必須小於 %{count}
       less_than_or_equal_to: 必須小於或等於 %{count}
       not_a_number: 不是數字
