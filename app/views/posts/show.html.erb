@@ -10,21 +10,8 @@
   <!--bread-crumbs-->
   <%= render :partial => "common/crumb_selector" %>
   <div id="main">
-    <div id="side">
-      <div id="list">
-        <% @posts.each do |post| %>
-        <ul class="content-title">
-          <li><%= post.created_at.to_date %></li>
-          <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
-        </ul>        
-        <% end %>
-      </div><!--list-->
-      <div id="page">
-      <ul>
-        <%= paginate @posts %>
-      </ul>
-	  </div><!--page-->
-    </div><!--side-->
+     <%= render :partial => "common/display_post_item" %>
+
     <div id="content"> 
     <span><%= @post.created_at.to_date %></span>
     <h3><%= @post.title %></h3> 

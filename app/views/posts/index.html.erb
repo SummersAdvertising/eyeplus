@@ -9,21 +9,9 @@
 <div id="container">
   <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="/news">最新消息</a></div><!--bread-crumbs-->
   <div id="main">
-    <div id="side">
-      <div id="list">
-        <% @posts.each do |post| %>
-        <ul class="content-title">
-          <li><%= post.created_at.to_date %></li>
-          <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
-        </ul>        
-        <% end %>
-      </div><!--list-->
-      <div id="page">
-      <ul>
-        <%= paginate @posts %>
-      </ul>
-      </div><!--page-->      
-    </div><!--side-->
+
+      <%= render :partial => "common/display_post_item" %><!--list-->
+
     <div id="content"> 
     <span><%= @post_show.created_at.to_date %></span>
     <h3><%= @post_show.title %></h3> 
