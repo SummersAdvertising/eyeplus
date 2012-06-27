@@ -1,4 +1,4 @@
-html{background:url() 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
+﻿html{background:url() 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
 body{font:300 16px "微軟正黑體",Arial;line-height:24px}
 a{font:300 16px "微軟正黑體",Arial;text-decoration:none}
 a:hover{text-decoration:underline}
@@ -40,7 +40,7 @@ h4{font:700 24px "";background:url(/assets/application/index-11.jpg) 0 33px no-r
 .content-title{border-bottom:1px dashed #aaa;padding:10px 0}
 .content-title span{margin-right:5px}
 
-h5{font-size:18px;color:#3088cb}
+h5 a{font-size:18px;color:#3088cb}
 .column{color:#6e6e6e;font-size:14px;margin:25px 0 10px 0}
 #column-1{background:url(/assets/application/index-12.jpg) right center no-repeat}
 #column-2{background:url(/assets/application/index-13.jpg) right center no-repeat}
