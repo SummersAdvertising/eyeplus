@@ -45,11 +45,13 @@
       <% end %>
 	  </div>
       <%= @article.content.gsub("\n", "<br />").html_safe %>
-      <% if @article.excerpt_image_bottom? %>
+      <div class="text-image">
+	  <% if @article.excerpt_image_bottom? %>
         
           <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
         
       <% end %>
+	  </div>
 	  </div>
   </div>
     <!--content--> 
