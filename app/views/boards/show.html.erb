@@ -12,7 +12,7 @@
 <!--header-->
 
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
+  <%= render :partial => "common/board_crumb_selector" %>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
