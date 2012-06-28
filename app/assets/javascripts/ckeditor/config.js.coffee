@@ -10,6 +10,7 @@ CKEDITOR.editorConfig = (config) ->
     { name: 'links',       items: [ 'Link','Unlink','Anchor' ] },
     '/',
     { name: 'styles',      items: [ 'Styles','Format','Font','FontSize' ] }, 
+    { name: 'insert',      items: [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak' ] },
   ]
   config.toolbar = 'Pure'
   true
