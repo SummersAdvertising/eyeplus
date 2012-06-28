@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.all
     @posts = Post.recent.page params[:page]  
-    @post_show = @posts[0]
+    @post = @posts[0]
     # @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
     @conditionUrl = "posts"
     @facebook = getFacebook(@conditionUrl)

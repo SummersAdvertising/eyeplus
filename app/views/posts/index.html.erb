@@ -7,30 +7,10 @@
   </div><!--banner--> 
 </div><!--header-->
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> ><a href="/news">最新消息</a></div><!--bread-crumbs-->
+  <%= render :partial => "common/crumb_selector" %><!--bread-crumbs-->
   <div id="main">
-    <div id="side">
-      <div id="list">
-        <% @posts.each do |post| %>
-        <ul class="content-title">
-          <li><%= post.created_at.to_date %></li>
-          <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
-        </ul>        
-        <% end %>
-      </div><!--list-->
-      <div id="page">
-      <ul>
-        <%= paginate @posts %>
-      </ul>
-      </div><!--page-->      
-    </div><!--side-->
-    <div id="content"> 
-    <span><%= @post_show.created_at.to_date %></span>
-    <h3><%= @post_show.title %></h3> 
-      <div class="text">
-        <%= @post_show.content.gsub("\n", "<br />").html_safe %>
-      </div>
-    </div><!--content--> 
+      <%= render :partial => "common/display_post_item" %><!--list-->
+      <%= render :partial => "common/display_post_content" %>
   </div><!--main--> 
 </div><!--container-->
 <%= render :partial => "common/footer" %>

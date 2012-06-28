@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-  	@posts=Post.find(:all, :order => "updated_at", :limit => 3)
+  	@posts=Post.find(:all, :order => "updated_at desc", :limit => 3)
   	
   	@boards=Board.find(:all, :limit => 4, :order=> 'order_number asc')
   	@first_board=@boards[0]
@@ -17,9 +17,9 @@ class StaticPagesController < ApplicationController
   	@third_board=@boards[2]
   	@fourth_board=@boards[3]
 
-  	@first_board_articles=@first_board.articles.find(:all, :order => "updated_at", :limit => 2)
-  	@second_board_articles=@second_board.articles.find(:all, :order => "updated_at", :limit => 2)
-  	@third_board_articles=@third_board.articles.find(:all, :order => "updated_at", :limit => 2)
-  	@fourth_board_articles=@fourth_board.articles.find(:all, :order => "updated_at", :limit => 2)
+  	@first_board_articles=@first_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
+  	@second_board_articles=@second_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
+  	@third_board_articles=@third_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
+  	@fourth_board_articles=@fourth_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
   end
 end

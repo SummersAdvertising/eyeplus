@@ -12,7 +12,7 @@
 <!--header-->
 
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=questions_path%>">醫師答客問</a></div>
+  <%= render :partial => "common/crumb_selector" %>
   <!--bread-crumbs-->
   <div id="main">
     <%= form_for(@question, :validate => true) do |f| %>
