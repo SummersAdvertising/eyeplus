@@ -12,6 +12,6 @@ class AnswerMailer < ActionMailer::Base
   	@user=user
   	@question=question
   	@answer=answer
-  	mail(:to => user.email, :subject => "您在聚英眼科診所發問的問題有醫師回答了")
+  	mail(:to => user.email, :subject => "聚英眼科診所─醫師回覆")
   end
 end
