@@ -11,26 +11,14 @@
 </div>
 <!--header-->
 <div id="container">
-  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=board_path(@first_board)%>">駐診醫師專欄</a> > <%=@first_board.name%></div>
+  <%= render :partial => "common/crumb_selector" %>
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
       <ul id="category">
         <%= render :partial => "common/board_selector" %>
       </ul><!--category-->
-      <div id="list">
-      <% @articles.each do |article| %>
-        <ul class="content-title">      
-          <li>醫師：<%=User.where(:id => article.user_id).first.user_name %>  │   <%= article.created_at.to_date %></li>
-          <li><a href="<%=board_article_path(@board,article)%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= article.title %></a></li>
-        </ul>   
-      <% end %>
-      </div><!--list--> 
-      <div id="page">
-        <ul>
-          <%= paginate @articles %>
-        </ul>      
-      </div>
+      <%= render :partial => "common/display_article_item" %>
     </div>
     <!--side-->
     <div id="content"> 
