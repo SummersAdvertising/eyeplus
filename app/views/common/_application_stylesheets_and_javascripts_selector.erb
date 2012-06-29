@@ -11,7 +11,8 @@
 <% end %>
 
 <%if request.original_fullpath.include?("/static_pages/home") || request.original_fullpath==root_path %> 
-	<%= stylesheet_link_tag    "home", :media => "all" %>
+	<link rel="stylesheet" href="/assets/share/reset.css">
+	<link rel="stylesheet" href="/assets/home/default.css">
 	<script type="text/javascript" src="/assets/jquery-1.7.2.js"></script>
 	<script type="text/javascript" src="/assets/jQueryRotate.2.2.js"></script>
 	<script type="text/javascript">
