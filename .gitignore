@@ -14,9 +14,6 @@
 /log/*.log
 /tmp
 
-# Ignore all files in the public.
-/public
-
 #Ignore production.rb
 /config/deploy/production.rb
 

@@ -11,17 +11,20 @@
 <% end %>
 
 <%if request.original_fullpath.include?("/static_pages/home") || request.original_fullpath==root_path %> 
-	<link rel="stylesheet" href="/assets/share/reset.css">
-	<link rel="stylesheet" href="/assets/home/default.css">
-	<script type="text/javascript" src="/assets/jquery-1.7.2.js"></script>
-	<script type="text/javascript" src="/assets/jQueryRotate.2.2.js"></script>
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/default.css">
+	<script type="text/javascript" src="/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="/jQueryRotate.2.2.js"></script>
 	<script type="text/javascript">
 		var angle = 0;
 		setInterval(function(){
-      		angle+=0.03;
-     		$("#circle-o").rotate(angle);
+      	angle+=0.03;
+     	$("#circle-o").rotate(angle);
 		},0);
 	</script>
+	<style>
+		#circle-o{}
+	</style>
 <% end %>
 
 <%if request.original_fullpath.include?("/boards") %> 
