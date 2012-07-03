@@ -1,4 +1,4 @@
-html{background:url() 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
+﻿html{background:url() 0 0 repeat-x #f8f8f8;font:300 16px "微軟正黑體",Arial}
 body{font:300 16px "微軟正黑體",Arial;line-height:24px}
 a{font:300 16px "微軟正黑體",Arial;text-decoration:none}
 a:hover{text-decoration:underline}
@@ -33,14 +33,14 @@ h2,h3{display:none}
 #side a{font-size:11px}
 
 #content{width:606px;float:left;padding-top:5px}
-h4{font:700 24px "";background:url(../images/index-11.jpg) 0 33px no-repeat;}
+h4{font:700 24px "微軟正黑體";background:url(../images/index-11.jpg) 0 33px no-repeat;}
 .list{background:#fff;border:3px solid #f0f0f0;width:570px;padding:0 15px;font-size:12px;color:#747474}
 .list a{color:#000}
 .list a:hover{color:#3c8dcd}
 .content-title{border-bottom:1px dashed #aaa;padding:10px 0}
 .content-title span{margin-right:5px}
 
-h5{font-size:18px;color:#3088cb}
+h5 a{font:300 18px "微軟正黑體";color:#3088cb}
 .column{color:#6e6e6e;font-size:14px;margin:25px 0 10px 0}
 #column-1{background:url(../images/index-12.jpg) right center no-repeat}
 #column-2{background:url(../images/index-13.jpg) right center no-repeat}
