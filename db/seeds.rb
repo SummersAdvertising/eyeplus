@@ -37,7 +37,7 @@ post = Post.new(:title => "News", :content => "News")
 post.user_id = 1
 post.save!
 
-default_facebook = DefaultFacebook.new(:title => "聚英眼科診所", :description => "聚英眼科診所", :site_type => "company", :url => "www.eyeplus.com.tw", :site_name => "聚英眼科診所", :admins => "1123456")
+default_facebook = DefaultFacebook.new(:title => "好眼鏡、好眼睛，聚英視光眼科一手包辦", :description => "在這個眼鏡王國，幾乎找不到眼鏡行懂得眼睛的生理，也幾乎沒有眼科診所懂得配鏡必需的矯正光學，只有聚英同時擁有眼科醫師與專業視光師，用良心與專業還給您健康與舒適！", :site_type => "company", :url => "www.eyeplus.com.tw", :site_name => "聚英眼科診所", :admins => "1123456")
 default_facebook.user_id = 1
 default_facebook.save!
 
