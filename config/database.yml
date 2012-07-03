@@ -5,7 +5,7 @@ development:
   database: eyeplusdevelopment
   pool: 5
   username: root
-  password: '1qaz@WSX' 
+  password: 
 
 
 # Warning: The database defined as "test" will be erased and
