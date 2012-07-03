@@ -9,8 +9,8 @@
 -%>
 <li <%= "class=active" if page.current? %>>
 	<% if url.include?("/posts") %>
-  		<a href="<%=url.gsub("posts", "news")%>" id="<%=page%>"><%=page%></a>
+  		<a href="<%=url.gsub("posts", "news")%>#list" id="<%=page%>"><%=page%></a>
   	<% else %> 	
-  		<a href="<%=url%>" id="<%=page%>"><%=page%></a>
+  		<a href="<%=url%>#list" id="<%=page%>"><%=page%></a>
   	<% end %>
 </li>
