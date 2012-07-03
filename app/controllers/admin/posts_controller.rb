@@ -39,8 +39,8 @@ class Admin::PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    # @post = Post.find(params[:id])
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    # @post = current_user.posts.find(params[:id])
   end
 
   # POST /posts
