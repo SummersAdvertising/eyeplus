@@ -36,8 +36,8 @@ class Admin::FacebooksController < ApplicationController
 
   # GET /facebooks/1/edit
   def edit
-    # @facebook = Facebook.find(params[:id])
-    @facebook = current_user.facebooks.find(params[:id])
+    @facebook = Facebook.find(params[:id])
+    # @facebook = current_user.facebooks.find(params[:id])
   end
 
   # POST /facebooks
@@ -60,8 +60,8 @@ class Admin::FacebooksController < ApplicationController
   # PUT /facebooks/1
   # PUT /facebooks/1.json
   def update
-    # @facebook = Facebook.find(params[:id])
-    @facebook = current_user.facebooks.find(params[:id])
+    @facebook = Facebook.find(params[:id])
+    # @facebook = current_user.facebooks.find(params[:id])
 
     respond_to do |format|
       if @facebook.update_attributes(params[:facebook])
@@ -77,8 +77,8 @@ class Admin::FacebooksController < ApplicationController
   # DELETE /facebooks/1
   # DELETE /facebooks/1.json
   def destroy
-    # @facebook = Facebook.find(params[:id])
-    @facebook = current_user.facebooks.find(params[:id])
+    @facebook = Facebook.find(params[:id])
+    # @facebook = current_user.facebooks.find(params[:id])
     @facebook.destroy
 
     respond_to do |format|

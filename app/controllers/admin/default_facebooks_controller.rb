@@ -60,7 +60,7 @@ class Admin::DefaultFacebooksController < ApplicationController
   # PUT /default_facebooks/1.json
   def update
     @default_facebook = DefaultFacebook.find(params[:id])
-    @default_facebook = current_user.default_facebooks.find(params[:id])
+    # @default_facebook = current_user.default_facebooks.find(params[:id])
 
     respond_to do |format|
       if @default_facebook.update_attributes(params[:default_facebook])
