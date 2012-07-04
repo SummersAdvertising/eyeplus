@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: eyeplus
   pool: 5
-  username: root
-  password: 
+  username: rails
+  password: '3edc&UJM'
 
 
 # Warning: The database defined as "test" will be erased and
