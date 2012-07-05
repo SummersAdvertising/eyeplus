@@ -28,7 +28,7 @@
           <% if question.answers.empty? %>
             <td align="left">&nbsp;</td>
           <% else %>
-            <td align="left"><%=User.where(:id => question.answers.first.user_id).first.user_name %></td>
+            <td align="center"><%=User.where(:id => question.answers.first.user_id).first.user_name %></td>
           <% end %>
           <td align="center"><a href='<%=admin_question_path(question)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a></td>
         </tr>
