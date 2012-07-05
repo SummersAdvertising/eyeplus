@@ -59,12 +59,12 @@ h1 a{font:700 15px "Helvetica"}
 
 /*-------------------------------------------------------------------按鈕---*/
 
-.button{color:#333;text-shadow:0 1px 0 #fff;font-weight:700;background:image-url("admin/list.jpg") 0 0 repeat-x;border:1px solid #ccc;
+.button{background:url(../images/list.jpg) 0 0 repeat-x;border:1px solid #ccc;
 	margin:0 0 10px 10px;border-radius:5px;height:27px;padding:3px 0 0 10px;width:100px;float:right;position:relative;z-index:1}
-.button a{color:#333;text-shadow:0 1px 0 #fff;font-weight:700;display:block;width:100%;height:100%;}
-.button:hover{color:#777}
+.button a{color:#333;text-shadow:0 1px 0 #fff;font-weight:700}
 .button:hover a{color:#777}
 .button img{position:relative;top:3px;margin-right:10px}
+
 .button input{display:block;width:110px;height:30px;position:absolute;top:0;left:0;background:none;border:0;z-index:2;cursor:pointer}
 
 /*-------------------------------------------------------------------標題---*/
@@ -111,3 +111,13 @@ h2{font:italic 300 18px "細明體";padding:5px 0 0 10px}
 
 #upload_bottom,#upload_top{padding:10px 0;font:300 11px "";color:#999;margin:10px}
 #upload_bottom img,#upload_top img{margin:0 0 10px 0}
+
+/*-------------------------------------------------------------------註冊---*/
+
+.main-sign{width:400px!important;margin:0 auto}
+.main-sign table,.main-form table{margin:20px 0}
+.main-sign table td,.main-form table td{padding:5px 0;font:300 15px "微軟正黑體";color:#222}
+.main-sign table td span,.main-form table td span{font:300 12px "微軟正黑體";color:#777}
+.main-sign table input{width:97%;background:#fff;border:1px solid #ccc!important;border-radius:5px;padding:8px 5px}
+.main-form input{width:53%;background:#fff;border:1px solid #ccc!important;border-radius:5px;padding:8px 5px}
+.main-form{padding-left:35px}
