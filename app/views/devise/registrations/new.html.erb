@@ -1,20 +1,40 @@
-<h2>Sign up</h2>
-
+<div id="top">
+  <h1 class="left"><a href="/admin/posts">聚英眼科-後台管理系統</a></h1>
+  <div class="right"><a href="<%=root_path%>">返回首頁</a><a href="<%=new_session_path(resource_name)%>">登入</a></div>
+</div>
+<!--top-->
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name, :validate => true)) do |f| %>
-<!-- <%= devise_error_messages! %> -->
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<div id="container">
+  <div id="main" class="main-sign">
+    <h2><img src="<%=image_path("admin/user.png")%>" width="16" height="16" /> 使用者註冊</h2>
+    
+     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left">帳號 <span> (請使用email註冊)</span><br>
+    <%= f.email_field :email %></td>
+  </tr>
+  <tr>
+    <td align="left">姓名<br>
+    <%= f.text_field :user_name %></td>
+  </tr>
+  <tr>
+    <td align="left">密碼<br>
+    <%= f.password_field :password %></td>
+  </tr>
+  <tr>
+    <td align="left">確認密碼<br>
+    <%= f.password_field :password_confirmation %></td>
+  </tr>
+</table>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :user_name %><br />
-  <%= f.text_field :user_name %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+    
+    
+    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/signin.png")%>"><a>註冊</a></div>
+    
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
 <% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<div id="footer"></div>
+<!--footer-->
