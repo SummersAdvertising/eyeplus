@@ -40,7 +40,7 @@ h4{font:700 24px "微軟正黑體";background:url(../images/index-11.jpg) 0 33px
 .content-title{border-bottom:1px dashed #aaa;padding:10px 0}
 .content-title span{margin-right:5px}
 
-h5 a{font:300 18px "微軟正黑體";color:#3088cb}
+h5 a{font:300 18px "微軟正黑體";color:#3088cb!important}
 .column{color:#6e6e6e;font-size:14px;margin:25px 0 10px 0}
 #column-1{background:url(../images/index-12.jpg) right center no-repeat}
 #column-2{background:url(../images/index-13.jpg) right center no-repeat}
