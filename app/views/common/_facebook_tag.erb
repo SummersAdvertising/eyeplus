@@ -12,7 +12,7 @@
     http_head="http://"
     @facebook.image_url = http_head + request.host_with_port+@facebook.image_url
     @facebook.url = http_head + request.host_with_port+request.original_fullpath
-    @facebook.description = sanitize(truncate(@facebook.description, :length => 165).gsub("\n", "<br />").html_safe, :tags=>[])
+    @facebook.description = strip_tags(truncate(@facebook.description, :length => 165).gsub("\n", "<br />").html_safe)
 %>
 <meta property="og:title" content="<%=@facebook.title%>" />
 <meta property="og:description" content="<%=@facebook.description%>" />
