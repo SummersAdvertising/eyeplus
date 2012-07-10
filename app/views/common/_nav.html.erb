@@ -1,11 +1,17 @@
 <h1><a href="<%=root_path%>">聚英視光眼科診所</a></h1>
 <ul id="nav">
-      <li><a href="<%=static_pages_introduction_path%>">診所介紹</a>│</li>
-      <li><a href="<%=static_pages_services_path%>">服務項目</a>│</li>
-      <li><a href="<%=static_pages_staff_path%>">醫師陣容</a>│</li>
-      <li><a href="<%="/boards/"+Board.first.id.to_s()%>">駐診醫師專欄</a>│</li>
-      <li><a href="<%=questions_path%>">醫師答客問</a>│</li>
-      <li><a href="/news">最新消息</a>│</li>
+      <li><a href="<%=static_pages_introduction_path%>">診所介紹</a></li>
+	  <li>│</li>
+      <li><a href="<%=static_pages_services_path%>">服務項目</a></li>
+	  <li>│</li>
+      <li><a href="<%=static_pages_staff_path%>">醫師陣容</a></li>
+	  <li>│</li>
+      <li><a href="<%="/boards/"+Board.first.id.to_s()%>">駐診醫師專欄</a></li>
+	  <li>│</li>
+      <li><a href="<%=questions_path%>">醫師答客問</a></li>
+	  <li>│</li>
+      <li><a href="/news">最新消息</a></li>
+	  <li>│</li>
       <li><a href="<%=static_pages_introduction_path%>">代理品牌</a></li>
       <li>
             <a id="fb" href="http://www.facebook.com/sharer.php?u=<%=request.host_with_port%>" target="_blank"><img src="<%=image_path("application/fb.jpg")%>"></a>
