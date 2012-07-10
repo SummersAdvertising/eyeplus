@@ -7,8 +7,8 @@
   <%= render :partial => "common/application_stylesheets_and_javascripts_selector" %>  
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body>	
+<%= render :partial => "common/facebook_share_button" %>	
 <%= yield %>
-<%= render :partial => "common/facebook_share_button" %>
 </body>
 </html>
