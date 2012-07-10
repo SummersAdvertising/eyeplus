@@ -12,7 +12,7 @@
     http_head="http://"
     @facebook.image_url = http_head + request.host_with_port+@facebook.image_url
     @facebook.url = http_head + request.host_with_port+request.original_fullpath
-    @facebook.description = CGI::unescapeHTML(@facebook.description.gsub("\n", "<br />").html_safe.gsub(/<\/?.*?>/, "").gsub("\\r", "").gsub("\\n", "").gsub("\\t", "").gsub("&quot;", ""))
+    @facebook.description = truncate(CGI::unescapeHTML(@facebook.description.gsub("\n", "<br />").html_safe.gsub(/<\/?.*?>/, "").gsub("\\r", "").gsub("\\n", "").gsub("\\t", "").gsub("&quot;", "")), :length => 165)
 %>
 <meta property="og:title" content="<%=@facebook.title%>" />
 <meta property="og:description" content="<%=h @facebook.description%>" />
