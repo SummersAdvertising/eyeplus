@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.reverse
+    # @questions = Question.all.reverse
+    @questions = Question.recent.page params[:page]  
     @question = Question.new
 
     respond_to do |format|

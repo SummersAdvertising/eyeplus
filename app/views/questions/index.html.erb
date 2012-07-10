@@ -82,11 +82,19 @@
           </div>
         <% end %>
       <% end %>
+      <div id="page">
+        <ul>
+          <%= paginate @questions %>
+        </ul>
+      </div><!--page-->
     </div>
     <!--board--> 
+
   </div>
   <!--main--> 
+
 </div>
 <!--container-->
+
 <%= render :partial => "common/footer" %>
 <!--footer-->
