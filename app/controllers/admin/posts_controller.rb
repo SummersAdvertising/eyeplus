@@ -4,7 +4,8 @@ class Admin::PostsController < ApplicationController
   layout 'admin'
   before_filter :require_is_admin
   before_filter :authenticate_user! , :except => [ :show, :index ]
-
+  # GET /posts
+  # GET /posts.json
   def index
     @posts = Post.recent.all
 
