@@ -21,3 +21,4 @@
 /config/database.yml.production
 
 /public/ckeditor_assets
+/public/system/

@@ -13,6 +13,8 @@ class Admin::AnswersController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
+    @question.is_display =  true
+    @question.save
     @answer = @question.answers.create(params[:answer])
     @answer.user_id = current_user.id
     @answer.save
