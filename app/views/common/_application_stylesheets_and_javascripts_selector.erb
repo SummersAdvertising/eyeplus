@@ -36,6 +36,9 @@
 
 <%if request.original_fullpath.include?("/news") %> 
 	<%= stylesheet_link_tag    "posts", :media => "all" %>
+	<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "3cb2fe9c-347c-4063-9491-fa0d0522b74b"}); </script>
 <% end %>
 
 <%if request.original_fullpath.include?("/questions") %> 
