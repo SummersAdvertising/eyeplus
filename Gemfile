@@ -10,7 +10,8 @@ gem 'mysql2'
 
 gem "devise"
 gem "paperclip"
-gem 'ckeditor_rails', :require => 'ckeditor-rails'
+# gem 'ckeditor_rails', :require => 'ckeditor-rails'
+gem "ckeditor", "3.7.1"
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'client_side_validations'

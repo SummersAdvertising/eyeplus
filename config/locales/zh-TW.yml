@@ -1,4 +1,11 @@
 zh-TW:
+  ckeditor:
+    page_title: "CKEditor 檔案管理員"
+    confirm_delete: "刪除檔案?"
+    buttons:
+      cancel: "取消"
+      upload: "上傳"
+      delete: "刪除"
   date:
     abbr_day_names:
     - 日
