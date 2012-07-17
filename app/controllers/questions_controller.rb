@@ -3,7 +3,8 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     # @questions = Question.all.reverse
-    @questions = Question.recent.page params[:page]  
+    # @questions = Question.recent.page params[:page]  
+    @questions = Question.where(:is_display => true).recent.page params[:page]  
     @question = Question.new
 
     respond_to do |format|
