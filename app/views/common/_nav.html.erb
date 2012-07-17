@@ -4,7 +4,8 @@
 </style>
 <h1><a href="<%=root_path%>">聚英視光眼科診所</a></h1>
 <ul id="nav">
-      <li><a href="<%=static_pages_introduction_path%>">診所介紹</a></li>
+      <li><a href="<%=root_path%>"></a></li>
+	  <li><a href="<%=static_pages_introduction_path%>">診所介紹</a></li>
 	  <li>│</li>
       <li><a href="<%=static_pages_services_path%>">服務項目</a></li>
 	  <li>│</li>
@@ -15,8 +16,6 @@
       <li><a href="<%=questions_path%>">醫師答客問</a></li>
 	  <li>│</li>
       <li><a href="/news">最新消息</a></li>
-	  <li>│</li>
-      <li><a href="<%=static_pages_introduction_path%>">代理品牌</a></li>
-        <li>│</li>
+	  
       <li><%= render :partial => "common/facebook_share_button" %></li>
 </ul>
