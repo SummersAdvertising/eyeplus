@@ -78,7 +78,7 @@ EyePlus::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => '192.168.1.45' }
+  config.action_mailer.default_url_options = { :host => 'eyeplus.summers.com.tw' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
