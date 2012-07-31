@@ -17,6 +17,13 @@
 <script type="text/javascript" src="<%=get_current_host_and_port+"js/AnchorArt.js"%>"></script>
 <% end %>
 
+<%if request.original_fullpath.include?("/static_pages/discomfort") %> 
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/reset.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/sales.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/discomfort.css"%>">
+<script type="text/javascript" src="<%=get_current_host_and_port+"js/AnchorArt.js"%>"></script>
+<% end %>
+
 <%if request.original_fullpath.include?("/static_pages/home") || request.original_fullpath==root_path %> 
 	<link rel="stylesheet" href="/reset.css">
 	<link rel="stylesheet" href="/default.css">
