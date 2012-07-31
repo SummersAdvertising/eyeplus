@@ -1,0 +1,29 @@
+﻿body{width:1188px;margin:135px auto 0 auto;font:300 16px "微軟正黑體";}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.right{float:right}
+.left{float:left}
+
+.article{line-height:24px;}
+
+#header{background:url(../images/sales-01.jpg) 0 0 repeat-x;height:135px;position:fixed;top:0px;width:1188px;z-index:5;}
+#top{height:80px;overflow:hidden;background:url(../images/header.jpg) center top no-repeat}
+h1{width:220px;height:47px;background:url(../images/h1.png) 0 0 no-repeat;float:left;margin:20px 0 0 120px}
+h1 a{display:block;text-indent:-7777px;width:100%;height:100%;font-size:0px}
+#nav{float:right;margin:35px 175px 0 0}
+#nav li{float:left;font-size:13px;color:#fff;}
+#nav li a {font-size:13px;color:#fff;text-shadow:0 -1px 2px #000}
+#fb {position:absolute;top:25px;margin-left:15px;}
+#anchor{overflow:hidden;text-align:center;height:38px;padding:17px 0 0 0;box-shadow:0 3px 3px #777}
+#anchor a{color:#fff;font:700 18px "微軟正黑體"}
+
+#footer{clear:both;height:150px;background:url(../images/footer.jpg) center 0 no-repeat #000;}	
+#info{background:url(../images/tel.jpg) 280px 37px no-repeat;width:940px;margin:0 auto;color:#fff;
+padding:40px 0 0 0;line-height:10px;height:100px;}
+#address{font:700 18px 華康黑體,微軟正黑體}
+#tel{display:none}
+#copyright{font-size:14px}
+
+#content-6{background:url(../images/sales-17.jpg) 0 0 repeat-x #000;color:#fff;font:300 14px "";line-height:22px}
+#content-6 h3{font:700 24px "微軟正黑體"}
+

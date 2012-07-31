@@ -1,0 +1,36 @@
+﻿html{background:#fff}
+body{background:#F8F8F8;}
+
+#anchor{background:#216eb8}
+#anchor a{margin:0 50px}
+
+#content-1{line-height:28px}
+#content-1 #article-1{text-align:center;padding-top:300px;background:url(../images/sales-19.jpg) center 50px no-repeat;font:700 22px "微軟正黑體";color:#000;}
+#content-1 #article-1 h2{font:700 55px "微軟正黑體";color:#216eb8;padding-bottom:20px}
+#content-1 #article-1 p{font:300 14px "微軟正黑體";line-height:28px}
+#content-1 #article-2{background:#216EB8;color:#fff;padding:20px 0 20px 120px;font-size:16px;}
+
+#content-2{background:url(../images/sales-20.jpg) center 0 no-repeat;line-height:28px;font-size:16px}
+#content-2 h2{font:700 100px "微軟正黑體";}
+#content-2 h3{font:700 24px "微軟正黑體";}
+#content-2 #article-1{padding:50px 0 0 120px;}
+#content-2 #article-2{margin:0 auto;width:930px;background:#FFD304;padding:10px 0 10px 20px;}
+#content-2 #article-3{padding:20px 0 20px 120px;background:#000;color:#fff;font:700 18px "微軟正黑體";}
+
+#content-3{padding:330px 0 0 120px;background:url(../images/sales-24.jpg) 0 0 no-repeat;line-height:24px;}
+#content-3 p{padding:50px 0 50px 0;line-height:28px}
+#content-3 #article-1 span{font:700 24px "微軟正黑體";padding-left:245px}
+#content-3 #article-1 h3{font:700 92px "微軟正黑體";padding-left:240px}
+#content-3 #article-1{width:925px;border-left:25px solid #216EB8;position:relative;margin-top:50px}
+#h3-img{position:absolute;left:0;top:-62px}
+#content-3 #article-2{margin:50px 0;background:url(../images/sales-27.jpg) 450px 0 no-repeat}
+#content-3 #article-2 h4{font:700 65px "微軟正黑體";color:#216eb8}
+
+#content-4{background:url(../images/sales-28.jpg) 0 0 no-repeat;line-height:24px;}
+#content-4 p{padding:230px 0 50px 450px;}
+#content-4 .article{width:754px;margin:0 0 50px 0;padding-left:120px}
+#content-4 h4{background:url(../images/sales-30.jpg) top center no-repeat;height:100px;font:700 26px "微軟正黑體";line-height:32px;padding:45px 0 0 110px}
+
+#content-5{text-align:center;font:700 24px "微軟正黑體";background:url(../images/sales-31.jpg) 0 0 no-repeat;padding:280px 0 50px 0;line-height:32px;}
+#content-5 h3{font:700 68px "微軟正黑體";}
+#content-5 p{font:300 16px "微軟正黑體";margin:20px 0;line-height:28px;}

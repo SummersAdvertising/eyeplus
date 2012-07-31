@@ -22,4 +22,8 @@ class StaticPagesController < ApplicationController
   	@third_board_articles=@third_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
   	@fourth_board_articles=@fourth_board.articles.find(:all, :order => "updated_at desc", :limit => 2)
   end
+
+  def child
+    
+  end
 end

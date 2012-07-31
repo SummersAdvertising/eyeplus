@@ -1,0 +1,36 @@
+﻿#anchor{background:#30803E}
+#anchor a{margin:0 150px}
+
+#content-1{background:url(../images/sales-32.jpg) 0 0 no-repeat;}
+#content-1 h2{font:700 65px "微軟正黑體";color:#221e1f;padding:60px 0 0 150px}
+#content-1 h3{font:300 22px "微軟正黑體";color:#58595b;padding:0 0 0 155px;height:215px}
+#content-1 h4{font:700 40px "微軟正黑體";color:#fff;height:55px}
+#content-1 .article{background:#30803E;color:#fff;padding:20px 0 20px 120px;margin:20}
+#content-1 .article span{color:#fff057}
+
+#content-2{background:url(../images/sales-34.jpg) center top no-repeat;height:320px;margin:50px 0 0 0}
+#content-2 h2{font:700 65px "微軟正黑體";color:#30803e;padding:0 0 0 200px;line-height:70px}
+#content-2 h3{font:700 22px "微軟正黑體";color:#868686;padding:0 0 0 200px;}
+#content-2 .article{padding:30px 0 0 200px}
+#content-2 .article span{color:#be210e;font-weight:700}
+#sec-nav{overflow:hidden;padding:70px 0 0 120px;background:url(../images/sales-56.jpg) left bottom repeat-x;position:fixed;bottom:0px;width:1069px}
+#sec-nav li{float:left;margin:0 10px}
+#sec-nav li:hover{position:relative;top:-5px}
+
+#content-3 h3{font:700 41px "微軟正黑體";color:#30803e;padding:0 0 20px 0}
+#content-3 .article{width:860px;margin:50px auto 0 auto;padding:60px 0 0 90px;line-height:25px}
+#content-3 #article-1{background:url(../images/sales-39.jpg) 0 0 no-repeat}
+#content-3 #article-2{background:url(../images/sales-42.jpg) 0 0 no-repeat}
+#content-3 #article-3{background:url(../images/sales-46.jpg) 0 0 no-repeat}
+#content-3 #article-4{background:url(../images/sales-48.jpg) 0 0 no-repeat}
+#content-3 li,#content-3 span{color:#057bd0}
+
+#content-4{background:url(../images/sales-49.jpg) 0 0 no-repeat;padding-left:120px;margin-top:50px}
+#content-4 h2{font:700 65px "微軟正黑體";color:#057bd0;padding:60px 0 0 0}
+#content-4 h3{font:700 22px "微軟正黑體";color:#868686;height:85px}
+#content-4 .article{color:#fff;height:175px;line-height:28px}
+#content-4 h4{font:700 41px "微軟正黑體";color:#057bd0;padding:0 0 20px 0}
+#content-4 table{margin-bottom:50px}
+#content-4 table span{color:#30803e}
+
+#content-5{text-align:center;height:500px;background:url(../images/sales-55.jpg) bottom left no-repeat}
