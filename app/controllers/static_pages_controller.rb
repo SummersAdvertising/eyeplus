@@ -26,4 +26,12 @@ class StaticPagesController < ApplicationController
   def child
     
   end
+
+  def discomfort
+    
+  end
+
+  def glasses
+    
+  end
 end

@@ -17,6 +17,8 @@ EyePlus::Application.routes.draw do
 
   get "static_pages/discomfort"
 
+  get "static_pages/glasses"
+
   namespace :admin do
     resources :users
   end
