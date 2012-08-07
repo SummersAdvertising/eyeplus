@@ -13,7 +13,7 @@
 #content-2 h3{font:700 22px "微軟正黑體";color:#868686;padding:0 0 0 200px;}
 #content-2 .article{padding:30px 0 0 200px}
 #content-2 .article span{color:#be210e;font-weight:700}
-#sec-nav{overflow:hidden;padding:70px 0 0 120px;background:url(../images/sales-56.jpg) left bottom repeat-x;position:fixed;bottom:0px;width:1069px}
+#sec-nav{overflow:hidden;padding:70px 0 0 120px;background:url(../images/sales-56.jpg) left bottom repeat-x;position:fixed;bottom:0px;width:1069px;z-index:999}
 #sec-nav li{float:left;margin:0 10px}
 #sec-nav li:hover{position:relative;top:-5px}
 

@@ -33,7 +33,7 @@ h2,h3{display:none}
 #side a{font-size:11px}
 
 #content{width:606px;float:left;padding-top:5px}
-h4{font:700 24px "";background:url(/index-11.jpg) 0 33px no-repeat;}
+h4{font:700 24px "微軟正黑體";background:url(/index-11.jpg) 0 33px no-repeat;}
 .list{background:#fff;border:3px solid #f0f0f0;width:570px;padding:0 15px;font-size:12px;color:#747474}
 .list a{color:#000}
 .list a:hover{color:#3c8dcd}
@@ -50,7 +50,7 @@ h5 a{font-size:18px;color:#3088cb}
 #footer{clear:both;height:150px;background:url(/footer.jpg) center 0 no-repeat #000;margin-top:50px}	
 #info{background:url(/tel.jpg) 280px 37px no-repeat;width:940px;margin:0 auto;color:#fff;
 padding:40px 0 0 0;line-height:10px;height:100px;}
-#address{font:700 18px 華康黑體,微軟正黑體}
+#address{font:700 18px 微軟正黑體}
 #tel{display:none}
 #copyright{font-size:14px}
 
