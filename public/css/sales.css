@@ -13,6 +13,7 @@ h1 a{display:block;text-indent:-7777px;width:100%;height:100%;font-size:0px}
 #nav{float:right;margin:35px 175px 0 0}
 #nav li{float:left;font-size:13px;color:#fff;}
 #nav li a {font-size:13px;color:#fff;text-shadow:0 -1px 2px #000}
+#nav li a img{margin-top:-5px}
 #fb {position:absolute;top:25px;margin-left:15px;}
 #anchor{overflow:hidden;text-align:center;height:38px;padding:17px 0 0 0;box-shadow:0 3px 3px #777}
 #anchor a{color:#fff;font:700 18px "微軟正黑體"}
