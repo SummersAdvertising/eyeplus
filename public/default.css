@@ -40,12 +40,8 @@ h4{font:700 24px "微軟正黑體";background:url(/index-11.jpg) 0 33px no-repea
 .content-title{border-bottom:1px dashed #aaa;padding:10px 0}
 .content-title span{margin-right:5px}
 
-h5 a{font-size:18px;color:#3088cb}
+h5 a{font-size:18px;color:#3088cb;padding-left:10px}
 .column{color:#6e6e6e;font-size:14px;margin:25px 0 10px 0}
-#column-1{background:url(/index-12.jpg) right center no-repeat}
-#column-2{background:url(/index-13.jpg) right center no-repeat}
-#column-3{background:url(/index-14.jpg) right center no-repeat}
-#column-4{background:url(/index-15.jpg) right center no-repeat}
 
 #footer{clear:both;height:150px;background:url(/footer.jpg) center 0 no-repeat #000;margin-top:50px}	
 #info{background:url(/tel.jpg) 280px 37px no-repeat;width:940px;margin:0 auto;color:#fff;
