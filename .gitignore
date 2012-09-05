@@ -23,4 +23,10 @@
 /public/ckeditor_assets
 /public/system/
 
+/public/system/articles
+/public/system/boards
+
+/public/assets
+
 /.idea
+
