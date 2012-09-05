@@ -7,6 +7,8 @@ class QuestionsController < ApplicationController
     @questions = Question.where(:is_display => true).recent.page params[:page]  
     @question = Question.new
 
+    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
@@ -45,7 +47,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     # @question = Question.new(params[:question])
-    @questions = Question.all.reverse
+    @questions = Question.where(:is_display => true).recent.page params[:page]  
     @question = Question.new(params[:question])
     # @question.user_id = current_user.id
     # @question.save!
