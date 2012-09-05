@@ -1,7 +1,7 @@
 set :application, "eyeplus"
-set :domain, "linode.summers.com.tw"
+set :domain, "li406-49.members.linode.com"
 set :repository,  "git@github.com:SummersAdvertising/eyeplus.git"
-set :deploy_to, "/home/deploy/eyeplus"
+set :deploy_to, "/var/spool/RoR-Projects/eyeplus"
 
 role :app, domain
 role :web, domain
@@ -14,11 +14,9 @@ set :scm, :git
 set :branch, "master"
 set :scm_verbose, true
 set :use_sudo, false
-
-set :user, "deploy"
+set :user, "apps"
 set :password, "1qaz2wsx"
-# set :group, "webs"
-set :group, "deploy"
+set :group, "webs"
 
 default_environment["PATH"] = "/opt/ree/bin:/usr/local/bin:/usr/bin:/bin:/usr/games"
 
@@ -35,3 +33,12 @@ desc "Create database.yml and asset packages for production"
    db_config = "#{shared_path}/config/database.yml.production"
    run "cp #{db_config} #{release_path}/config/database.yml"
 end 
+
+namespace :deploy do
+	desc "restart"
+	task :restart do
+		run "ln -s  #{shared_path}/uploads #{current_path}/public/systems"
+		
+		run "cd #{current_path}; RAILS_ENV=production bundle exec rake cache:clear"
+	end
+end

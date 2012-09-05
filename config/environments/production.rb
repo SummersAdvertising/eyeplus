@@ -1,3 +1,14 @@
+def compile_asset?(path)
+  if File.basename(path) =~ /^[^_].*\.\w+$/
+    puts "Compiling: #{path}"
+    true
+  else
+    puts "Ignoring: #{path}"
+    false
+  end
+end
+		
+
 EyePlus::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -46,6 +57,8 @@ EyePlus::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile = [ method(:compile_asset?).to_proc ]
+  
   config.assets.precompile += %w( admin.js )
   config.assets.precompile += %w( questions.js )
   config.assets.precompile += %w( users.js )
@@ -84,7 +97,7 @@ EyePlus::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default :charset => "utf-8"  
 
   config.action_mailer.smtp_settings = {
       :address => "smtp.gmail.com",
