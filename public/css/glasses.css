@@ -1,0 +1,36 @@
+﻿#anchor{background:#BE210E}
+#anchor a{margin:0 150px}
+
+#content-1{background:url(../images/sales-02.jpg) top right no-repeat;}
+#content-1 h2{font:700 55px "微軟正黑體";color:#BE210E;padding:150px 0 0 150px}
+#content-1 h3{font:300 30px "微軟正黑體";color:#888888;padding:0 0 0 150px;height:168px}
+#content-1 h4{font:700 40px "微軟正黑體";color:#fff;height:55px}
+#content-1 .article{background: url(../images/sales-03.jpg) 850px center no-repeat #BE210E;color:#fff;padding:20px 0 20px 120px;margin:20}
+
+#content-2{background:url(../images/sales-05.jpg) center 88px no-repeat;}
+#content-2 .article{background:#fbe380;padding:20px 0 20px 120px}
+#content-2 .article span{color:#be210e;font-weight:700}
+#content-2 .images{height:372px;background:url(../images/sales-04.jpg) center center no-repeat}
+
+#content-3{background:url(../images/sales-07.jpg) 150px 90px no-repeat}
+#content-3 h3{background:#057BD2;padding:10px 0 10px 120px;color:#fff;border-bottom:10px solid #82BDE8;font:700 30px "微軟正黑體"}
+#content-3 .article{background:#057BD2;width:895px;margin:0 auto;padding:20px;color:#fff;margin-top:40px}
+#content-3 .images{height:220px;background: url(../images/sales-06.jpg) center 0 no-repeat;margin:30px 0}
+#content-3 h4{font:700 24px "微軟正黑體";padding:50px 0 0 140px}
+
+#content-4{background:url(../images/sales-08.jpg) 0 0 no-repeat}
+#content-4 h2{font:700 75px "微軟正黑體";color:#888;padding:100px 0 0 120px}
+#content-4 h3{font:700 23px "微軟正黑體";color:#888;padding:0 0 0 120px;height:120px}
+#content-4 h4{background:#be210e;padding:10px 0 10px 120px;color:#fff;border-bottom:10px solid #de9086;font:700 30px "微軟正黑體"}
+#content-4 .text{color:#057bd2;font:700 18px "微軟正黑體";padding:20px 0 60px 120px}
+#content-4 .article{padding:0 0 0 120px;margin-bottom:50px}
+#content-4 h5{font:700 36px "微軟正黑體";color:#be210e;background:url(../images/sales-10.jpg) 0 0 no-repeat;padding:5px 0 0 15px;height:65px}
+#content-4 #article-1{background:url(../images/sales-09.jpg) 640px center no-repeat}
+#content-4 #article-2 .images{margin-top:50px;background:url(../images/sales-11.jpg) center 0 no-repeat ; height:397px}
+#content-4 #article-3{background:url(../images/sales-12.jpg) 670px bottom no-repeat}
+#content-4 #article-4{background:url(../images/sales-15.jpg) 745px bottom no-repeat}
+#content-4 #article-4 .images{background:url(../images/sales-16.jpg) 0 0 no-repeat ;width:503px;height:300px}
+
+#content-5{background:url(../images/sales-14.jpg) 0 0 repeat-y;text-align:center;padding:40px 0}
+
+

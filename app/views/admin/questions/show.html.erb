@@ -1,36 +1,23 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <b>Title:</b>
-  <%= @question.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @question.content %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @question.email %>
-</p>
-
-<p>
-  <b>Is private:</b>
-  <%= @question.is_private %>
-</p>
-
-<p>
-  <b>user_name:</b>
-  <%= @question.user_name %>
-</p>
-
-<h2>answers</h2>
-<%= render @question.answers %>
-
-<h2>Add a answer:</h2>
-<%= render "admin/answers/form" %>
-
-
-
-<%= link_to 'Edit', edit_admin_question_path(@question) %> |
-<%= link_to 'Back', admin_questions_path %>
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title">
+      <div class="publish"><%= @question.created_at.to_date %></div>
+      <div class="title"><span id="name"><%= @question.user_name %></span><span id="mail"><%= @question.email %></span></div>
+    </div>
+    <div class="main-text"><%= @question.content.gsub("\n", "<br />").html_safe %></div>
+    <div class="button"><a href="<%=new_admin_question_answer_path(@question)%>"><img src="<%=image_path("admin/reply.png")%>">回覆</a></div>
+    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
+    <%= render @question.answers %>   
+    <!--main--> 
+  </div>
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->

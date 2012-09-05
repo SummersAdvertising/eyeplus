@@ -1,5 +1,29 @@
 EyePlus::Application.routes.draw do
-  devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
+
+  devise_for :users do
+    get 'users', :to => 'admin/posts#index', :as => :user_root # Rails 3
+  end
+
+  get "static_pages/introduction"
+
+  get "static_pages/staff"
+
+  get "static_pages/services"
+
+  get "static_pages/home"
+
+  get "static_pages/child"
+
+  get "static_pages/discomfort"
+
+  get "static_pages/glasses"
+
+  namespace :admin do
+    resources :users
+  end
+
+  # resources :users
 
   namespace :admin do
     resources :default_facebooks
@@ -88,7 +112,12 @@ EyePlus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'posts#index'
+  root :to => 'static_pages#home'
+
+  # match "/patients/:id" => "patients#show"
+  match "/news" => "posts#index"
+  match "/news/:id" => "posts#show"
+  
 
   # See how all your routes lay out with "rake routes"
 

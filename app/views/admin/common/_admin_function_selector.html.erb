@@ -1,0 +1,30 @@
+<%if (request.original_fullpath.include?("/admin/posts")) && (!request.original_fullpath.include?("/admin/users"))%>   
+	<li><a href="<%="/admin/posts"%>" id="posts" class="active">最新消息</a></li>
+<% else %>
+	<li><a href="<%="/admin/posts"%>" id="posts">最新消息</a></li>
+<% end %>
+
+<%if request.original_fullpath.include?("/admin/questions") %>   
+	<li><a href="<%="/admin/questions"%>" id="questions" class="active">醫師答客問</a></li>
+<% else %>
+	<li><a href="<%="/admin/questions"%>" id="questions">醫師答客問</a></li>
+<% end %>
+
+<%@tempboard=Board.find(:all, :limit => 1, :order=> 'order_number asc').first%>
+<%if request.original_fullpath.include?("/admin/boards/") %>
+	<li><a href="<%="/admin/boards/"+@tempboard.id.to_s()%>" id="boards" class="active">醫療專欄</a></li>
+<% else %>
+	<li><a href="<%="/admin/boards/"+@tempboard.id.to_s()%>" id="boards">醫療專欄</a></li>
+<% end %>
+
+<%if current_user.is_super_admin == true %>
+	<%if request.original_fullpath.include?("/admin/users")%>   
+		<li><a href="<%="/admin/users"%>" id="users" class="active">使用者管理</a></li>
+	<% else %>
+		<li><a href="<%="/admin/users"%>" id="users">使用者管理</a></li>
+	<% end %>
+<% end %>
+
+
+
+

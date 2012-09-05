@@ -1,0 +1,147 @@
+<div id="top">
+  <div id="top-nav">    
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-nav--> 
+</div>
+<!--top-->
+<div id="header">
+  <h2>雙重權威，打造新圓滿視界─結合醫療與配鏡，完美團隊誕生</h2>
+  <h3>眼科醫學權威與專業視光首次聯手、搭配國際頂級驗光配鏡設備  一切眼睛的問題從此完美解決，全面守護您的靈魂之窗</h3>
+  <div id="banner"><img src="<%=image_path("application/circle-o.png")%>" id="circle-o" class="circle"> <img src="<%=image_path("application/circle-i.png")%>" id="circle-i" class="circle"> </div>
+  <!--banner--> 
+</div>
+<!--header-->
+<div id="container">
+  <div id="main">
+<%= render :partial => "common/sales" %>
+    <!--sales-->
+	    <div id="category">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:50px 0 0 0">
+  <tr>
+    <td><a href="<%=board_path(@first_board)%>"><img src="<%=image_path("application/index-16.jpg")%>" height="100" /></a>
+      </td>
+    <td><a href="<%=board_path(@second_board)%>"><img src="<%=image_path("application/index-17.jpg")%>" height="100" /></a>
+      </td>
+    <td><a href="<%=board_path(@third_board)%>"><img src="<%=image_path("application/index-18.jpg")%>" height="100" /></a>
+      </td>
+    <td><a href="<%=board_path(@fourth_board)%>"><img src="<%=image_path("application/index-19.jpg")%>" height="100" /></a>
+      </td>
+  </tr>
+</table>
+
+    </div><!--category-->
+    <div id="content">
+    <h4 style="padding:25px 0 25px 25px">最新消息</h4>
+      <div class="list">
+        <% @posts.each do |post| %>
+          <%if !(post == @posts.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
+            <li><span><%= post.updated_at.to_date %></span><a href="<%=post_path(post)%>"><%= post.title %></a></li>
+          </ul>
+        <% end %>
+      </div>
+      <!--list--> 
+      <h4 style="padding:25px 0 0 25px">駐診醫師專欄</h4>
+      <div class="column" id="column-1">
+      <h5><a href="<%=board_path(@first_board)%>">保護與矯正兒童視力</a></h5>
+      </div>
+      <div class="list">        
+        <% @first_board_articles.each do |article| %>       
+          <%if !(article == @first_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@first_board,article)%>"><%= article.title %></a></li>
+        </ul>
+        <% end %>        
+      </div>
+      <!--list--> 
+      <div class="column" id="column-2">
+      <h5><a href="<%=board_path(@second_board)%>">近視與角膜塑型術</a></h5>
+      
+      </div>
+      <div class="list">        
+        <% @second_board_articles.each do |article| %>        
+          <%if !(article == @second_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@second_board,article)%>"><%= article.title %></a></li>
+        </ul>
+        <% end %>        
+      </div>
+      <!--list-->
+      <div class="column" id="column-3">
+      <h5><a href="<%=board_path(@third_board)%>">個人化配鏡指南</a></h5>
+      
+      </div>
+      <div class="list">        
+        <% @third_board_articles.each do |article| %>    
+          <%if !(article == @third_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@third_board,article)%>"><%= article.title %></a></li>
+        </ul>
+        <% end %>        
+      </div>
+      <!--list-->
+      <div class="column" id="column-4">
+      <h5><a href="<%=board_path(@fourth_board)%>">對抗老花、白內障</a></h5>
+      
+      </div>
+      <div class="list">        
+        <% @fourth_board_articles.each do |article| %>    
+          <%if !(article == @fourth_board_articles.last)%>
+            <ul class="content-title">
+          <% else %>   
+            <ul class="content-title no-border"> 
+          <% end %>
+          <li><span><%= article.updated_at.to_date %></span><a href="<%=board_article_path(@fourth_board,article)%>"><%= article.title %></a></li>
+        </ul>
+        <% end %>        
+      </div>
+      <!--list-->
+      
+    </div>
+    <!--content-->
+    <div id="side">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><img src="<%=image_path("application/intro-01.jpg")%>" width="283" height="427" /></td>
+        </tr>
+        <tr>
+          <td><img src="<%=image_path("application/index-09.jpg")%>" width="283" height="162" /></td>
+        </tr>
+        <tr>
+          <td>交通資訊<br />
+            公車：在【民權龍江路口】或【捷運中山國中站】下<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;車，走路約3-5分鐘<br />
+            捷運：【捷運中山國中站】下車，走路約3-5分鐘<br />
+            停車場：【榮星公園地下停車場】<br />
+            停車場：【民權東路三段及龍江路路邊停車】</td>
+        </tr>
+        <tr>
+          <td><a target="_blank" href="https://maps.google.com.tw/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&hl=zh-TW&ie=UTF8&sll=23.63446,120.970459&sspn=10.204465,16.204834&brcurrent=3,0x3442abf2b1d366ed:0x5d62b36fc2a1bb86,0,0x3442ac6b61dbbd9d:0xc0c243da98cba64b&hnear=104%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&t=m&z=17"><img src="<%=image_path("application/index-10.jpg")%>" width="283" height="201" /></a></td>
+        </tr>
+        <tr>
+          <td><a target="_blank" href="https://maps.google.com.tw/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&hl=zh-TW&ie=UTF8&sll=23.63446,120.970459&sspn=10.204465,16.204834&brcurrent=3,0x3442abf2b1d366ed:0x5d62b36fc2a1bb86,0,0x3442ac6b61dbbd9d:0xc0c243da98cba64b&hnear=104%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&t=m&z=17">檢視較大的地圖</a></td>
+        </tr>
+      </table>
+    </div>
+    <!--side--> 
+  </div>
+  <!--main-->
+  <%= render :partial => "common/footer" %>
+
+<!--footer--> 
+</div>
+<!--container-->

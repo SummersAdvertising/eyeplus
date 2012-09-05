@@ -1,8 +1,0 @@
-production:
-	adapter: mysql2
-	encoding: utf8
-	reconnect: false
-	database: eyeplus
-	pool: 5
-	username: production
-	password: 1qaz2wsx

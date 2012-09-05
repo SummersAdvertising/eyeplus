@@ -1,37 +1,92 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div id="header">
+  <div id="top">
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>醫師答客問</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
 
-      <ul>
-      <% @question.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div id="container">
+  <div id="bread-crumbs"><a href="<%=root_path%>">首頁</a> > <a href="<%=questions_path%>">醫師答客問</a></div>
+  <!--bread-crumbs-->
+  <div id="main">
+    <%= form_for(@question) do |f| %>
+    <div id="form">      
+      <table width="285px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>姓名：
+            <%= f.text_field :user_name, :id => "form-name" %></td>
+        </tr>
+        <tr>
+          <td>Email：
+            <%= f.text_field :email, :id => "form-mail" %></td>
+        </tr>
+        <tr>
+          <td>詢問內容：<br>
+            <%= f.text_area :content, :id => "form-ta" %>&nbsp;</textarea></td>
+        </tr>
+        <tr>
+          <td><%= f.check_box :is_private, :id => "form-ck" %>
+            不要顯示我的留言<br>
+            <span>醫師會回覆到您填寫的Email信箱</span></td>
+        </tr>
+        <tr>
+          <td align="center" id="form-send">
+            <%= f.submit ""%>
+          </td>
+        </tr>
+      </table>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <% end %>
+    <!--form-->
+    <div id="board">
+      <% @questions.each do |question| %>
+        <%if question.is_private == false %>
+          <div class="msg">
+            <table width="100%" border="0" cellspacing="10" cellpadding="0">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td width="20%" class="q-name"><%= question.user_name %></td>
+                      <td width="80%" class="q-text"><span class="publish"><%=question.created_at.to_date%>  <%=question.created_at.strftime("%I:%M%p")%></span><p><%= question.content %></p></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+                  <%= render question.answers %>           
+            </table>
+          </div>            
+        <% else %>  
+          <div class="msg hidden">
+            <table width="100%" border="0" cellspacing="10" cellpadding="0">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td width="20%" class="q-name"><%= question.user_name %></td>
+                      <td width="80%" class="q-text"><span class="publish"><%=question.created_at.to_date%>  <%=question.created_at.strftime("%I:%M%p")%></span><p>隱藏內容</p></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <!--board--> 
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :is_private %><br />
-    <%= f.check_box :is_private %>
-  </div>
-  <div class="field">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <!--main--> 
+</div>
+<!--container-->
+<%= render :partial => "common/footer" %>
+<!--footer-->

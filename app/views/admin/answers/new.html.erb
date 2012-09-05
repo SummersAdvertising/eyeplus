@@ -1,0 +1,26 @@
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title">
+      <div class="publish"><%= @question.created_at.to_date %></div>
+      <div class="title"><%= @question.user_name %></div>
+    </div>
+    <div class="main-text"><%= @question.content.gsub("\n", "<br>").html_safe  %></div>
+    <%= form_for @answer, :url => admin_question_answers_path(@question,@answer) do |f| %>
+    <div class="main-text" id="main-text-reply"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%>     
+    </div>
+    <div class="button"><a href="#"><%= f.submit "" %><img src="<%=image_path("admin/mail.png")%>">儲存寄出</a></div>
+    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/cancel.png")%>">取消</a></div>
+    <!--main--> 
+    <% end %>
+  </div>
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->

@@ -1,0 +1,26 @@
+<%= form_for([:admin,@user]) do |f| %>
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-form">
+      <table width="100%" border="0" cellpadding="0" cellspacing="10" >
+        <tr>
+          <td align="right" height="30" width="25%">是否給予權限</td>
+          <td align="left" height="30" width="75%"><%= f.check_box :is_admin %></td>
+        </tr>
+      </table>
+    </div>
+    <!--main-form-->
+    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>">儲存</div>
+    <div class="button"><a href="<%=admin_users_path%>"><%=image_tag("admin/cancel.png")%>取消</a></div>  
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->
+<% end %>

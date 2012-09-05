@@ -1,0 +1,11 @@
+#banner {background:url(/assets/application/banner-library.jpg) right -2px no-repeat}
+#category li{height:45px}
+#category a{color:#C0C0C0;font-size:18px;letter-spacing:2px}
+#category img{opacity:.3;filter:alpha(opacity=30);padding:0 10px 0 0;position:relative;top:3px}
+#category .active a {color:#000}
+#category .active img{opacity:1;filter:alpha(opacity=100)}
+#main{overflow:hidden;}
+#list{margin:20px 0}
+h3 {font:300 46px "微軟正黑體";padding-left:25px;text-shadow:0 1px 0 #fff,0 0 3px #ccc}
+h4 {font:700 26px "微軟正黑體";padding-left:25px;}
+#content span{font-size:16px;color:#747474;padding-left:25px}

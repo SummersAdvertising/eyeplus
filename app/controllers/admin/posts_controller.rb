@@ -7,7 +7,7 @@ class Admin::PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.recent.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -39,8 +39,8 @@ class Admin::PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    # @post = Post.find(params[:id])
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    # @post = current_user.posts.find(params[:id])
   end
 
   # POST /posts
@@ -75,8 +75,8 @@ class Admin::PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    # @post = Post.find(params[:id])
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    # @post = current_user.posts.find(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -99,8 +99,8 @@ class Admin::PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    # @post = Post.find(params[:id])
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    # @post = current_user.posts.find(params[:id])
     @post.destroy
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)

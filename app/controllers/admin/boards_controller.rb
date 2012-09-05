@@ -17,7 +17,9 @@ class Admin::BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @articles = @board.articles.all    
+    @articles = @board.articles.recent.all    
+
+    get_four_boards(@board)  
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,8 +40,8 @@ class Admin::BoardsController < ApplicationController
 
   # GET /boards/1/edit
   def edit
-    # @board = Board.find(params[:id])
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
+    # @board = current_user.boards.find(params[:id])
   end
 
   # POST /boards
@@ -62,8 +64,8 @@ class Admin::BoardsController < ApplicationController
   # PUT /boards/1
   # PUT /boards/1.json
   def update
-    # @board = Board.find(params[:id])
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
+    # @board = current_user.boards.find(params[:id])
 
     respond_to do |format|
       if @board.update_attributes(params[:board])
@@ -79,8 +81,8 @@ class Admin::BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
-    # @board = Board.find(params[:id])
-    @board = current_user.boards.find(params[:id])
+    @board = Board.find(params[:id])
+    # @board = current_user.boards.find(params[:id])
     @board.articles.destroy_all
     @board.destroy
 

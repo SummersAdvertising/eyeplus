@@ -2,7 +2,10 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    # @questions = Question.all.reverse
+    # @questions = Question.recent.page params[:page]  
+    @questions = Question.where(:is_display => true).recent.page params[:page]  
+    @question = Question.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,12 +45,15 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     # @question = Question.new(params[:question])
+    @questions = Question.all.reverse
     @question = Question.new(params[:question])
     # @question.user_id = current_user.id
+    # @question.save!
+    # redirect_to questions_path
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to questions_path, notice: 'Question was successfully created.' }
         format.json { render json: @question, status: :created, location: @question }
       else
         format.html { render action: "new" }

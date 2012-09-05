@@ -14,5 +14,13 @@
 /log/*.log
 /tmp
 
-# Ignore all files in the public.
-/public
+#Ignore production.rb
+/config/deploy/production.rb
+
+#Ignore database.yml.production
+/config/database.yml.production
+
+/public/ckeditor_assets
+/public/system/
+
+/.idea

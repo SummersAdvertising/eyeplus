@@ -12,7 +12,7 @@
 <% @boards.each do |board| %>
   <tr>
     <td><%= board.name %></td>
-    <td><%= board.order %></td>
+    <td><%= board.order_number %></td>
     <td><%= link_to 'Show', admin_board_path(board) %></td>
     <td><%= link_to 'Edit', edit_admin_board_path(board) %></td>
 <!--     <td><%= link_to 'Destroy', admin_board_path(board), confirm: 'Are you sure?', method: :delete %></td> -->

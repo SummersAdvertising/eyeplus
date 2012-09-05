@@ -1,0 +1,72 @@
+<%if request.original_fullpath.include?("/static_pages/introduction") %> 
+	<%= stylesheet_link_tag    "introduction", :media => "all" %>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/staff") %> 
+	<%= stylesheet_link_tag    "staff", :media => "all" %>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/services") %> 
+	<%= stylesheet_link_tag    "services", :media => "all" %>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/child") %> 
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/reset.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/sales.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/child.css"%>">
+<script type="text/javascript" src="<%=get_current_host_and_port+"js/AnchorArt.js"%>"></script>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/discomfort") %> 
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/reset.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/sales.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/discomfort.css"%>">
+<script type="text/javascript" src="<%=get_current_host_and_port+"js/AnchorArt.js"%>"></script>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/glasses") %> 
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/reset.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/sales.css"%>">
+<link rel="stylesheet" href="<%=get_current_host_and_port+"css/glasses.css"%>">
+<script type="text/javascript" src="<%=get_current_host_and_port+"js/AnchorArt.js"%>"></script>
+<% end %>
+
+<%if request.original_fullpath.include?("/static_pages/home") || request.original_fullpath==root_path %> 
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/default.css">
+	<script type="text/javascript" src="/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="/jQueryRotate.2.2.js"></script>
+	<script type="text/javascript">
+		var angle = 0;
+		setInterval(function(){
+      	angle+=0.03;
+     	$("#circle-o").rotate(angle);
+		},0);
+	</script>
+	<style>
+		#circle-o{}
+	</style>
+<% end %>
+
+<%if request.original_fullpath.include?("/boards") %> 
+	<%= stylesheet_link_tag    "boards", :media => "all" %>
+	<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "3cb2fe9c-347c-4063-9491-fa0d0522b74b"}); </script>
+<% end %>
+<%if request.original_fullpath.include?("/posts") %> 
+	<%= stylesheet_link_tag    "posts", :media => "all" %>
+<% end %>
+
+<%if request.original_fullpath.include?("/news") %> 
+	<%= stylesheet_link_tag    "posts", :media => "all" %>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "3cb2fe9c-347c-4063-9491-fa0d0522b74b"}); </script>
+<% end %>
+
+<%if request.original_fullpath.include?("/questions") %> 
+	<%= stylesheet_link_tag    "questions", :media => "all" %>
+	<%= javascript_include_tag "questions" %>
+<% end %>
+

@@ -1,0 +1,19 @@
+<div id="side">
+  <div id="list">
+    <% @posts.each do |post| %>
+      <% if post == @posts.last %>
+        <ul class="content-title no-border">             
+      <% else %>
+        <ul class="content-title">              
+      <% end %>        
+        <li><%= post.created_at.to_date %></li>
+        <li><a href="/news/<%=post.id%><%="?page="+params[:page].to_s() if !params[:page].blank?%>"><%= post.title %></a></li>
+        </ul>        
+      <% end %>
+  </div><!--list-->
+  <div id="page">
+    <ul>
+      <%= paginate @posts %>
+    </ul>
+  </div><!--page-->
+</div><!--side-->

@@ -3,11 +3,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @posts = Post.all  
-    @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
+    # @posts = Post.all
+    @posts = Post.recent.page params[:page]  
+    @post = @posts[0]
+    # @posts =  Post.recent.paginate(:page => params[:page], :per_page => 5 )
     @conditionUrl = "posts"
     @facebook = getFacebook(@conditionUrl)
-    encodeURIComponent
+    # encodeURIComponent
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,13 +21,14 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @posts = Post.recent.page params[:page]
+    # @post_show = @posts[0]
 
     @conditionUrl = "posts/" + @post.id.to_s()
     @facebook = getFacebook(@conditionUrl)
-    encodeURIComponent
 
-    respond_to do |format|
-      format.html # show.html.erb
+    respond_to do |format|      
+      format.html 
       format.json { render json: @post }
     end
   end

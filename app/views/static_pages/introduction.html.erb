@@ -1,0 +1,94 @@
+<div id="header">
+  <div id="top">
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>診所介紹</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
+<div id="container">
+  <%= render :partial => "common/crumb_selector" %>
+  <!--bread-crumbs-->
+  <div id="main">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="38%"><h3>門診時間</h3>
+                <p class="text"><img src="<%=image_path("application/intro-01.jpg")%>"></p></td>
+              <td width="62%" valign="top"><h3>交通資訊</h3>
+                <p class="text"><a target="_blank" href="https://maps.google.com.tw/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&hl=zh-TW&ie=UTF8&ll=25.061975,121.542027&spn=0.00621,0.010847&sll=23.63446,120.970459&sspn=10.204465,16.204834&brcurrent=3,0x3442abf2b1d366ed:0x5d62b36fc2a1bb86,0,0x3442ac6b61dbbd9d:0xc0c243da98cba64b&hnear=104%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%B0%91%E6%AC%8A%E6%9D%B1%E8%B7%AF%E4%B8%89%E6%AE%B556%E8%99%9F&t=m&z=17"><img src="<%=image_path("application/intro-02.jpg")%>"></a></p></td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td><img src="<%=image_path("application/intro-03.jpg")%>" alt="眼科醫師與視光師的完美結合─從看眼睛到配眼鏡，給您最佳的眼睛照護服務" style="padding:25px 25px 0 25px">
+          <p class="text">國內首創的「視光眼科診所」，由台大榮總眼科專科醫師與中山醫學視光師群（全國視光學最高學府）聯手合作，搭配國際頂級視覺光學檢查儀器，打造兼顧醫學檢查與矯正光學的真正專業團隊。
+            
+            除了量身打造兼顧「生理需求」與「光學專業」的個人化配鏡及角膜塑型服務，聚英視光眼科也是國內少數的幼兒視力檢查、兒童視覺訓練專家，並提供斜弱視治療、近視控制、無刀準分子雷射近視手術、老花眼與白內障治療等服務，是您從小到大皆可信任的視覺醫療、矯正團隊。</p></td>
+      </tr>
+      <tr>
+        <td><h3>精密儀器</h3>
+          
+          <table width="889" border="0" cellspacing="0" cellpadding="0" style="margin:25px">
+            <tr>
+              <td width="31%"><img src="<%=image_path("application/intro-04.jpg")%>"></td>
+              <td colspan="2" align="left" valign="top"><h4>Rodenstock 3D 瞳孔定位儀</h4>
+                瞳孔定位儀中的勞斯萊斯，3D攝影技術可直接測量您配戴鏡<br>
+                框後框面與角膜之距離、傾斜角、框面弧度、配戴時的焦距與<br>
+                眼位，更具備電腦配框諮詢與模擬圖，可清楚模擬鏡片製作後<br>
+                的效果。</td>
+            </tr>
+            <tr>
+              <td height="311"><img src="<%=image_path("application/intro-05.jpg")%>"></td>
+              <td width="7%"><img src="<%=image_path("application/intro-06.jpg")%>"></td>
+              <td width="62%"><h4>角膜內皮細胞顯微分析儀</h4>
+                又叫做「角膜內皮顯微鏡」，能夠分析角膜<br>
+                內皮細胞的大小、形態、數量，瞭解病情、<br>
+                判斷手術或治療對角膜內皮細胞的影響。</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table width="889" border="0" cellspacing="0" cellpadding="0" style="margin:0 25px 25px 25px">
+  <tr>
+    <td width="406"><img src="<%=image_path("application/intro-09.jpg")%>"></td>
+    <td width="483"><h4>眼底視網膜數位照相儀</h4>
+    能檢查視網膜、黃斑部、視神經盤及視網<br>
+    膜血管的健康情形，對於高度近視、青光<br>
+    眼、黃斑部病變，甚至心血管疾病、風濕<br>
+    免疫性疾病來說都是極為重要的檢查。</td>
+  </tr>
+</table>
+
+    <table width="889" border="0" cellspacing="0" cellpadding="0" style="margin:0 25px 25px 25px">
+  <tr>
+    <td width="52%" align="left" style="padding:0 0 0 70px"><h4>綜合驗光儀</h4>
+    不僅可用來檢查遠近視等屈光不正問題，還具<br>
+    有檢查眼外肌的功能，能有效輕鬆的變換各種<br>
+    鏡片，使得操作更方便精確。
+    </td>
+    <td width="48%"><img src="<%=image_path("application/intro-07.jpg")%>"></td>
+  </tr>
+</table>
+<table width="889" border="0" cellspacing="0" cellpadding="0" style="margin:0 25px 50px 25px">
+  <tr>
+    <td width="406"><img src="<%=image_path("application/intro-08.jpg")%>"></td>
+    <td width="483"><h4>角膜地圖儀</h4>
+    檢查角膜健康狀況，並以等高線的方式呈<br />
+    現出表面的高低起伏，就像繪製角膜的地形圖。</td>
+  </tr>
+</table>
+
+
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<%= render :partial => "common/footer" %>
+<!--footer-->

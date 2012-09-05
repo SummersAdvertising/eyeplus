@@ -1,49 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @board.name %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%= @board.order %>
-</p>
-
-<% if @board.excerpt_image %>
-  <p>
-    <%= image_tag(@board.excerpt_image.url(:medium)) %>
-  </p>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Created At</th>
-    <th>Updated At</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-<tr>
-    <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= l(article.created_at, :format => :short)%></td>
-    <td><%= l(article.updated_at, :format => :short)%></td>
-    <td><%= link_to 'Show', board_article_path(@board,article) %></td>
-<!--     <% if current_user && article.user == current_user %>
-      <td><%= link_to 'Edit', edit_board_article_path(@board,article) %></td>
-      <td><%= link_to 'Destroy', board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %> -->
-</tr>
-<% end %>
-</table>
-<%= will_paginate(@articles)%>
-<br>
-<!-- <%= link_to 'New Article', new_board_article_path(@board) %> -->
-<br><br>
-<!-- <%= link_to 'Edit', edit_board_path(@board) %> | -->
-<%= link_to 'Back', boards_path %>
+<div id="header">
+  <div id="top">
+    <%= render :partial => "common/nav" %>
+    <!--nav--> 
+  </div>
+  <!--top-->
+  <div id="banner">
+    <h2>駐診醫師專欄</h2>
+  </div>
+  <!--banner--> 
+</div>
+<!--header-->
+<div id="container">
+  <%= render :partial => "common/crumb_selector" %>
+  <!--bread-crumbs-->
+  <div id="main">
+    <div id="side">
+      <ul id="category">
+        <%= render :partial => "common/board_selector" %>
+      </ul><!--category-->
+      <%= render :partial => "common/display_article_item" %>
+    </div>
+    <!--side-->
+    <%= render :partial => "common/board_side_content" %>
+    <!--content--> 
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<%= render :partial => "common/footer" %>
+<!--footer-->

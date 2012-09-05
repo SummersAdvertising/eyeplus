@@ -1,0 +1,25 @@
+#banner {background:url(/assets/application/banner-qa.jpg) right -4px no-repeat}
+#form{width:285px;float:left;margin:0 0 0 25px}
+#form-name,#form-mail,#form-ta,#form-ck{border:3px solid #F0F0F0;padding:5px;border-radius:5px}
+#form input:focus,#form-ta:focus{border:3px solid #C2D8EF}
+#form-send input:focus{border:none!important}
+#form-name{width:216px}
+#form-mail{width:207px}
+#form-ta{width:268px;min-height:300px}
+#form-send input{width:202px;height:43px;background:url(/assets/application/qa-01.jpg) 0 0 no-repeat;border:none;cursor:pointer}
+#form-send input:hover{background:url(/assets/application/qa-02.jpg) 0 0 no-repeat;}
+#form td{padding:0 0 10px 0}
+#form span{font-size:12px;margin: 0 0 0 23px}
+#board{float:right;width:630px}
+.msg{border:3px solid #F0F0F0;margin:0 0 10px 10px;border-radius:5px}
+.q-name{color:#f05b01;font-size:18px;background:url(/assets/application/news-02.jpg) right top no-repeat}
+.hidden .q-text{color:#4d8a19}
+.q-text{background:#fcf4d9;padding:5px 10px}
+.q-text .publish{color:#f05b01;font-size:12px}
+.a-name{color:#3088cb;font-size:18px;background:url(/assets/application/news-03.jpg) left top no-repeat}
+.a-text{background:#ececec;padding:5px 10px}
+.a-text .publish{color:#3088cb;font-size:12px}
+#footer{position:relative;top:50px}
+.message{color:red;font:300 12px "";width:100%;position:absolute;margin-top:-18px;margin-left:-85px}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ #form input:focus,#form-ta:focus{border:3px solid #F0F0F0} }

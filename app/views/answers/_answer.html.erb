@@ -1,7 +1,10 @@
-  <p>
-    <b>answer:</b>
-    <%= answer.content %>
-    <%= link_to 'Destroy Answer', [answer.question, answer],
-               :confirm => 'Are you sure?',
-               :method => :delete %>
-  </p>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top">
+    			<td width="80%" class="a-text"><span class="publish"><%=answer.created_at.to_date%>  <%=answer.created_at.strftime("%I:%M%p")%></span><p><%= answer.content %></p></td>
+        		<td width="20%" align="right" class="a-name"><%=User.where(:id => answer.user_id).first.user_name %></td>
+    		</tr>
+		</table>   
+    </td>
+</tr>

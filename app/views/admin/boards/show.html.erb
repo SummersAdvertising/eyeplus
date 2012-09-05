@@ -1,44 +1,43 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @board.name %>
-</p>
-
-<p>
-  <b>Order:</b>
-  <%= @board.order %>
-</p>
-
-<% if @board.excerpt_image %>
-  <p>
-    <%= image_tag(@board.excerpt_image.url(:medium)) %>
-  </p>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-<tr>
-    <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= link_to 'Show', admin_board_article_path(@board,article) %></td>
-    <% if current_user && article.user == current_user %>
-      <td><%= link_to 'Edit', edit_admin_board_article_path(@board,article) %></td>
-      <td><%= link_to 'Destroy', admin_board_article_path(@board,article), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-</tr>
-<% end %>
-</table>
-<br>
-<%= link_to 'New Article', new_admin_board_article_path(@board) %>
-<br><br>
-<%= link_to 'Edit', edit_admin_board_path(@board) %> |
-<%= link_to 'Back', admin_boards_path %>
+<%= render :partial => "admin/common/admin_top" %>
+<div id="container">
+  <div id="side" class="left">
+    <ul>
+      <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="main-title">
+      <div class="publish">專欄分類</div>
+      <div class="title">
+        <%= render :partial => "admin/common/admin_board_selector" %>
+      </div>
+    </div>
+    <div class="button" style="margin-top:10px"><a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>
+    <div class="main-list">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="main-list-title">
+          <th width="16%" align="center" scope="col">日期</th>
+          <th width="48%" align="left" scope="col">標題</th>
+          <th width="20%" align="center" scope="col">撰寫人</th>
+          <th width="8%" align="center" scope="col">編輯</th>
+          <th width="8%" align="center" scope="col">刪除</th>
+        </tr>
+        <% @articles.each do |article| %>
+          <tr>
+            <td align="center"><%= article.created_at.to_date %></td>
+            <td align="left"><a href="<%=admin_board_article_path(@board,article)%>"><%= article.title %></a></td>
+            <td align="center"><%=User.where(:id => article.user_id).first.user_name %></td>
+            <td align="center"><a href="<%=edit_admin_board_article_path(@board,article)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
+            <td align="center"><a href='<%=admin_board_article_path(@board,article)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a>
+            </td>
+          </tr>  
+        <% end %>     
+      </table>     
+    </div>
+  </div>
+  <!--main--> 
+</div>
+<!--container-->
+<div id="footer"></div>
+<!--footer-->

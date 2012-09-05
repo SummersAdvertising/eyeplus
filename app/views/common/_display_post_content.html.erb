@@ -1,0 +1,19 @@
+<div id="content"> 
+    <span><%= @post.created_at.to_date %></span>
+    <h3><%= @post.title %></h3> 
+    <div class="text">
+      <%= @post.content.gsub("\n", "<br />").html_safe %>
+    </div>
+</div><!--content-->
+<div id="share_button">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_plurk"></a>
+<a class="addthis_button_email"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50050ff727d6ae6e"></script>
+<!-- AddThis Button END -->
+</div><!--share_button-->

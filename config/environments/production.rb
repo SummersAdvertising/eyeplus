@@ -46,7 +46,20 @@ EyePlus::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( admin.js )
+  config.assets.precompile += %w( questions.js )
+  config.assets.precompile += %w( users.js )
+
+  config.assets.precompile += %w( admin.css )
+  config.assets.precompile += %w( boards.css )
+  config.assets.precompile += %w( introduction.css )
+  config.assets.precompile += %w( posts.css )
+  config.assets.precompile += %w( questions.css )  
+  config.assets.precompile += %w( services.css )
+  config.assets.precompile += %w( staff.css )
+  config.assets.precompile += %w( users.css )
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
+  config.assets.precompile += %w( ckeditor/* )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -64,4 +77,22 @@ EyePlus::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.action_mailer.default_url_options = { :host => 'eyeplus.summers.com.tw' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => "587",
+      :domain => "gmail.com",
+      :authentication => "plain",
+      :user_name => "rails.test.action.mailer@gmail.com",
+      :password => "3edc&UJM",
+      :enable_starttls_auto => true
+   }
 end

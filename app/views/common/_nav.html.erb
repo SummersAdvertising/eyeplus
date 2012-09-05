@@ -1,0 +1,22 @@
+<style>
+#fb{background:url(<%=image_path("application/fb.jpg")%>) 0 0 no-repeat;width:35px;height:34px;}
+.FBConnectButton_Simple, .FBConnectButton_RTL_Simple{background:none!important}
+</style>
+<h1><a href="<%=root_path%>">聚英視光眼科診所</a></h1>
+<ul id="nav">
+      <li><a href="<%=root_path%>" >回首頁</a></li>
+	  <li>│</li>
+	  <li><a href="<%=static_pages_introduction_path%>">診所介紹</a></li>
+	  <li>│</li>
+      <li><a href="<%=static_pages_services_path%>">服務項目</a></li>
+	  <li>│</li>
+      <li><a href="<%=static_pages_staff_path%>">醫師陣容</a></li>
+	  <li>│</li>
+      <li><a href="<%="/boards/"+Board.first.id.to_s()%>">駐診醫師專欄</a></li>
+	  <li>│</li>
+      <li><a href="<%=questions_path%>">醫師答客問</a></li>
+	  <li>│</li>
+      <li><a href="/news">最新消息</a></li>
+	  
+      <li><%= render :partial => "common/facebook_share_button" %></li>
+</ul>
