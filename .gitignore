@@ -20,6 +20,11 @@
 #Ignore database.yml.production
 /config/database.yml.production
 
+/config/database.yml
+
+/config/deploy
+/config/deploy/production.rb
+
 /public/ckeditor_assets
 /public/system/
 
@@ -30,6 +35,8 @@
 
 /.idea
 
-/config/database.yml
+
+
+
 
 
