@@ -1,7 +1,7 @@
 set :application, "eyeplus"
 set :domain, "linode.summers.com.tw"
 set :repository,  "git@github.com:SummersAdvertising/eyeplus.git"
-set :deploy_to, "/home/deploy/sysjust"
+set :deploy_to, "/home/deploy/eyeplus"
 
 role :app, domain
 role :web, domain
@@ -20,8 +20,7 @@ set :password, "1qaz2wsx"
 # set :group, "webs"
 set :group, "deploy"
 
-default_environment["PATH"] =
-    "/opt/ree/bin:/usr/local/bin:/usr/bin:/bin:/usr/games"
+default_environment["PATH"] = "/opt/ree/bin:/usr/local/bin:/usr/bin:/bin:/usr/games"
 
 namespace :deploy do
   desc "restart"
@@ -35,5 +34,4 @@ desc "Create database.yml and asset packages for production"
 after("deploy:finalize_update") do
   db_config = "#{shared_path}/config/database.yml.production"
   run "cp #{db_config} #{release_path}/config/database.yml"
-end
-
+end 
