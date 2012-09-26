@@ -1,6 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35078310-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
   <% if !((params[:controller]=="static_pages" && params[:action]=="discomfort") || (params[:controller]=="static_pages" && params[:action]=="glasses") || (params[:controller]=="static_pages" && params[:action]=="child")) %>
       <meta name="Robots" content="index,follow"/>
       <meta name="keywords" content="兒童視力,隱形眼鏡,白內障,配眼鏡,專業驗光,視力保健,老花,角膜塑形,乾眼症,視覺訓練,視光師,藍光鏡片,透氧率,白內障手術"/>
