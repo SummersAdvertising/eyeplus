@@ -17,8 +17,7 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     # @articles = @board.articles.all    
     # @articles = @board.articles.recent.paginate(:page => params[:page], :per_page => 5 )
-    @articles = @board.articles.recent.page params[:page]
-
+    @articles = @board.articles.order( "top DESC" ).page params[:page]
     get_four_boards(@board)
 
     respond_to do |format|

@@ -17,7 +17,7 @@ class Admin::BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @articles = @board.articles.recent.all    
+    @articles = @board.articles.order( "top DESC" ).recent.all    
 
     get_four_boards(@board)  
 

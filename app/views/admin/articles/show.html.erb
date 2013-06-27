@@ -7,7 +7,11 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <div class="main-title"> <div class="publish"><%= @article.created_at.to_date %></div> <div class="title"><%= @article.title %></div> 
+    <div class="main-title"> 
+    <div class="publish"><%= @article.created_at.to_date %></div>
+       	<div class="title"><%= @article.title %> 
+       		<spin style="float: right;"><input style="width: 16px;" type="checkbox" <%= 'checked="checked"'.html_safe if @article.top == 'true' %> disabled="disabled" />置頂<spin>
+       	</div>  
     </div>
     <% if @article.excerpt_image_top? %>
       <p>

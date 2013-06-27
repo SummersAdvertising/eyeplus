@@ -20,13 +20,23 @@
     <div class="main-title"> 
     <div class="publish"><%=Time.now.to_date%></div> 
     <div class="title"><%= f.text_field :title %></div>
+    
     </div>
+    
+    <div class="field">
+       <br />
+       <%= f.label :top, '是否為置頂文章' %>
+        <%= f.check_box :top, {}, "true" %>
+    </div>
+    
 	<div id="upload_top">
     <% if @article.excerpt_image_top? %>
       <p>
         <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
       </p>
     <% end %>
+    
+    
     <div class="field">
         圖片將置於文章上方<br />
         <%= f.file_field :excerpt_image_top %>

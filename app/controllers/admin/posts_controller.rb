@@ -63,6 +63,8 @@ class Admin::PostsController < ApplicationController
          @facebook.user_id = current_user.id
          @facebook.save
 
+         flash[:updated] = true
+         
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -81,12 +83,13 @@ class Admin::PostsController < ApplicationController
     respond_to do |format|
       if @post.update_attributes(params[:post])
          @conditionUrl = "posts/" + @post.id.to_s()
+         
          @facebook = getFacebook(@conditionUrl)
          @facebook.title = @post.title
          @facebook.description = @post.content
          @facebook.user_id = current_user.id
          @facebook.save
-
+         flash[:updated] = true
         format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else

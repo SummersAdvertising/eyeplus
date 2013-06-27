@@ -26,7 +26,7 @@
         <% @articles.each do |article| %>
           <tr>
             <td align="center"><%= article.created_at.to_date %></td>
-            <td align="left"><a href="<%=admin_board_article_path(@board,article)%>"><%= article.title %></a></td>
+            <td align="left"><a href="<%=admin_board_article_path(@board,article)%>"><%= article.title %></a><%= "（置頂文）" if article.top == 'true' %> </td>
             <td align="center"><%=User.where(:id => article.user_id).first.user_name %></td>
             <td align="center"><a href="<%=edit_admin_board_article_path(@board,article)%>"><img src="<%=image_path("admin/edit.png")%>"></a></td>
             <td align="center"><a href='<%=admin_board_article_path(@board,article)%>' rel="nofollow" data-method="delete" data-confirm="您確定嗎？"><img src="<%=image_path("admin/delete.png")%>"></a>
