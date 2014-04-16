@@ -39,7 +39,7 @@ GEM
       net-ssh-gateway (>= 1.1.0)
     capistrano-ext (1.2.1)
       capistrano (>= 1.0.0)
-    ckeditor (3.7.1)
+    ckeditor (3.7.2)
       mime-types
       orm_adapter
     client_side_validations (3.2.5)
@@ -150,7 +150,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano-ext
-  ckeditor (= 3.7.1)
+  ckeditor (= 3.7.2)
   client_side_validations
   coffee-rails (~> 3.2.1)
   devise
