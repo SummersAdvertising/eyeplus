@@ -1,4 +1,5 @@
 <%= render :partial => "admin/common/admin_top" %>
+
 <div id="container">
   <div id="side" class="left">
     <ul>
@@ -7,20 +8,28 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <div class="main-title">
-      <div class="publish"><%= @question.created_at.to_date %></div>
-      <div class="title"><%= @question.user_name %></div>
+    <div class="form">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><div class="title">
+              <h2><%= @question.user_name %></h2>
+              (<%= @question.email %>) <span class="publish"><%= @question.created_at.to_date %></span> </div></td>
+        </tr>
+      </table>
     </div>
-    <div class="main-text"><%= @question.content.gsub("\n", "<br>").html_safe  %></div>
+    <div class="question">
+      <%= @question.content.gsub("\n", "<br>").html_safe  %>
+    </div>
+    <div class="answer">
     <%= form_for @answer, :url => admin_question_answers_path(@question,@answer) do |f| %>
-    <div class="main-text" id="main-text-reply"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%>     
-    </div>
-    <div class="button"><a href="#"><%= f.submit "" %><img src="<%=image_path("admin/mail.png")%>">儲存寄出</a></div>
-    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/cancel.png")%>">取消</a></div>
-    <!--main--> 
+      
+        <%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%>
+        <%= f.submit "送出" %>
     <% end %>
   </div>
+  <div class="button">         
+    <a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/back.png")%>">返回</a>
+  </div>
+  </div>
 </div>
-<!--container-->
-<div id="footer"></div>
-<!--footer-->
+
