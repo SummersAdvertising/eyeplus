@@ -4,6 +4,9 @@ class Article < ActiveRecord::Base
   belongs_to :user
   has_attached_file :excerpt_image_top, :styles => { :medium => "515x515>", :thumb => "100x100>" }
   has_attached_file :excerpt_image_bottom, :styles => { :medium => "515x515>", :thumb => "100x100>" }
+  validates_attachment_content_type :excerpt_image_top, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  validates_attachment_content_type :excerpt_image_bottom, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
   # default_scope :order => 'created_at DESC'
   scope :recent, :order => 'updated_at DESC'
   paginates_per 5
