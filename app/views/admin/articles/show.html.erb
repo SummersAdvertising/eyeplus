@@ -32,7 +32,16 @@
         <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
       </div>
     <% end %>
-
+    <% unless @article.video_iframe_1.blank? %>
+      <p>
+        <%= @article.video_iframe_1.html_safe %>
+      </p>
+    <% end %>
+    <% unless @article.video_iframe_2.blank? %>
+      <p>
+        <%= @article.video_iframe_2.html_safe %>
+      </p>
+    <% end %>
     <div class="button">
     <a href="<%=edit_admin_board_article_path(@board, @article)%>"><img src="<%=image_path("admin/edit.png")%>">編輯</a>
     <a href="<%=admin_board_path(@board)%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
