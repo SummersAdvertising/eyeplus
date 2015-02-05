@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627030239) do
+ActiveRecord::Schema.define(:version => 20150203074717) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20130627030239) do
     t.integer  "excerpt_image_bottom_file_size"
     t.datetime "excerpt_image_bottom_updated_at"
     t.string   "top"
+    t.text     "video_iframe_1"
+    t.text     "video_iframe_2"
   end
 
   create_table "boards", :force => true do |t|

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+#ruby=ruby-1.9.3-p547
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:

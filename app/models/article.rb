@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :title, :excerpt_image_top, :excerpt_image_bottom, :top
+  attr_accessible :content, :title, :excerpt_image_top, :excerpt_image_bottom, :top, :video_iframe_1, :video_iframe_2
   belongs_to :board
   belongs_to :user
   has_attached_file :excerpt_image_top, :styles => { :medium => "515x515>", :thumb => "100x100>" }

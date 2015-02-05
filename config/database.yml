@@ -1,8 +1,13 @@
+# development:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: eyeplus
+#   pool: 5
+#   username: development
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: eyeplus
+  adapter: sqlite3
+  database: db/eyeplus.sqlite3
   pool: 5
-  username: development
-
+  timeout: 5000
+  strict: false
