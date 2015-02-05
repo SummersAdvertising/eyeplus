@@ -13,24 +13,36 @@
 <%= render :partial => "admin/common/admin_top" %>
 <!--top-->
 <div id="container">
-<div id="side" class="left">
-<ul>
-<%= render :partial => "admin/common/admin_function_selector" %>
-</ul>
+  <div id="side" class="left">
+    <ul>
+    <%= render :partial => "admin/common/admin_function_selector" %>
+    </ul>
+  </div>
+  <!--side-->
+  <div id="main" class="right">
+    <div class="form">
+      <table width="100%" cellpadding="0" cellspacing="0">        
+        <tr>
+          <td width="7%">標題</td>
+            <td width="93%" colspan="4">
+              <div class="title">
+              <%= f.text_field :title %>
+              <span class="publish"><%=Time.now.to_date%></span>
+              </div>
+          </td>
+        </tr> 
+        <tr>
+          <td colspan="5"><%= f.cktext_area :content %></td>
+        </tr> 
+      </table>
+    </div>
+    <div class="button">
+      <%= f.submit "儲存" %>
+      <a href="<%=admin_posts_path%>"><%=image_tag("admin/cancel.png")%>取消</a>
+    </div>
+  </div>
 </div>
-<!--side-->
-<div id="main" class="right">
-<div class="main-title">
-<div class="publish"><%=Time.now.to_date%></div>
-<div class="title"><%= f.text_field :title %></div>
-</div>
-<div class="main-text"><%= f.cktext_area :content %></div>
-<div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>">儲存</div>
-<div class="button"><a href="<%=admin_posts_path%>"><%=image_tag("admin/cancel.png")%>取消</a></div>
-</div><!--main-->
-</div><!--container-->
-<div id="footer" /></div>
-<!--footer-->
+
 <style>
 .cke_1 .cke_wrapper,.cke_1_dialog .cke_dialog_contents,.cke_1_dialog a.cke_dialog_tab,.cke_1_dialog .cke_dialog_footer{background-color: #fff !important;}
 

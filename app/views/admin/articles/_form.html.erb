@@ -1,12 +1,13 @@
 <% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-  </div>
+
+<div id="error_explanation">
+  <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 <%= render :partial => "admin/common/admin_top" %>
 <div id="container">
@@ -17,49 +18,54 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <div class="main-title"> 
-    <div class="publish"><%=Time.now.to_date%></div> 
-    <div class="title"><%= f.text_field :title %></div>
-    
+    <div class="form">
+      <table width="100%" cellpadding="0" cellspacing="0">        
+        <tr>
+          <td width="7%">標題</td>
+            <td width="93%" colspan="4">
+              <div class="title">
+              <%= f.text_field :title %>
+              <span class="publish"><%=Time.now.to_date%></span>
+              </div>
+          </td>
+        </tr>     
+        <tr>
+          <td colspan="5" align="right"><%#= f.label :top, '置頂文章' %>文章置頂 <%= f.check_box :top, {}, "true" %></td>
+        </tr>   
+        <tr>
+          <td width="7%">圖片(上)</td>
+          <td width="41%"><% if @article.excerpt_image_top? %>
+            <%= image_tag(@article.excerpt_image_top.url(:medium)) %><br><br>
+            <% end %>
+            <%= f.file_field :excerpt_image_top %></td>
+          <td width="2%"></td>
+          <td width="7%">圖片(下)</td>
+          <td width="41%"><% if @article.excerpt_image_bottom? %>
+            <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %><br><br>
+            <% end %>
+            <%= f.file_field :excerpt_image_bottom %></td>
+        </tr>
+        <tr>
+          <td valign="top">內文</td>
+          <td colspan="4"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%></td>
+        </tr>
+        <tr>
+          <td>影片一</td>
+          <td><%= f.text_field :video_iframe_1 %></td>
+          <td></td>
+          <td>影片二</td>
+          <td><%= f.text_field :video_iframe_2 %></td>
+        </tr>
+      </table>
     </div>
     
-    <div class="field">
-       <br />
-       <%= f.label :top, '是否為置頂文章' %>
-        <%= f.check_box :top, {}, "true" %>
+    <div class="button">      
+      <%= f.submit "儲存" %>       
+      <a href="<%=admin_board_path(@board)%>"><%=image_tag("admin/cancel.png")%>取消</a>
     </div>
-    
-	<div id="upload_top">
-    <% if @article.excerpt_image_top? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
-      </p>
-    <% end %>
-    
-    
-    <div class="field">
-        圖片將置於文章上方<br />
-        <%= f.file_field :excerpt_image_top %>
-    </div>
-	</div><!--upload_top-->
-    <div class="main-text"><%= f.text_area :content, :cols => "", :rows => "", :class=> "autogrow"%></div>
-    <div id="upload_bottom">
-	<% if @article.excerpt_image_bottom? %>
-      <p>
-        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
-      </p>
-    <% end %>
-    <div class="field">
-        圖片將置於文章下方<br />
-        <%= f.file_field :excerpt_image_bottom %>
-    </div>
-	</div><!--upload_bottom-->
 
-    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>">儲存</div>
-    <div class="button"><a href="<%=admin_board_path(@board)%>"><%=image_tag("admin/cancel.png")%>取消</a>
-    </div>
-    <!--main--> 
-  </div>
+	</div>
+  <!--main--> 
 </div>
 <!--container-->
 <div id="footer"></div>

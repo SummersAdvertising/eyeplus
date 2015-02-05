@@ -7,14 +7,30 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <div class="main-title">
-      <div class="publish"><%= @question.created_at.to_date %></div>
-      <div class="title"><span id="name"><%= @question.user_name %></span><span id="mail"><%= @question.email %></span></div>
+  <div class="category">
+      <table width="100%" cellpadding="0" cellspacing="0">        
+        <tr>          
+          <td>
+            <div class="title">
+              <h2><%= @question.user_name %></h2>
+              (<a href="mailto:<%= @question.email %>" target="_blank" ><img src="<%=image_path("admin/mail.png")%>"> <%= @question.email %></a>)        
+              <span class="publish"><%= @question.created_at.to_date %></span>
+            </div>
+          </td>          
+        </tr>
+      </table>
+    </div>    
+    <div class="question">
+      <%= @question.content.gsub("\n", "<br />").html_safe %>
     </div>
-    <div class="main-text"><%= @question.content.gsub("\n", "<br />").html_safe %></div>
-    <div class="button"><a href="<%=new_admin_question_answer_path(@question)%>"><img src="<%=image_path("admin/reply.png")%>">回覆</a></div>
-    <div class="button"><a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/back.png")%>">返回</a></div>
+    <div class="answer">
     <%= render @question.answers %>   
+    </div>
+    <div class="button">
+      <a href="<%=new_admin_question_answer_path(@question)%>"><img src="<%=image_path("admin/reply.png")%>">回覆</a>
+      <a href="<%=admin_questions_path%>"><img src="<%=image_path("admin/back.png")%>">返回</a>
+    </div>
+    
     <!--main--> 
   </div>
 </div>

@@ -7,21 +7,21 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <div class="main-title">
-      <div class="publish">專欄分類</div>
-      <div class="title">
-        <%= render :partial => "admin/common/admin_board_selector" %>
-      </div>
+    <div class="category">
+      <h2>專欄分類</h2>
+      <%= render :partial => "admin/common/admin_board_selector" %>
     </div>
-    <div class="button" style="margin-top:10px"><a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a></div>
+    <div class="button">
+      <a href="<%=new_admin_board_article_path(@board)%>"><img src="<%=image_path("admin/add.png")%>">新增文章</a>
+    </div>
     <div class="main-list">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr class="main-list-title">
-          <th width="16%" align="center" scope="col">日期</th>
-          <th width="48%" align="left" scope="col">標題</th>
-          <th width="20%" align="center" scope="col">撰寫人</th>
-          <th width="8%" align="center" scope="col">編輯</th>
-          <th width="8%" align="center" scope="col">刪除</th>
+          <th width="14%" align="center" scope="col">日期</th>
+          <th width="58%" align="left" scope="col">標題</th>
+          <th width="14%" align="center" scope="col">撰寫人</th>
+          <th width="7%" align="center" scope="col">編輯</th>
+          <th width="7%" align="center" scope="col">刪除</th>
         </tr>
         <% @articles.each do |article| %>
           <tr>

@@ -1,6 +1,14 @@
 <%= render :partial => "admin/common/admin_top" %>
 <!--top-->
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
+<script>
+$(document).ready(function(){
+  $('#switch').click(function(){
+    $('.hidden').toggle(500)
+  })
+})
+</script>
 <div id="container">
   <div id="side" class="left">
     <ul>
@@ -9,37 +17,34 @@
   </div>
   <!--side-->
   <div id="main" class="right">
-    <h2><img src="<%=image_path("admin/signin.png")%>" width="16" height="16" /> 修改個人資料</h2>
-    <div class="main-form">
-     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="left">帳號<br>
-    <%= f.email_field :email %></td>
-  </tr>
-  <tr>
-    <td align="left">姓名<br>
-    <%= f.text_field :user_name %></td>
-  </tr>
-    <tr>
-    <td align="left"><span>- - - - - - - - - - - - 如不修改密碼則無需填下欄- - - - - - - - - - - -</span></td>
-  </tr>
-  <tr>
-    <td align="left">密碼<br>
-    <%= f.password_field :password, :autocomplete => "off" %></td>
-  </tr>
-  <tr>
-    <td align="left">確認密碼<br>
-    <%= f.password_field :password_confirmation %></td>
-  </tr>
-</table>
+    <div class="category">
+      <h2>修改個人資料</h2> <a id="switch" class="select" href="javascript:void(0)">重設密碼</a>
     </div>
-    <!--main-form-->
-    <div class="button"><%= f.submit "" %><img src="<%=image_path("admin/save.png")%>"><a>儲存</a></div>
-    <div class="button"><a href="/admin/posts"><img src="<%=image_path("admin/cancel.png")%>">取消</a></div>
+    <div class="form">
+      <table width="62%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="7%">帳號</td>
+          <td width="93%"><%= f.email_field :email %></td>
+        </tr>
+        <tr>
+          <td width="7%">姓名</td>
+          <td width="93 %"><%= f.text_field :user_name %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="form hidden">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="14%">重設密碼</td>
+          <td width="86%"><%= f.password_field :password, :autocomplete => "off" %></td>
+        </tr>
+        <tr>
+          <td width="14%">確認密碼</td>
+          <td width="86%"><%= f.password_field :password_confirmation %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="button"> <%= f.submit "儲存" %> <a href="/admin/posts"><img src="<%=image_path("admin/cancel.png")%>">取消</a> </div>
   </div>
-  <!--main--> 
 </div>
-<!--container-->
 <% end %>
-<div id="footer"></div>
-<!--footer-->

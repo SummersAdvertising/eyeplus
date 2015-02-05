@@ -24,22 +24,31 @@
     <div id="content"> 
       <span><%=@article.created_at.to_date%></span>
       <h4><%= @article.title %></h4> 
-  	<div class="text">
-	<div class="text-image">
-      <% if @article.excerpt_image_top? %>
-       
+  	
+    <div class="text">
+    	<div class="text-image">
+        <% if @article.excerpt_image_top? %>
           <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
-       
-      <% end %>
-	  </div>
+        <% end %>
+  	  </div>
       <%= @article.content.gsub("\n", "<br />").html_safe %>
+
       <div class="text-image">
-	  <% if @article.excerpt_image_bottom? %>
-        
+    	  <% if @article.excerpt_image_bottom? %>
           <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
-        
+        <% end %>
+  	  </div>
+
+      <% unless @article.video_iframe_1.blank? %>
+        <p>
+          <%= @article.video_iframe_1.html_safe %>
+        </p>
       <% end %>
-	  </div>
+      <% unless @article.video_iframe_2.blank? %>
+        <p>
+          <%= @article.video_iframe_2.html_safe %>
+        </p>
+      <% end %>
 	  </div>
   </div>
     <!--content--> 
