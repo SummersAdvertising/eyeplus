@@ -59,7 +59,11 @@
       </table>
     </div>
     
-    <div class="button">      
+
+    <div class="button">
+      <%# content_tag :button, type: :submit do %>
+        <!-- 儲存<%#image_tag("admin/cancel.png")%> -->
+      <%# end %>
       <%= f.submit "儲存" %>       
       <a href="<%=admin_board_path(@board)%>"><%=image_tag("admin/cancel.png")%>取消</a>
     </div>
