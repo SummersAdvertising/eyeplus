@@ -1,6 +1,5 @@
 <div id="header">
-  <div id="top">
-    <%= render :partial => "common/nav" %>
+  <div id="top"> <%= render :partial => "common/nav" %> 
     <!--nav--> 
   </div>
   <!--top-->
@@ -10,63 +9,53 @@
   <!--banner--> 
 </div>
 <!--header-->
-<div id="container">
-  <%= render :partial => "common/crumb_selector" %>
+<div id="container"> <%= render :partial => "common/crumb_selector" %> 
   <!--bread-crumbs-->
   <div id="main">
     <div id="side">
       <ul id="category">
         <%= render :partial => "common/board_selector" %>
-      </ul><!--category-->
-      <%= render :partial => "common/display_article_item" %>
-    </div>
+      </ul>
+      <!--category--> 
+      <%= render :partial => "common/display_article_item" %> </div>
     <!--side-->
-    <div id="content"> 
-      <span><%=@article.created_at.to_date%></span>
-      <h4><%= @article.title %></h4> 
-  	
-    <div class="text">
-    	<div class="text-image">
+    <div id="content"> <span><%=@article.created_at.to_date%></span>
+      <h4><%= @article.title %></h4>
+      <div class="text">
         <% if @article.excerpt_image_top? %>
-          <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
+        <%= image_tag(@article.excerpt_image_top.url(:medium)) %>
         <% end %>
-  	  </div>
-      <%= @article.content.gsub("\n", "<br />").html_safe %>
-
-      <div class="text-image">
-    	  <% if @article.excerpt_image_bottom? %>
-          <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
+        
+        <p> <%= @article.content.gsub("\n", "<br />").html_safe %> </p>
+        
+        <% if @article.excerpt_image_bottom? %>
+        <%= image_tag(@article.excerpt_image_bottom.url(:medium)) %>
         <% end %>
-  	  </div>
-
-      <% unless @article.video_iframe_1.blank? %>
-        <p>
-          <%= @article.video_iframe_1.html_safe %>
-        </p>
-      <% end %>
-      <% unless @article.video_iframe_2.blank? %>
-        <p>
-          <%= @article.video_iframe_2.html_safe %>
-        </p>
-      <% end %>
-	  </div>
-  </div>
-    <!--content--> 
-  <div id="share_button">
-<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-<a class="addthis_button_facebook"></a>
-<a class="addthis_button_twitter"></a>
-<a class="addthis_button_google_plusone_share"></a>
-<a class="addthis_button_plurk"></a>
-<a class="addthis_button_email"></a>
-</div>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50050ff727d6ae6e"></script>
-<!-- AddThis Button END -->
-  </div><!--share_button-->
+        
+        <% unless @article.video_iframe_1.blank? %>
+        <div class="youtube">
+        <%= @article.video_iframe_1.html_safe %>
+        </div>
+        <% end %>
+        
+        <% unless @article.video_iframe_2.blank? %>
+        <div class="youtube">
+        <%= @article.video_iframe_2.html_safe %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <!--content-->
+    <div id="share_button"> 
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style"> <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a> <a class="addthis_button_google_plusone_share"></a> <a class="addthis_button_plurk"></a> <a class="addthis_button_email"></a> </div>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50050ff727d6ae6e"></script> 
+      <!-- AddThis Button END --> 
+    </div>
+    <!--share_button--> 
   </div>
   <!--main--> 
 </div>
-<!--container-->
-<%= render :partial => "common/footer" %>
+<!--container--> 
+<%= render :partial => "common/footer" %> 
 <!--footer-->

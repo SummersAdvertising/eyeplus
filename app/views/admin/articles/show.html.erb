@@ -33,14 +33,14 @@
       </div>
     <% end %>
     <% unless @article.video_iframe_1.blank? %>
-      <p>
+      <div>
         <%= @article.video_iframe_1.html_safe %>
-      </p>
+      </div>
     <% end %>
     <% unless @article.video_iframe_2.blank? %>
-      <p>
+      <div>
         <%= @article.video_iframe_2.html_safe %>
-      </p>
+      </div>
     <% end %>
     <div class="button">
     <a href="<%=edit_admin_board_article_path(@board, @article)%>"><img src="<%=image_path("admin/edit.png")%>">編輯</a>
